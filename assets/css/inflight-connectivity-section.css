@@ -1,0 +1,414 @@
+/*
+===========================================
+   INFLIGHT CONNECTIVITY SECTION STYLES
+===========================================
+*/
+
+.inflight-connectivity-section {
+    padding: var(--spacing-5xl) 0;
+    background-color: var(--color-gray-50);
+    overflow: hidden;
+}
+
+.inflight-connectivity-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.inflight-connectivity-content {
+    position: relative;
+    width: 100%;
+    min-height: 1200px;
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-color: transparent;
+    /* Fallback color */
+    border-radius: 30px;
+    overflow: hidden;
+    /* box-shadow: var(--shadow-xl); */
+}
+
+/* Optional overlay for better text readability */
+.inflight-connectivity-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+    z-index: 1;
+}
+
+.inflight-connectivity-content>* {
+    position: relative;
+    z-index: 2;
+}
+
+/*
+===========================================
+   HEADER SECTION
+===========================================
+*/
+
+.inflight-connectivity-header {
+    text-align: center;
+    padding: var(--spacing-3xl) var(--spacing-xl) var(--spacing-2xl);
+    color: var(--color-white);
+    margin-top: 2rem;
+}
+
+.inflight-connectivity-title {
+    font-size: 40px;
+    font-weight: var(--font-weight-bold);
+    line-height: 130%;
+    letter-spacing: -1%;
+    color: #0B2051;
+    margin-bottom: 0px !important;
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.inflight-connectivity-subtitle {
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: -1%;
+    color: #0B2051;
+    max-width: 800px;
+    margin: 1.438rem auto 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*
+===========================================
+   MAIN CONTENT GRID
+===========================================
+*/
+
+.inflight-connectivity-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    padding: 0 var(--spacing-xl) var(--spacing-2xl);
+}
+
+.inflight-connectivity-card {
+    background: linear-gradient(81deg, #FFF 76.31%, #E0F4FC 101.75%);
+    border-radius: var(--border-radius-2xl);
+    padding: 2.5rem;
+    border: 1px solid #E0EAF8;
+}
+
+.card-title {
+    color: #0B2051;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.015rem;
+}
+
+.card-description {
+    color: #0B2051;
+    opacity: 0.7;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 1.4rem */
+    letter-spacing: -0.01rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg) 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: var(--font-size-sm);
+}
+
+.feature-arrow {
+    color: #155BFF;
+    font-weight: var(--font-weight-medium);
+    margin-right: var(--spacing-sm);
+    flex-shrink: 0;
+}
+
+.feature-text {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+}
+
+.card-footer {
+    color: #0B2051;
+    opacity: 0.7;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 1.4rem */
+    letter-spacing: -0.01rem;
+}
+
+/*
+===========================================
+   WHY IT MATTERS SECTION
+===========================================
+*/
+
+.inflight-connectivity-matters-section {
+    padding: 0 var(--spacing-xl) var(--spacing-3xl);
+}
+
+.matters-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+} */
+
+.matters-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.matters-intro {
+    text-align: center;
+    color: var(--color-text-secondary);
+    max-width: 900px;
+    margin: 0 auto var(--spacing-xl);
+    line-height: var(--line-height-relaxed);
+}
+
+.matters-content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.matters-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: var(--line-height-relaxed);
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+}
+
+/*
+===========================================
+   CHARTS SECTION
+===========================================
+*/
+
+.charts-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.chart-item {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+}
+
+.chart-item:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.chart-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius-md);
+}
+
+/*
+===========================================
+   RESPONSIVE DESIGN
+===========================================
+*/
+
+@media (max-width: 1024px) {
+    .inflight-connectivity-content {
+        min-height: 1000px;
+    }
+
+    .inflight-connectivity-container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .inflight-connectivity-content {
+        border-radius: var(--border-radius-xl);
+    }
+
+    .inflight-connectivity-header {
+        padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-xl);
+    }
+
+    .matters-content-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .inflight-connectivity-section {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .inflight-connectivity-content {
+        min-height: auto;
+        border-radius: var(--border-radius-lg);
+    }
+
+    .inflight-connectivity-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .inflight-connectivity-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .inflight-connectivity-main-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-lg) var(--spacing-xl);
+    }
+
+    .inflight-connectivity-card {
+        padding: var(--spacing-lg);
+    }
+
+    .card-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .matters-content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .charts-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .inflight-connectivity-matters-section {
+        padding: 0 var(--spacing-lg) var(--spacing-2xl);
+    }
+
+    .matters-card {
+        padding: var(--spacing-lg);
+    }
+
+    .matters-title {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .inflight-connectivity-header {
+        padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+    }
+
+    .inflight-connectivity-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .inflight-connectivity-main-grid {
+        padding: 0 var(--spacing-md) var(--spacing-lg);
+    }
+
+    .inflight-connectivity-card {
+        padding: var(--spacing-md);
+    }
+
+    .card-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+
+    .inflight-connectivity-matters-section {
+        padding: 0 var(--spacing-md) var(--spacing-xl);
+    }
+
+    .matters-card {
+        padding: var(--spacing-md);
+    }
+}
+
+/*
+===========================================
+   ACCESSIBILITY IMPROVEMENTS
+===========================================
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .inflight-connectivity-card,
+    .chart-item {
+        transition: none;
+    }
+
+    .inflight-connectivity-card:hover,
+    .chart-item:hover {
+        transform: none;
+    }
+}
+
+/* Focus states for keyboard navigation */
+.chart-item:focus-within {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+
+    .inflight-connectivity-card,
+    .matters-card {
+        background-color: var(--color-white);
+        border: 2px solid var(--color-text-primary);
+    }
+
+    .feature-arrow {
+        color: var(--color-text-primary);
+    }
+}
