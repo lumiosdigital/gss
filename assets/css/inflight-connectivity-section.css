@@ -5,14 +5,14 @@
 */
 
 .inflight-connectivity-section {
-    padding: var(--spacing-5xl) 0;
+    padding: var(--spacing-5xl) 0 0;
     background-color: var(--color-gray-50);
     overflow: hidden;
 }
 
 .inflight-connectivity-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
 }
@@ -175,7 +175,7 @@
     width: 100%;
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius-2xl);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-2xl) var(--spacing-xl);
     border: 1px solid #E0EAF8;
 }
 
@@ -195,7 +195,7 @@
     color: #0B2051;
     opacity: 0.7;
     max-width: 53.125rem;
-    margin: 0 auto 4rem;
+    margin: 0 auto 2rem;
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
@@ -213,7 +213,7 @@
 
 .matters-description {
     width: 37rem;
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: #0B2051;
     opacity: 0.7;
     margin-bottom: 1.25rem;
@@ -231,7 +231,7 @@
 .benefits-list li {
     display: flex;
     color: #0B2051;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;

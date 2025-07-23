@@ -91,6 +91,9 @@ function gss_scripts() {
     // Inflight Connectivity section stylesheet
     wp_enqueue_style('gss-inflight-connectivity-section', get_template_directory_uri() . '/assets/css/inflight-connectivity-section.css', array('gss-main'), '1.0.0');
     
+    // Airline Case Study section stylesheet
+    wp_enqueue_style('gss-airline-case-study-section', get_template_directory_uri() . '/assets/css/airline-case-study-section.css', array('gss-main'), '1.0.0');
+    
     
     // Main JavaScript file
     wp_enqueue_script('gss-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0.0', true);
