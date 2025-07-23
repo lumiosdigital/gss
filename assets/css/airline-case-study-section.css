@@ -249,7 +249,7 @@
 
 .bottom-description {
     text-align: center;
-    /* margin: var(--spacing-4xl) 0 var(--spacing-2xl) 0; */
+    margin-top: 1.87rem;
 }
 
 .bottom-description p {
@@ -337,6 +337,7 @@
     display: flex;
     align-items: center;
     min-height: 60px;
+    height: 64.59px;
 }
 
 .benefits-table-cell:last-child {
