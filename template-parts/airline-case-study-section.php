@@ -107,8 +107,6 @@
                         <p>Viper delivers a powerful, scalable, and provider-agnostic performance intelligence layer. With ROI exceeding 10x in the first year, it enables this Airline to:</p>
                     </div>                                        
                 </div>
-
-
             </div>
         </div>
 
