@@ -27,6 +27,9 @@ get_header(); ?>
 
         <!-- Insights to Action Section -->
         <?php get_template_part('template-parts/insights-to-action-section'); ?>
+
+        <!-- Strategic Takeaways Section -->
+        <?php get_template_part('template-parts/strategic-takeaways-section'); ?>
         
         <!-- Future sections will go here -->
         <div class="container">
