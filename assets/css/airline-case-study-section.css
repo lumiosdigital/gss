@@ -175,7 +175,7 @@
 .benefits-summary {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-xl);
+    gap: 20px;
     width: 100%;
     max-width: 887px;
 }
