@@ -71,7 +71,7 @@
 }
 
 .insights-to-action-subtitle {
-    width: 38.625rem;
+    max-width: 38.625rem;
     color: #0B2051;
     opacity: 0.7;
     text-align: center;
