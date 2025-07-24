@@ -5,7 +5,7 @@
 */
 
 .inflight-connectivity-section {
-    padding: var(--spacing-5xl) 0 0;
+    padding: var(--spacing-sm) 0 0;
     background-color: var(--color-gray-50);
     overflow: hidden;
 }
