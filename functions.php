@@ -93,6 +93,9 @@ function gss_scripts() {
     
     // Airline Case Study section stylesheet
     wp_enqueue_style('gss-airline-case-study-section', get_template_directory_uri() . '/assets/css/airline-case-study-section.css', array('gss-main'), '1.0.0');
+
+    // Insights to Action section stylesheet
+    wp_enqueue_style('gss-insights-to-action-section', get_template_directory_uri() . '/assets/css/insights-to-action-section.css', array('gss-main'), '1.0.0');
     
     
     // Main JavaScript file

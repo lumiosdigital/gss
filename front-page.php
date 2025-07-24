@@ -24,6 +24,9 @@ get_header(); ?>
         
         <!-- Airline Case Study Section -->
         <?php get_template_part('template-parts/airline-case-study-section'); ?>
+
+        <!-- Insights to Action Section -->
+        <?php get_template_part('template-parts/insights-to-action-section'); ?>
         
         <!-- Future sections will go here -->
         <div class="container">
