@@ -1,6 +1,6 @@
 .strategic-takeaways-section {
     background-color: #f7f9fe;
-    padding: 80px 0;
+    padding: 80px 0 0;
     position: relative;
     overflow: hidden;
 }
@@ -372,7 +372,7 @@
 
 .strategic-bottom-description {
     text-align: center;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
     z-index: 3;
 }
 
@@ -396,8 +396,10 @@
 */
 
 .strategic-airplane-section {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 .strategic-airplane-image {
