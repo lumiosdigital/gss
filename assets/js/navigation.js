@@ -11,6 +11,7 @@
         initDropdownMenus();
         initAccessibility();
         preventIndustriesClick();
+        initHeaderScrollBehavior(); // Enable header scroll behavior
     });
 
     /**
@@ -161,6 +162,50 @@
     }
 
     /**
+     * Header scroll behavior with throttling for better performance
+     */
+    function initHeaderScrollBehavior() {
+        let lastScrollTop = 0;
+        let ticking = false;
+        const header = $('.site-header');
+        
+        function updateHeader() {
+            const scrollTop = $(window).scrollTop();
+            
+            // Add shadow when scrolled
+            if (scrollTop > 10) {
+                header.addClass('header-scrolled');
+            } else {
+                header.removeClass('header-scrolled');
+            }
+            
+            // Hide/show header based on scroll direction
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down - hide header
+                header.addClass('header-hidden');
+            } else if (scrollTop < lastScrollTop) {
+                // Scrolling up - show header
+                header.removeClass('header-hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        }
+        
+        $(window).on('scroll', requestTick);
+        
+        // Also handle touchmove for mobile devices
+        $(window).on('touchmove', requestTick);
+    }
+
+    /**
      * Smooth scrolling for anchor links (if needed)
      */
     function initSmoothScrolling() {
@@ -177,30 +222,7 @@
         });
     }
 
-    /**
-     * Header scroll behavior (optional)
-     */
-    function initHeaderScrollBehavior() {
-        let lastScrollTop = 0;
-        const header = $('.site-header');
-        
-        $(window).on('scroll', function() {
-            const scrollTop = $(this).scrollTop();
-            
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down
-                header.addClass('header-hidden');
-            } else {
-                // Scrolling up
-                header.removeClass('header-hidden');
-            }
-            
-            lastScrollTop = scrollTop;
-        });
-    }
-
     // Optional: Initialize additional features
     // initSmoothScrolling();
-    // initHeaderScrollBehavior();
 
 })(jQuery);

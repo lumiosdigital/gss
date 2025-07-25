@@ -144,6 +144,226 @@
     max-width: 312px;
 }
 
+/* Scintillating animation for SVG circles - more star-like with random patterns */
+@keyframes scintillate-1 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    25% {
+        transform: scale(0.7);
+        opacity: 0.6;
+    }
+
+    60% {
+        transform: scale(1.5);
+        opacity: 0.9;
+    }
+
+    85% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scintillate-2 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    30% {
+        transform: scale(1.3);
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+
+    90% {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scintillate-3 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    20% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.6);
+        opacity: 0.6;
+    }
+
+    75% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scintillate-4 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    35% {
+        transform: scale(1.4);
+        opacity: 0.7;
+    }
+
+    65% {
+        transform: scale(0.5);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scintillate-5 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    15% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+
+    45% {
+        transform: scale(1.3);
+        opacity: 0.9;
+    }
+
+    80% {
+        transform: scale(0.7);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scintillate-6 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    40% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+
+    55% {
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+
+    90% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply different animations and timings to each circle */
+.scintillate-delay-1 {
+    animation: scintillate-1 5.8s ease-in-out infinite;
+    transform-origin: 156px 15px;
+    animation-delay: 0s;
+}
+
+.scintillate-delay-2 {
+    animation: scintillate-2 4.9s ease-in-out infinite;
+    transform-origin: 156px 289px;
+    animation-delay: 1.4s;
+}
+
+.scintillate-delay-3 {
+    animation: scintillate-3 3.8s ease-in-out infinite;
+    transform-origin: 156px 152px;
+    animation-delay: 2.7s;
+}
+
+.scintillate-delay-4 {
+    animation: scintillate-4 6.9s ease-in-out infinite;
+    transform-origin: 156px 426px;
+    animation-delay: 0.5s;
+}
+
+.scintillate-delay-5 {
+    animation: scintillate-5 5.3s ease-in-out infinite;
+    transform-origin: 157px 564px;
+    animation-delay: 3.8s;
+}
+
+.scintillate-delay-6 {
+    animation: scintillate-6 6.2s ease-in-out infinite;
+    transform-origin: 156px 705px;
+    animation-delay: 2.2s;
+}
+
+/* Different animation delays for each circle */
+.scintillate-delay-1 {
+    animation-delay: 0s;
+}
+
+.scintillate-delay-2 {
+    animation-delay: 0.5s;
+}
+
+.scintillate-delay-3 {
+    animation-delay: 1s;
+}
+
+.scintillate-delay-4 {
+    animation-delay: 1.5s;
+}
+
+.scintillate-delay-5 {
+    animation-delay: 0.8s;
+}
+
+.scintillate-delay-6 {
+    animation-delay: 2s;
+}
+
 /*
 ===========================================
    BOTTOM DESCRIPTION

@@ -12,6 +12,17 @@
     top: 0;
     z-index: 1000;
     /* box-shadow: var(--shadow-sm); */
+    transition: transform var(--transition-slow), box-shadow var(--transition-normal);
+}
+
+/* Header scroll behavior */
+.site-header.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* Add subtle shadow when scrolling */
+.site-header.header-scrolled {
+    box-shadow: var(--shadow-md);
 }
 
 .header-container {
@@ -390,6 +401,11 @@
     .mobile-cta .cta-button {
         width: 100%;
         text-align: center;
+    }
+
+    /* Mobile header height adjustment */
+    .header-container {
+        height: 70px;
     }
 }
 
