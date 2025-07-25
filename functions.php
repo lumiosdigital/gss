@@ -99,6 +99,9 @@ function gss_scripts() {
     
     // Strategic Takeaways section stylesheet
     wp_enqueue_style('gss-strategic-takeaways-section', get_template_directory_uri() . '/assets/css/strategic-takeaways-section.css', array('gss-main'), '1.0.0');
+
+    // Experience Viper section stylesheet
+    wp_enqueue_style('gss-experience-viper-section', get_template_directory_uri() . '/assets/css/experience-viper-section.css', array('gss-main'), '1.0.0');
     
     // Main JavaScript file
     wp_enqueue_script('gss-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0.0', true);

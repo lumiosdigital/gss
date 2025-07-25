@@ -1,0 +1,324 @@
+/*
+===========================================
+   EXPERIENCE VIPER SECTION STYLES
+===========================================
+*/
+
+.experience-viper-section {
+    background-color: #f7f9fe;
+    padding: 20.438rem 0 3.125rem;
+    position: relative;
+    overflow: hidden;
+    height: 52.688rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.experience-viper-container {
+    width: 100%;
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+    /* padding: 0 var(--spacing-lg); */
+    position: relative;
+    z-index: 2;
+}
+
+.experience-viper-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+/*
+===========================================
+   WORLD BACKGROUND IMAGE
+===========================================
+*/
+
+.world-background {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 1440px;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    /* Container for background image - can be animated or repositioned */
+}
+
+.world-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: auto;
+    object-position: center;
+    /* opacity: 0.8; */
+}
+
+/*
+===========================================
+   MAIN CONTAINER
+===========================================
+*/
+
+.experience-viper-card {
+    background: #155BFF;
+    border-radius: 40px;
+    padding: 6.30rem var(--spacing-3xl);
+    text-align: center;
+    max-width: 1440px;
+    width: 100%;
+    box-shadow: var(--shadow-xl);
+}
+
+.experience-viper-title {
+    font-size: 3.125rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: 120%;
+    letter-spacing: -0.03125rem;
+    color: var(--color-white);
+    margin-bottom: 1.87rem;
+}
+
+.experience-viper-description {
+    font-size: 1.125rem;
+    line-height: 140%;
+    letter-spacing: -0.01125rem;
+    color: var(--color-white);
+    opacity: 0.7;
+    max-width: 601px;
+    margin: 0 auto 40px;
+}
+
+/*
+===========================================
+   ACTIONS/BUTTON
+===========================================
+*/
+
+.experience-viper-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-2xl);
+}
+
+/* Reuse button styles from hero banner */
+.experience-viper-section .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    gap: 0;
+}
+
+.experience-viper-section .btn-primary:hover {
+    transform: translateY(-2px);
+    color: var(--color-white);
+}
+
+.experience-viper-section .btn-primary .btn-text {
+    background: var(--color-viper-green);
+    color: var(--color-text-primary);
+    padding: var(--spacing-md) var(--spacing-2xl);
+    border-radius: var(--border-radius-full);
+    font-weight: var(--font-weight-semibold);
+    transition: var(--transition-normal);
+}
+
+.experience-viper-section .btn-primary .btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--color-viper-green);
+    border-radius: 50%;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+    transition: var(--transition-normal);
+}
+
+.experience-viper-section .btn-primary:hover .btn-text {
+    background: #9FE63A;
+}
+
+.experience-viper-section .btn-primary:hover .btn-arrow {
+    background: #9FE63A;
+    transform: translateX(4px);
+}
+
+/*
+===========================================
+   RESPONSIVE DESIGN
+===========================================
+*/
+
+@media (max-width: 1024px) {
+    .experience-viper-section {
+        padding: var(--spacing-2xl) 0 var(--spacing-3xl);
+    }
+
+    .experience-viper-container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .experience-viper-card {
+        border-radius: 30px;
+        padding: var(--spacing-3xl) var(--spacing-2xl);
+        max-width: 100%;
+    }
+
+    .experience-viper-title {
+        font-size: 40px;
+    }
+
+    .experience-viper-description {
+        font-size: 16px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-viper-section {
+        padding: var(--spacing-xl) 0 var(--spacing-2xl);
+    }
+
+    .world-background {
+        min-width: 800px;
+    }
+
+    .world-background-image {
+        object-position: center top;
+    }
+
+    .experience-viper-card {
+        border-radius: 20px;
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .experience-viper-title {
+        font-size: 32px;
+        line-height: 1.3;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .experience-viper-description {
+        font-size: 15px;
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .experience-viper-section .btn-primary {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: center;
+    }
+
+    .experience-viper-section .btn-primary .btn-text {
+        border-radius: var(--border-radius-full);
+        padding: var(--spacing-md) var(--spacing-xl);
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .experience-viper-section .btn-primary .btn-arrow {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-viper-card {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .experience-viper-title {
+        font-size: 28px;
+    }
+
+    .experience-viper-description {
+        font-size: 14px;
+    }
+
+    .experience-viper-section .btn-primary .btn-text {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
+
+    .experience-viper-section .btn-primary .btn-arrow {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Example animations you can apply to .world-background-image:
+
+@keyframes slowRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes subtleFloat {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.02); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.8; filter: brightness(1); }
+    50% { opacity: 0.9; filter: brightness(1.1); }
+}
+
+Uncomment and apply like:
+.world-background-image {
+    animation: slowRotate 120s linear infinite;
+}
+*/
+
+/*
+===========================================
+   ACCESSIBILITY IMPROVEMENTS
+===========================================
+*/
+
+@media (prefers-reduced-motion: reduce) {
+    .experience-viper-section .btn-primary {
+        transition: none;
+    }
+
+    .experience-viper-section .btn-primary:hover {
+        transform: none;
+    }
+
+    .experience-viper-section .btn-primary:hover .btn-arrow {
+        transform: none;
+    }
+}
+
+/* Focus states for keyboard navigation */
+.experience-viper-section .btn-primary:focus {
+    outline: 2px solid var(--color-white);
+    outline-offset: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .experience-viper-card {
+        background: var(--color-brand-dark);
+        border: 2px solid var(--color-white);
+    }
+
+    .experience-viper-section .btn-primary .btn-text,
+    .experience-viper-section .btn-primary .btn-arrow {
+        background: var(--color-white);
+        color: var(--color-text-primary);
+        border: 2px solid var(--color-text-primary);
+    }
+}

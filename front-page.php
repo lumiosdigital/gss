@@ -30,6 +30,9 @@ get_header(); ?>
 
         <!-- Strategic Takeaways Section -->
         <?php get_template_part('template-parts/strategic-takeaways-section'); ?>
+
+        <!-- Experience Viper Section -->
+        <?php get_template_part('template-parts/experience-viper-section'); ?>
         
         <!-- Future sections will go here -->
         <div class="container">
