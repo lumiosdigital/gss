@@ -242,7 +242,7 @@
 
 /*
 ===========================================
-   CHARTS SECTION - Exact Figma Layout
+   CHARTS SECTION - Enhanced for Animations
 ===========================================
 */
 
@@ -250,16 +250,19 @@
     position: relative;
     height: 280px;
     width: 100%;
+    overflow: visible;
+    /* Allow animations to extend outside bounds */
 }
 
 .chart-item {
     position: absolute;
+    /* Animation initial states are now handled by JavaScript */
 }
 
 .chart-item:nth-child(1) {
     /* Page load times - left side, middle height */
     left: -25px;
-    top: 18%;
+    top: -5%;
     transform: translateY(-50%);
     z-index: 4;
 }
@@ -274,7 +277,7 @@
 .chart-item:nth-child(3) {
     /* Application responsiveness - bottom right, overlapping */
     right: 72px;
-    bottom: -50px;
+    bottom: -55px;
     z-index: 2;
 }
 
@@ -443,6 +446,9 @@
 
     .chart-item {
         position: static;
+        /* Animation overrides for mobile stacked layout */
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .chart-item:nth-child(1),
@@ -482,6 +488,16 @@
 
     .inflight-connectivity-card:hover {
         transform: none;
+    }
+
+    .chart-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .chart-item:hover {
+        transform: none !important;
     }
 }
 

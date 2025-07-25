@@ -1,0 +1,120 @@
+/*
+===========================================
+   CHART ANIMATIONS
+===========================================
+*/
+
+/* Container for animation setup */
+.charts-container {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    overflow: visible;
+    /* Allow animations to be visible */
+}
+
+/* Chart items with animation preparation */
+.chart-item {
+    position: absolute;
+    opacity: 0;
+    /* Will be set by JavaScript, but fallback */
+    transform: translateY(20px);
+    /* Will be set by JavaScript, but fallback */
+}
+
+/* Ensure SVGs are ready for animation */
+.chart-item svg {
+    overflow: visible;
+    width: auto;
+    height: auto;
+}
+
+/* Style for animated text elements */
+.chart-item svg text {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600;
+    fill: #0B2051;
+}
+
+/* Style for animated paths */
+.chart-item svg path[stroke] {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Animation states */
+.chart-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive animations */
+@media (max-width: 1024px) {
+    .charts-container {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .charts-container {
+        height: 180px;
+    }
+
+    .chart-item svg {
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .charts-container {
+        position: static;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .chart-item {
+        position: static;
+        opacity: 1;
+        /* Override for mobile stacked layout */
+        transform: none;
+    }
+
+    .chart-item svg {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .chart-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .chart-item svg path[stroke] {
+        stroke-dasharray: none !important;
+        stroke-dashoffset: 0 !important;
+        transition: none !important;
+    }
+
+    .chart-item:hover {
+        transform: none !important;
+    }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+    .chart-item svg text {
+        fill: var(--color-text-primary);
+        font-weight: 700;
+    }
+
+    .chart-item svg path[stroke] {
+        stroke: var(--color-text-primary);
+        stroke-width: 2;
+    }
+}

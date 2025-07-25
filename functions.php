@@ -91,6 +91,9 @@ function gss_scripts() {
     // Inflight Connectivity section stylesheet
     wp_enqueue_style('gss-inflight-connectivity-section', get_template_directory_uri() . '/assets/css/inflight-connectivity-section.css', array('gss-main'), '1.0.0');
     
+    // Chart animations stylesheet
+    wp_enqueue_style('gss-chart-animations', get_template_directory_uri() . '/assets/css/chart-animations.css', array('gss-main'), '1.0.0');
+    
     // Airline Case Study section stylesheet
     wp_enqueue_style('gss-airline-case-study-section', get_template_directory_uri() . '/assets/css/airline-case-study-section.css', array('gss-main'), '1.0.0');
 
@@ -108,6 +111,9 @@ function gss_scripts() {
     
     // Main JavaScript file
     wp_enqueue_script('gss-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0.0', true);
+    
+    // Chart animations JavaScript
+    wp_enqueue_script('gss-chart-animations', get_template_directory_uri() . '/assets/js/chart-animations.js', array(), '1.0.0', true);
     
     // Comment reply script
     if (is_singular() && comments_open() && get_option('thread_comments')) {
