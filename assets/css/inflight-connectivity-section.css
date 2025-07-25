@@ -252,18 +252,18 @@
     gap: var(--spacing-md);
 }
 
-.chart-item {
+/* .chart-item {
     background-color: var(--color-white);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-sm);
     box-shadow: var(--shadow-sm);
     transition: var(--transition-normal);
-}
+} */
 
-.chart-item:hover {
+/* .chart-item:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-md);
-}
+} */
 
 .chart-image {
     width: 100%;

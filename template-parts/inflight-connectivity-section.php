@@ -131,19 +131,19 @@
                         <!-- Charts Section -->
                         <div class="charts-container">
                             <div class="chart-item">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/charts/video-buffering-chart.png" 
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/video-buffering.svg" 
                                      alt="Video buffering performance chart" 
                                      class="chart-image">
                             </div>
 
                             <div class="chart-item">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/charts/page-load-chart.png" 
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/page-load-times.svg" 
                                      alt="Page load times chart" 
                                      class="chart-image">
                             </div>
 
                             <div class="chart-item">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/charts/app-response-chart.png" 
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/application-responsiveness.svg" 
                                      alt="Application responsiveness chart" 
                                      class="chart-image">
                             </div>
