@@ -103,6 +103,9 @@ function gss_scripts() {
     // Experience Viper section stylesheet
     wp_enqueue_style('gss-experience-viper-section', get_template_directory_uri() . '/assets/css/experience-viper-section.css', array('gss-main'), '1.0.0');
     
+    // Footer stylesheet
+    wp_enqueue_style('gss-footer', get_template_directory_uri() . '/assets/css/footer.css', array('gss-main'), '1.0.0');
+    
     // Main JavaScript file
     wp_enqueue_script('gss-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0.0', true);
     
@@ -199,4 +202,17 @@ function gss_fallback_menu() {
     echo '<div class="mobile-cta">';
     echo '<a href="' . esc_url(home_url('/contact')) . '" class="cta-button">Schedule a Discovery Call</a>';
     echo '</div>';
+}
+
+/**
+ * Fallback menu for footer navigation
+ */
+function gss_footer_fallback_menu() {
+    echo '<ul class="footer-menu">';
+    echo '<li><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/about')) . '">About Us</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/blog')) . '">Blog</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/industries')) . '">Industries</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/news')) . '">News</a></li>';
+    echo '</ul>';
 }

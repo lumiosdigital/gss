@@ -34,13 +34,6 @@ get_header(); ?>
         <!-- Experience Viper Section -->
         <?php get_template_part('template-parts/experience-viper-section'); ?>
         
-        <!-- Future sections will go here -->
-        <div class="container">
-            <section class="placeholder-content">
-                <h2>More sections coming soon...</h2>
-                <p>This is where additional homepage content will be added.</p>
-            </section>
-        </div>
         
     </main><!-- #main -->
 </div><!-- #primary -->
