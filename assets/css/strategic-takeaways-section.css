@@ -52,7 +52,7 @@
 /* Left Column Styling */
 .strategic-column-left {
     text-align: left;
-    gap: 10.6rem;
+    gap: 9.3rem;
     /* max-width: 380px; */
     /* Space between items to align with SVG connection points */
     /* padding-top: 15px; */
@@ -88,6 +88,7 @@
     position: relative;
     width: 100%;
     max-width: 380px;
+    height: 128px;
 }
 
 /* Left column items align to the right */
@@ -158,9 +159,9 @@
 .strategic-bottom-description p {
     font-family: var(--font-family-primary);
     font-weight: var(--font-weight-semibold);
-    font-size: 24px;
-    line-height: 1.3;
-    letter-spacing: -0.24px;
+    font-size: 1.5rem;
+    line-height: normal;
+    letter-spacing: -0.015rem;
     color: #091026;
     margin: 0;
     max-width: 803px;
@@ -183,7 +184,7 @@
     max-width: 100%;
     width: 904px;
     height: auto;
-    transform: rotate(0.819deg);
+    /* transform: rotate(0.819deg); */
 }
 
 /*
