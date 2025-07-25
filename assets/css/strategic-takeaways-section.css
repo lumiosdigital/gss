@@ -28,21 +28,26 @@
 
 .strategic-takeaways-grid {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 40px 1fr;
-    gap: 60px;
+    display: flex;
+    justify-content: center;
     margin-bottom: 120px;
 }
 
-.strategic-takeaways-column {
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
+/* Central SVG Container */
+.strategic-timeline-svg {
+    position: relative;
+    z-index: 1;
 }
 
+/* Strategic Takeaway Items */
 .strategic-takeaway-item {
-    width: 100%;
-    max-width: 380px;
+    position: absolute;
+    width: 380px;
+}
+
+/* Content Block */
+.strategic-takeaway-content {
+    max-width: 320px;
 }
 
 .strategic-takeaway-title {
@@ -66,27 +71,47 @@
     margin: 0;
 }
 
-.timeline-center-line {
-    position: relative;
-    width: 2px;
-    background: repeating-linear-gradient(to bottom,
-            #cdd9f4,
-            #cdd9f4 6px,
-            transparent 6px,
-            transparent 12px);
-    margin: 0 auto;
+/* Left Side Items - positioned to align with left connectors */
+.strategic-takeaway-item.left {
+    right: calc(50% + 156px - 7px);
+    text-align: right;
 }
 
-.timeline-node {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 14px;
-    height: 14px;
-    background-color: #1d4eff;
-    border: 4px solid white;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px #cdd9f4;
+/* Right Side Items - positioned to align with right connectors */
+.strategic-takeaway-item.right {
+    left: calc(50% + 156px - 305px);
+    text-align: left;
+}
+
+/* Specific positioning for each item based on SVG connector positions */
+.strategic-takeaway-item.operational-confidence {
+    top: -5px;
+    /* Aligns with y=15.5 connector */
+}
+
+.strategic-takeaway-item.sla-enforcement {
+    top: 132px;
+    /* Aligns with y=151.499 connector */
+}
+
+.strategic-takeaway-item.engineering-efficiency {
+    top: 269px;
+    /* Aligns with y=289.5 connector */
+}
+
+.strategic-takeaway-item.customer-experience {
+    top: 406px;
+    /* Aligns with y=425.499 connector */
+}
+
+.strategic-takeaway-item.performance-transparency {
+    top: 544px;
+    /* Aligns with y=564.5 connector */
+}
+
+.strategic-takeaway-item.vendor-strategy-alignment {
+    top: 685px;
+    /* Aligns with y=704.5 connector */
 }
 
 /*
@@ -144,14 +169,26 @@
         padding: 0 40px;
     }
 
-    .strategic-takeaways-grid {
-        gap: 40px;
-        margin-bottom: 80px;
-    }
-
     .strategic-takeaways-title {
         font-size: 32px;
         margin-bottom: 60px;
+    }
+
+    .strategic-takeaway-item {
+        width: 300px;
+    }
+
+    .strategic-takeaway-content {
+        max-width: 250px;
+    }
+
+    /* Adjust positioning for smaller screens */
+    .strategic-takeaway-item.left {
+        right: calc(50% + 120px);
+    }
+
+    .strategic-takeaway-item.right {
+        left: calc(50% + 80px);
     }
 
     .strategic-bottom-description p {
@@ -169,18 +206,30 @@
     }
 
     .strategic-takeaways-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
     }
 
-    .timeline-center-line {
+    .strategic-timeline-svg {
         display: none;
     }
 
-    .strategic-takeaways-column {
-        gap: 60px;
+    .strategic-takeaway-item {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
     }
 
-    .strategic-takeaway-item {
+    .strategic-takeaway-item.left,
+    .strategic-takeaway-item.right {
+        left: auto;
+        right: auto;
+        text-align: center;
+    }
+
+    .strategic-takeaway-content {
         max-width: 100%;
     }
 
@@ -232,4 +281,3 @@
         max-width: 400px;
     }
 }
-
