@@ -399,6 +399,9 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    /* overflow: hidden; */
+    width: 100vw;
+    margin: 0 0 !important;
     /* margin-top: 60px; */
 }
 
@@ -406,7 +409,9 @@
     max-width: 100%;
     width: 904px;
     height: auto;
-    /* transform: rotate(0.819deg); */
+    transform: translateX(150%) rotate(0.819deg);
+    transition: none;
+    /* Remove transition for smooth scroll-based movement */
 }
 
 /*
