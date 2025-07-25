@@ -242,34 +242,47 @@
 
 /*
 ===========================================
-   CHARTS SECTION
+   CHARTS SECTION - Exact Figma Layout
 ===========================================
 */
 
 .charts-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+    position: relative;
+    height: 280px;
+    width: 100%;
 }
 
-/* .chart-item {
-    background-color: var(--color-white);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-sm);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-normal);
-} */
+.chart-item {
+    position: absolute;
+}
 
-/* .chart-item:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-md);
-} */
+.chart-item:nth-child(1) {
+    /* Page load times - left side, middle height */
+    left: -25px;
+    top: 18%;
+    transform: translateY(-50%);
+    z-index: 4;
+}
+
+.chart-item:nth-child(2) {
+    /* Video buffering - top right */
+    right: 281px;
+    top: 54px;
+    z-index: 3;
+}
+
+.chart-item:nth-child(3) {
+    /* Application responsiveness - bottom right, overlapping */
+    right: 72px;
+    bottom: -50px;
+    z-index: 2;
+}
 
 .chart-image {
-    width: 100%;
+    width: auto;
     height: auto;
     display: block;
-    border-radius: var(--border-radius-md);
+    max-width: none;
 }
 
 /*
@@ -298,6 +311,28 @@
     .matters-content-grid {
         grid-template-columns: 2fr 1fr;
         gap: var(--spacing-lg);
+    }
+
+    .charts-container {
+        position: relative;
+        height: 220px;
+        width: 100%;
+    }
+
+    .chart-item:nth-child(1) {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .chart-item:nth-child(2) {
+        right: 0;
+        top: 0;
+    }
+
+    .chart-item:nth-child(3) {
+        right: 0;
+        bottom: 0;
     }
 }
 
@@ -339,9 +374,29 @@
     }
 
     .charts-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--spacing-sm);
+        position: relative;
+        height: 180px;
+        width: 100%;
+    }
+
+    .chart-item:nth-child(1) {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .chart-item:nth-child(2) {
+        right: 0;
+        top: 0;
+    }
+
+    .chart-item:nth-child(3) {
+        right: 0;
+        bottom: 0;
+    }
+
+    .chart-image {
+        max-width: 140px;
     }
 
     .inflight-connectivity-matters-section {
@@ -379,7 +434,30 @@
     }
 
     .charts-container {
-        grid-template-columns: 1fr;
+        position: static;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .chart-item {
+        position: static;
+    }
+
+    .chart-item:nth-child(1),
+    .chart-item:nth-child(2),
+    .chart-item:nth-child(3) {
+        transform: none;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+    }
+
+    .chart-image {
+        max-width: 250px;
+        margin: 0 auto;
     }
 
     .inflight-connectivity-matters-section {
@@ -398,14 +476,11 @@
 */
 
 @media (prefers-reduced-motion: reduce) {
-
-    .inflight-connectivity-card,
-    .chart-item {
+    .inflight-connectivity-card {
         transition: none;
     }
 
-    .inflight-connectivity-card:hover,
-    .chart-item:hover {
+    .inflight-connectivity-card:hover {
         transform: none;
     }
 }
