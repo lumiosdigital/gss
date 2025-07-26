@@ -7,7 +7,7 @@
 .airline-case-study-section {
     background-color: #f7f9fe;
     padding: var(--spacing-5xl) 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 
@@ -36,10 +36,9 @@
 }
 
 .case-study-title-column {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: fit-content;
+    position: sticky;
+    top: 6rem;
+    /* background-color: lightblue; */
 }
 
 .case-study-title {
