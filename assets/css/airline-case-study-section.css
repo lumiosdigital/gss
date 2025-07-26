@@ -191,8 +191,18 @@
     max-width: 433px;
 }
 
+.benefit-summary-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(21, 91, 255, 0.1);
+    background: linear-gradient(81deg, #FFF 6.31%, #E0F4FC 100%);
+}
+
 .benefit-summary-box:last-child {
-    background: linear-gradient(70.98deg, #ffffff 78.07%, #e0fce5 104.1%);
+    background: linear-gradient(70.98deg, #ffffff 78.07%, #e0fce5 100%);
+}
+
+.benefit-summary-box:last-child:hover {
+    background: linear-gradient(81deg, #FFF 6.31%, #E0FCE5 100%);
 }
 
 .benefit-icon {
