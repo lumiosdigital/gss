@@ -41,46 +41,5 @@
                 </div>
             </div>
         </div>
-<!-- IMAGES COMMENTED OUT FOR NOW        
-        
-        <div class="hero-visual">
-            
-            <div class="hero-bg-elements">
-                <div class="bg-dot bg-dot-1"></div>
-                <div class="bg-dot bg-dot-2"></div>
-                <div class="bg-dot bg-dot-3"></div>
-                <div class="bg-dot bg-dot-4"></div>
-            </div>
-            
-            
-            <div class="globe-container">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/wireframe-globe.png" alt="Global Network" class="globe-image">
-            </div>
-            
-            
-            <div class="dashboard-container">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/viper-dashboard.png" alt="Viper Performance Dashboard" class="dashboard-image">
-            </div>
-            
-            
-            <div class="chart-container">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flight-score-chart.png" alt="Flight Score Distribution" class="chart-image">
-            </div>
-            
-            
-            <div class="airplane-container">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/airplane-icon.png" alt="Aircraft" class="airplane-image">
-            </div>
-            
-          
-            <div class="location-pin pin-1">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-pin.png" alt="Location" class="pin-image">
-            </div>
-            <div class="location-pin pin-2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/location-pin.png" alt="Location" class="pin-image">
-            </div>
-        </div>
--->
-        
     </div>
 </section>
