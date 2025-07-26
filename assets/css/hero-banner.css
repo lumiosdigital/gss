@@ -441,6 +441,221 @@
     }
 }
 
+/* Halo pulsing animation */
+@keyframes halo-pulse {
+    0% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0.15;
+    }
+}
+
+@keyframes halo-pulse-5 {
+    0% {
+        opacity: 0.18;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.18;
+    }
+}
+
+/* Apply pulsing animation to halos only */
+.hero-halo-pulse.hero-orbit-3,
+.hero-halo-pulse.hero-orbit-3-opposite,
+.hero-halo-pulse.hero-orbit-3-quarter,
+.hero-halo-pulse.hero-orbit-3-three-quarter {
+    animation: orbit-3 75s linear infinite, halo-pulse 1.2s ease-in-out infinite;
+    transform-origin: 1149px 707px;
+}
+
+.hero-halo-pulse.hero-orbit-5,
+.hero-halo-pulse.hero-orbit-5-opposite {
+    animation: orbit-5 85s linear infinite, halo-pulse-5 1.5s ease-in-out infinite;
+    transform-origin: 1149px 707px;
+}
+
+/* Make sure opposite halos still have the negative delay for orbital animation */
+.hero-halo-pulse.hero-orbit-3-opposite {
+    animation-delay: -37.5s, 0s;
+}
+
+.hero-halo-pulse.hero-orbit-3-quarter {
+    animation-delay: -18.75s, 0s;
+}
+
+.hero-halo-pulse.hero-orbit-3-three-quarter {
+    animation-delay: -56.25s, 0s;
+}
+
+.hero-halo-pulse.hero-orbit-5-opposite {
+    animation-delay: -42.5s, 0s;
+}
+
+/* Orbital animations for hero banner circles */
+@keyframes orbit-1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit-2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit-3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit-4 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit-5 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Apply orbital animations to each hero banner circle */
+.hero-orbit-1 {
+    animation: orbit-1 90s linear infinite;
+    transform-origin: 1149px 707px;
+}
+
+.hero-orbit-1-opposite {
+    animation: orbit-1 90s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -45s;
+    /* Negative delay - starts as if 45s already passed */
+}
+
+.hero-orbit-2 {
+    animation: orbit-2 120s linear infinite;
+    transform-origin: 1149px 707px;
+}
+
+.hero-orbit-2-opposite {
+    animation: orbit-2 120s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -60s;
+    /* 180° = 50% of 120s = 60s */
+}
+
+.hero-orbit-2-60 {
+    animation: orbit-2 120s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -20s;
+    /* 60° = 16.67% of 120s = 20s */
+}
+
+.hero-orbit-2-120 {
+    animation: orbit-2 120s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -40s;
+    /* 120° = 33.33% of 120s = 40s */
+}
+
+.hero-orbit-2-240 {
+    animation: orbit-2 120s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -80s;
+    /* 240° = 66.67% of 120s = 80s */
+}
+
+.hero-orbit-2-300 {
+    animation: orbit-2 120s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -100s;
+    /* 300° = 83.33% of 120s = 100s */
+}
+
+.hero-orbit-3 {
+    animation: orbit-3 75s linear infinite;
+    transform-origin: 1149px 707px;
+}
+
+.hero-orbit-3-opposite {
+    animation: orbit-3 75s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -37.5s;
+    /* 50% of 75s = 37.5s */
+}
+
+.hero-orbit-3-quarter {
+    animation: orbit-3 75s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -18.75s;
+    /* 25% of 75s = 18.75s */
+}
+
+.hero-orbit-3-three-quarter {
+    animation: orbit-3 75s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -56.25s;
+    /* 75% of 75s = 56.25s */
+}
+
+.hero-orbit-4 {
+    animation: orbit-4 105s linear infinite;
+    transform-origin: 1149px 707px;
+}
+
+.hero-orbit-4-opposite {
+    animation: orbit-4 105s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -52.5s;
+    /* Negative delay - starts as if 52.5s already passed */
+}
+
+.hero-orbit-5 {
+    animation: orbit-5 85s linear infinite;
+    transform-origin: 1149px 707px;
+}
+
+.hero-orbit-5-opposite {
+    animation: orbit-5 85s linear infinite;
+    transform-origin: 1149px 707px;
+    animation-delay: -42.5s;
+    /* Negative delay - starts as if 42.5s already passed */
+}
+
 /*
 ===========================================
    RESPONSIVE DESIGN

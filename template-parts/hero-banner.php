@@ -17,14 +17,29 @@
                 <circle cx="1149" cy="707" r="680.25" stroke="white" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="6 6"/>
                 <circle cx="1149" cy="707" r="904.25" stroke="white" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="6 6"/>
                 <circle cx="1150" cy="708" r="1172.25" stroke="white" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="6 6"/>
-                <circle cx="890" cy="79" r="8" fill="#9FFFF5"/>
-                <circle cx="246" cy="738" r="6" fill="#9FFFF5"/>
+                <circle cx="890" cy="79" r="8" fill="#9FFFF5" class="hero-orbit-1"/>
+                <circle cx="890" cy="79" r="8" fill="#9FFFF5" class="hero-orbit-1-opposite"/>
+                <circle cx="246" cy="738" r="6" fill="#9FFFF5" class="hero-orbit-2"/>
+                <circle cx="246" cy="738" r="6" fill="#9FFFF5" class="hero-orbit-2-60"/>
+                <circle cx="246" cy="738" r="6" fill="#9FFFF5" class="hero-orbit-2-120"/>
+                <circle cx="246" cy="738" r="6" fill="#9FFFF5" class="hero-orbit-2-opposite"/>
+                <circle cx="246" cy="738" r="6" fill="#9FFFF5" class="hero-orbit-2-240"/>
+                <circle cx="246" cy="738" r="6" fill="#9FFFF5" class="hero-orbit-2-300"/>
                 <circle cx="1149" cy="707" r="496.25" stroke="white" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="6 6"/>
-                <circle cx="169" cy="68" r="26" fill="#9FFFF5" fill-opacity="0.18"/>
-                <circle cx="169" cy="68" r="12" fill="#9FFFF5"/>
-                <circle cx="821" cy="343" r="8" fill="#9FFFF5"/>
-                <circle cx="1288" cy="39" r="15" fill="#9FFFF5" fill-opacity="0.21"/>
-                <circle cx="1288" cy="39" r="7" fill="#9FFFF5"/>
+                <circle cx="169" cy="68" r="26" fill="#9FFFF5" fill-opacity="0.18" class="hero-orbit-3 hero-halo-pulse"/>
+                <circle cx="169" cy="68" r="12" fill="#9FFFF5" class="hero-orbit-3"/>
+                <circle cx="169" cy="68" r="26" fill="#9FFFF5" fill-opacity="0.18" class="hero-orbit-3-quarter hero-halo-pulse"/>
+                <circle cx="169" cy="68" r="12" fill="#9FFFF5" class="hero-orbit-3-quarter"/>
+                <circle cx="169" cy="68" r="26" fill="#9FFFF5" fill-opacity="0.18" class="hero-orbit-3-opposite hero-halo-pulse"/>
+                <circle cx="169" cy="68" r="12" fill="#9FFFF5" class="hero-orbit-3-opposite"/>
+                <circle cx="169" cy="68" r="26" fill="#9FFFF5" fill-opacity="0.18" class="hero-orbit-3-three-quarter hero-halo-pulse"/>
+                <circle cx="169" cy="68" r="12" fill="#9FFFF5" class="hero-orbit-3-three-quarter"/>
+                <circle cx="810" cy="343" r="8" fill="#9FFFF5" class="hero-orbit-4"/>
+                <circle cx="810" cy="343" r="8" fill="#9FFFF5" class="hero-orbit-4-opposite"/>
+                <circle cx="1288" cy="39" r="15" fill="#9FFFF5" fill-opacity="0.21" class="hero-orbit-5 hero-halo-pulse"/>
+                <circle cx="1288" cy="39" r="7" fill="#9FFFF5" class="hero-orbit-5"/>
+                <circle cx="1288" cy="39" r="15" fill="#9FFFF5" fill-opacity="0.21" class="hero-orbit-5-opposite hero-halo-pulse"/>
+                <circle cx="1288" cy="39" r="7" fill="#9FFFF5" class="hero-orbit-5-opposite"/>
             </g>
         </svg>
     </div>
