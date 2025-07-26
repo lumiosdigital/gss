@@ -14,6 +14,44 @@
     overflow: hidden;
 }
 
+/*
+===========================================
+   BACKGROUND AND FOREGROUND SVGs
+===========================================
+*/
+
+.hero-bg-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-bg-svg svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-fg-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.hero-fg-svg svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -33,7 +71,8 @@
 
 .hero-content {
     color: var(--color-white);
-    /* max-width: 500px; */
+    position: relative;
+    z-index: 12;
 }
 
 .hero-title {
@@ -71,8 +110,9 @@
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
     transition: var(--transition-normal);
-    /* width: fit-content; */
     gap: 0;
+    position: relative;
+    z-index: 13;
 }
 
 .btn-primary:hover {
@@ -97,7 +137,6 @@
     height: 56px;
     background: var(--color-viper-green);
     border-radius: 50%;
-    /* margin-left: 8px; */
     font-size: var(--font-size-lg);
     color: var(--color-text-primary);
     transition: var(--transition-normal);
@@ -105,13 +144,11 @@
 
 .btn-primary:hover .btn-text {
     background: #9FE63A;
-    /* box-shadow: 0 8px 25px rgba(177, 254, 76, 0.4); */
 }
 
 .btn-primary:hover .btn-arrow {
     background: #9FE63A;
     transform: translateX(4px);
-    /* box-shadow: 0 8px 25px rgba(177, 254, 76, 0.4); */
 }
 
 /* Secondary Button - Outlined */
@@ -128,8 +165,8 @@
     border: 1px solid #B1FE4C;
     border-radius: var(--border-radius-full);
     transition: var(--transition-normal);
-    /* width: fit-content; */
-    /* min-width: 260px; */
+    position: relative;
+    z-index: 13;
 }
 
 .btn-secondary:hover {
@@ -141,6 +178,8 @@
 /* Partners Section */
 .hero-partners {
     margin-top: auto;
+    position: relative;
+    z-index: 12;
 }
 
 .partners-label {
@@ -156,7 +195,6 @@
     align-items: center;
     gap: var(--spacing-2xl);
     height: 5.75rem;
-    /* width: 8.3125rem; */
 }
 
 .partner-logo:first-child {
@@ -192,12 +230,14 @@
     position: relative;
     height: 100%;
     min-height: 500px;
+    z-index: 11;
 }
 
 /* Background Decorative Dots */
 .hero-bg-elements {
     position: absolute;
     inset: 0;
+    z-index: 2;
 }
 
 .bg-dot {
@@ -241,7 +281,7 @@
     transform: translateY(-50%);
     width: 400px;
     height: 400px;
-    z-index: 1;
+    z-index: 3;
 }
 
 .globe-image {
@@ -258,7 +298,7 @@
     top: 10%;
     right: 10%;
     width: 280px;
-    z-index: 5;
+    z-index: 7;
     background: rgba(255, 255, 255, 0.95);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xs);
@@ -277,7 +317,7 @@
     bottom: 20%;
     left: 15%;
     width: 200px;
-    z-index: 4;
+    z-index: 6;
     background: rgba(255, 255, 255, 0.95);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xs);
@@ -297,7 +337,7 @@
     bottom: 35%;
     width: 60px;
     height: 60px;
-    z-index: 6;
+    z-index: 8;
     animation: float 4s ease-in-out infinite;
 }
 
@@ -306,7 +346,6 @@
     height: 100%;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    /* Make it white */
 }
 
 /* Location Pins */
@@ -314,7 +353,7 @@
     position: absolute;
     width: 24px;
     height: 24px;
-    z-index: 3;
+    z-index: 5;
     animation: pulse 3s ease-in-out infinite;
 }
 
@@ -489,6 +528,12 @@
         width: 40px;
         height: 40px;
     }
+
+    /* Adjust SVGs for mobile */
+    .hero-bg-svg,
+    .hero-fg-svg {
+        display: block;
+    }
 }
 
 @media (max-width: 480px) {
@@ -540,7 +585,6 @@
 }
 
 .satqoe-title {
-    /* width: 41.25rem; */
     text-align: center;
 }
 
