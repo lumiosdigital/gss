@@ -9,7 +9,24 @@
 <section class="hero-banner">
     <!-- Background SVG -->
     <div class="hero-bg-svg">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-banner-background.svg" alt="Hero Background" class="hero-bg-image">
+        <svg width="1340" height="940" viewBox="0 0 1340 940" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_490_750" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1340" height="940">
+                <rect width="1340" height="940" rx="40" fill="#487FFF"/>
+            </mask>
+            <g mask="url(#mask0_490_750)">
+                <circle cx="1149" cy="707" r="680.25" stroke="white" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <circle cx="1149" cy="707" r="904.25" stroke="white" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <circle cx="1150" cy="708" r="1172.25" stroke="white" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <circle cx="890" cy="79" r="8" fill="#9FFFF5"/>
+                <circle cx="246" cy="738" r="6" fill="#9FFFF5"/>
+                <circle cx="1149" cy="707" r="496.25" stroke="white" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <circle cx="169" cy="68" r="26" fill="#9FFFF5" fill-opacity="0.18"/>
+                <circle cx="169" cy="68" r="12" fill="#9FFFF5"/>
+                <circle cx="821" cy="343" r="8" fill="#9FFFF5"/>
+                <circle cx="1288" cy="39" r="15" fill="#9FFFF5" fill-opacity="0.21"/>
+                <circle cx="1288" cy="39" r="7" fill="#9FFFF5"/>
+            </g>
+        </svg>
     </div>
     <div class="hero-container">
         
@@ -51,6 +68,6 @@
 
     <!-- Foreground SVG -->
     <div class="hero-fg-svg">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-banner-foreground.svg" alt="Hero Foreground" class="hero-fg-image">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-banner-foreground.png" alt="Hero Foreground" class="hero-fg-image">
     </div>
 </section>

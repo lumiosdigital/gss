@@ -112,6 +112,9 @@ function gss_scripts() {
     // Main JavaScript file
     wp_enqueue_script('gss-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0.0', true);
     
+    // Features parallax JavaScript
+    wp_enqueue_script('gss-features-parallax', get_template_directory_uri() . '/assets/js/features-parallax.js', array(), '1.0.0', true);
+    
     // Chart animations JavaScript
     wp_enqueue_script('gss-chart-animations', get_template_directory_uri() . '/assets/js/chart-animations.js', array(), '1.0.0', true);
     
@@ -209,7 +212,7 @@ function gss_fallback_menu() {
     
     // Add mobile CTA
     echo '<div class="mobile-cta">';
-    echo '<a href="' . esc_url(home_url('/contact')) . '" class="cta-button">Schedule a Discovery Call</a>';
+    echo '<a href="' . esc_url(home_url('/contact')) . '" class="cta-button">Schedule a Discovery Call</a></li>';
     echo '</div>';
 }
 

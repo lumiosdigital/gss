@@ -13,7 +13,7 @@
 
 .airline-case-study-container {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1340px;
     margin: 0 auto;
     padding: 0;
     position: relative;
@@ -30,7 +30,7 @@
     grid-template-columns: 1fr 2fr;
     gap: var(--spacing-4xl);
     align-items: start;
-    max-width: 1440px;
+    max-width: 1340px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -285,7 +285,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
-    max-width: 1440px;
+    max-width: 1340px;
     margin: 0 auto;
 }
 
