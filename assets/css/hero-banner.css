@@ -16,7 +16,7 @@
 
 /*
 ===========================================
-   BACKGROUND AND FOREGROUND SVGs
+   BACKGROUND AND FOREGROUND SVGs - UPDATED POSITIONING
 ===========================================
 */
 
@@ -30,26 +30,36 @@
     pointer-events: none;
 }
 
-.hero-bg-svg svg {
+.hero-bg-svg svg,
+.hero-bg-svg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center right;
+    /* Align globe more to the right */
 }
 
 .hero-fg-svg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -5%;
+    /* Slightly higher to match reference */
+    left: 5%;
+    /* Slight left offset for better positioning */
+    width: 95%;
+    height: 110%;
+    /* Slightly larger to ensure full coverage */
     z-index: 15;
     pointer-events: none;
 }
 
-.hero-fg-svg svg {
+.hero-fg-svg svg,
+.hero-fg-svg img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    /* Changed from cover to contain for better control */
+    object-position: center right;
+    /* Position globe elements to the right */
 }
 
 .hero-container {
@@ -222,7 +232,7 @@
 
 /*
 ===========================================
-   RIGHT VISUAL ELEMENTS
+   RIGHT VISUAL ELEMENTS - UPDATED TO MATCH REFERENCE
 ===========================================
 */
 
@@ -233,7 +243,7 @@
     z-index: 11;
 }
 
-/* Background Decorative Dots */
+/* Background Decorative Dots - Repositioned to match reference */
 .hero-bg-elements {
     position: absolute;
     inset: 0;
@@ -250,37 +260,39 @@
 }
 
 .bg-dot-1 {
-    top: 10%;
-    right: 15%;
+    top: 8%;
+    right: 8%;
     animation-delay: 0s;
 }
 
 .bg-dot-2 {
-    top: 65%;
-    left: 5%;
+    top: 55%;
+    left: 10%;
     animation-delay: 2s;
 }
 
 .bg-dot-3 {
-    top: 25%;
-    left: 25%;
+    top: 20%;
+    left: 15%;
     animation-delay: 4s;
 }
 
 .bg-dot-4 {
-    bottom: 20%;
-    right: 25%;
+    bottom: 15%;
+    right: 35%;
     animation-delay: 1s;
 }
 
-/* Main Globe */
+/* Main Globe - Repositioned to match reference exactly */
 .globe-container {
     position: absolute;
-    right: -10%;
+    right: -15%;
+    /* Moved further right to match reference */
     top: 50%;
     transform: translateY(-50%);
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    /* Slightly larger */
+    height: 450px;
     z-index: 3;
 }
 
@@ -292,12 +304,15 @@
     animation: rotate 30s linear infinite;
 }
 
-/* Viper Dashboard */
+/* Viper Dashboard - Repositioned to match reference */
 .dashboard-container {
     position: absolute;
-    top: 10%;
-    right: 10%;
-    width: 280px;
+    top: 8%;
+    /* Slightly higher */
+    right: 8%;
+    /* Closer to edge */
+    width: 290px;
+    /* Slightly larger */
     z-index: 7;
     background: rgba(255, 255, 255, 0.95);
     border-radius: var(--border-radius-lg);
@@ -311,12 +326,15 @@
     border-radius: var(--border-radius-md);
 }
 
-/* Flight Score Chart */
+/* Flight Score Chart - Repositioned to match reference */
 .chart-container {
     position: absolute;
-    bottom: 20%;
-    left: 15%;
-    width: 200px;
+    bottom: 25%;
+    /* Adjusted vertical position */
+    left: 20%;
+    /* Moved slightly right */
+    width: 210px;
+    /* Slightly larger */
     z-index: 6;
     background: rgba(255, 255, 255, 0.95);
     border-radius: var(--border-radius-lg);
@@ -330,13 +348,16 @@
     border-radius: var(--border-radius-md);
 }
 
-/* Airplane */
+/* Airplane - Repositioned to match reference */
 .airplane-container {
     position: absolute;
-    right: 20%;
-    bottom: 35%;
-    width: 60px;
-    height: 60px;
+    right: 18%;
+    /* Adjusted to match reference position */
+    bottom: 30%;
+    /* Adjusted vertical position */
+    width: 65px;
+    /* Slightly larger */
+    height: 65px;
     z-index: 8;
     animation: float 4s ease-in-out infinite;
 }
@@ -348,24 +369,27 @@
     filter: brightness(0) invert(1);
 }
 
-/* Location Pins */
+/* Location Pins - Repositioned to match reference */
 .location-pin {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    /* Slightly larger */
+    height: 26px;
     z-index: 5;
     animation: pulse 3s ease-in-out infinite;
 }
 
 .pin-1 {
-    bottom: 45%;
-    left: 20%;
+    bottom: 40%;
+    /* Adjusted to match reference */
+    left: 25%;
     animation-delay: 0.5s;
 }
 
 .pin-2 {
-    top: 30%;
-    right: 30%;
+    top: 25%;
+    /* Adjusted to match reference */
+    right: 25%;
     animation-delay: 1.5s;
 }
 
@@ -434,16 +458,17 @@
     }
 
     .globe-container {
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
+        right: -10%;
     }
 
     .dashboard-container {
-        width: 220px;
+        width: 240px;
     }
 
     .chart-container {
-        width: 160px;
+        width: 170px;
     }
 }
 
@@ -499,6 +524,16 @@
         justify-content: center;
     }
 
+    /* Adjust SVGs for mobile */
+    .hero-bg-svg,
+    .hero-fg-svg {
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     /* Adjust visual elements for mobile */
     .globe-container {
         position: relative;
@@ -527,12 +562,6 @@
         bottom: 25%;
         width: 40px;
         height: 40px;
-    }
-
-    /* Adjust SVGs for mobile */
-    .hero-bg-svg,
-    .hero-fg-svg {
-        display: block;
     }
 }
 
