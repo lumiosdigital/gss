@@ -50,7 +50,7 @@
 
 .feature-card {
     border-radius: 1.875rem;
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-2xl) var(--spacing-2xl) 0;
     min-height: 580px;
     position: relative;
     overflow: hidden;
@@ -89,16 +89,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: var(--spacing-lg);
+    /* margin-top: var(--spacing-lg); */
 }
 
 .feature-image {
     max-width: 100%;
-    max-height: 280px;
+    max-height: 466px;
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: var(--border-radius-lg);
+    /* border-radius: var(--border-radius-lg); */
 }
 
 /*
@@ -111,11 +111,19 @@
     position: absolute;
     inset: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .parallax-bg {
-    position: absolute;
-    inset: 0;
+    width: 100%;
+    /* padding-bottom: 20px; */
+}
+
+.parallax-bg img {
+    width: 100%;
+    /* height: auto; */
+    /* top: 100px; */
     will-change: transform;
     transition: transform 0.1s ease-out;
 }
