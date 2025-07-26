@@ -33,7 +33,9 @@
             <div class="feature-card feature-card-green">
                 <!-- Parallax background -->
                 <div class="parallax-container">
-
+                    <div class="parallax-bg plane">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plane.svg" alt="Plane background">
+                    </div>
                 </div>
                 
                 <div class="feature-content">
@@ -49,7 +51,9 @@
             <div class="feature-card feature-card-green">
                 <!-- Parallax background -->
                 <div class="parallax-container">
-
+                    <div class="parallax-bg test-score">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/average-test-score.svg" alt="Crew tablet background">
+                    </div>
                 </div>
                 
                 <div class="feature-content">
@@ -65,7 +69,9 @@
             <div class="feature-card feature-card-blue">
                 <!-- Parallax background -->
                 <div class="parallax-container">
-
+                    <div class="parallax-bg geometric-aws">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/geometric-AWS.svg" alt="AWS cloud background">
+                    </div>
                 </div>
                 
                 <div class="feature-content">
