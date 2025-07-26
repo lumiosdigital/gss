@@ -38,7 +38,6 @@
 .case-study-title-column {
     position: sticky;
     top: 6rem;
-    /* background-color: lightblue; */
 }
 
 .case-study-title {
@@ -55,7 +54,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 4.38rem;
+    gap: 5.5rem;
 }
 
 .case-study-description {
