@@ -90,33 +90,12 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- Blue Graphics Section with Uploaded Image -->
+        <!-- Blue Graphics Section with Image -->
         <div class="about-graphics-section">
-            <?php 
-            // Get the featured image or custom field for about page image
-            $about_image_id = get_post_meta(get_the_ID(), 'about_page_image', true);
-            $about_image_url = '';
-            
-            if ($about_image_id) {
-                $about_image_url = wp_get_attachment_image_url($about_image_id, 'full');
-            } elseif (has_post_thumbnail()) {
-                $about_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-            }
-            
-            if ($about_image_url) : ?>
-                <img src="<?php echo esc_url($about_image_url); ?>" 
-                     alt="Global Satellite Solutions - About Us" 
-                     class="about-graphics-image" 
-                     loading="lazy" />
-            <?php else : ?>
-                <!-- Fallback background if no image is uploaded -->
-                <div class="about-graphics-fallback">
-                    <div class="fallback-content">
-                        <h3>Global Satellite Solutions</h3>
-                        <p>Satellite Performance Intelligence Platform</p>
-                    </div>
-                </div>
-            <?php endif; ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-us.svg" 
+                 alt="Global Satellite Solutions - About Us" 
+                 class="about-graphics-image" 
+                 loading="lazy" />
         </div>
         
     </main><!-- #main -->

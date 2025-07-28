@@ -5,7 +5,7 @@
 */
 
 .about-page-wrapper {
-    padding-top: var(--spacing-4xl);
+    padding-top: var(--spacing-md);
     padding-bottom: 0;
     background-color: var(--color-white);
 }
@@ -69,10 +69,10 @@
 
 .about-content-grid {
     display: grid;
-    grid-template-columns: 1fr 773px;
-    gap: var(--spacing-4xl);
+    grid-template-columns: 1fr 886px;
+    gap: var(--spacing-2xl);
     align-items: start;
-    margin-bottom: var(--spacing-5xl);
+    margin-bottom: var(--spacing-3xl);
 }
 
 .about-heading-column {
@@ -94,10 +94,6 @@
     padding-top: 0;
 }
 
-.about-text-content {
-    max-width: 773px;
-}
-
 .about-text-content p {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-normal);
@@ -105,7 +101,7 @@
     letter-spacing: -0.18px;
     color: var(--color-dark-navy);
     opacity: 0.7;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .about-text-content p:last-child {
@@ -124,7 +120,8 @@
     height: 750px;
     position: relative;
     overflow: hidden;
-    margin-top: var(--spacing-5xl);
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-5xl);
     max-width: 1340px;
     width: 100%;
     margin-left: auto;
@@ -137,34 +134,8 @@
 .about-graphics-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: none; */
     border-radius: 40px;
-}
-
-/* Fallback styling when no image is uploaded */
-.about-graphics-fallback {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-white);
-    text-align: center;
-}
-
-.fallback-content h3 {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-md);
-    color: var(--color-white);
-}
-
-.fallback-content p {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-white);
-    opacity: 0.8;
-    margin: 0;
 }
 
 /*
@@ -213,14 +184,6 @@
         margin-top: var(--spacing-3xl);
         max-width: 100%;
     }
-
-    .fallback-content h3 {
-        font-size: var(--font-size-3xl);
-    }
-
-    .fallback-content p {
-        font-size: var(--font-size-lg);
-    }
 }
 
 @media (max-width: 768px) {
@@ -246,14 +209,6 @@
     .about-graphics-image {
         border-radius: 20px;
     }
-
-    .fallback-content h3 {
-        font-size: var(--font-size-2xl);
-    }
-
-    .fallback-content p {
-        font-size: var(--font-size-base);
-    }
 }
 
 @media (max-width: 480px) {
@@ -273,14 +228,6 @@
     .about-graphics-section {
         height: 300px;
         margin-top: var(--spacing-xl);
-    }
-
-    .fallback-content h3 {
-        font-size: var(--font-size-xl);
-    }
-
-    .fallback-content p {
-        font-size: var(--font-size-sm);
     }
 }
 
@@ -306,16 +253,5 @@
     .about-graphics-section {
         background: #0033CC;
         border: 2px solid var(--color-white);
-    }
-
-    .about-graphics-fallback {
-        background: #0033CC;
-        border: 2px solid var(--color-white);
-    }
-
-    .fallback-content h3,
-    .fallback-content p {
-        color: var(--color-white);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     }
 }
