@@ -91,6 +91,7 @@ get_header(); ?>
         </div>
 
         <!-- Blue Graphics Section with Image -->
+  
         <div class="about-graphics-section">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-us.svg" 
                  alt="Global Satellite Solutions - About Us" 
