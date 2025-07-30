@@ -145,8 +145,8 @@
 }
 
 .table-header .table-cell {
-    font-weight: var(--font-weight-semibold);
-    line-height: normal;
+    background: #f8fbff;
+        font-weight: var(--font-weight-semibold);
 }
 
 .table-row .table-cell {
@@ -302,6 +302,7 @@
     color: #091026;
     text-align: center;
     margin-bottom: var(--spacing-xl);
+    
 }
 
 .benefits-table-content {
@@ -345,6 +346,7 @@
     border-right: 1px solid #e0eaf8;
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     min-height: 60px;
     height: 64.59px;
 }
@@ -354,8 +356,8 @@
 }
 
 .benefits-table-header .benefits-table-cell {
-    font-weight: var(--font-weight-semibold);
-    line-height: normal;
+    background: #f8fbff;
+        font-weight: var(--font-weight-semibold);
 }
 
 .benefits-table-row .benefits-table-cell {
