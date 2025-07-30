@@ -5,8 +5,9 @@
 */
 
 .about-page-wrapper {
-    padding-top: var(--spacing-md);
+    padding-top: var(--spacing-3xl);
     padding-bottom: 0;
+    background-color: #F7F9FE;
 }
 
 /*
@@ -71,7 +72,8 @@
     grid-template-columns: 1fr 886px;
     gap: var(--spacing-2xl);
     align-items: start;
-    margin-bottom: var(--spacing-3xl);
+    /* margin-bottom: var(--spacing-3xl); */
+    padding-bottom: var(--spacing-3xl);
 }
 
 .about-heading-column {
@@ -115,14 +117,21 @@
 ===========================================
 */
 
+.about-graphics-wrapper {
+    background-color: #F7F9FE;
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-5xl);
+}
+
+
 .about-graphics-section {
     background: linear-gradient(135deg, #155BFF 0%, #2563EB 100%);
     border-radius: 40px;
     height: 750px;
     position: relative;
     overflow: hidden;
-    margin-top: var(--spacing-2xl);
-    margin-bottom: var(--spacing-5xl);
+    /* margin-top: var(--spacing-2xl); */
+    /* margin-bottom: var(--spacing-5xl); */
     max-width: 1340px;
     width: 100%;
     margin-left: auto;

@@ -229,6 +229,7 @@ a {
     color: var(--color-brand);
     text-decoration: none;
     transition: var(--transition-normal);
+    /* cursor: pointer; */
 }
 
 a:hover {

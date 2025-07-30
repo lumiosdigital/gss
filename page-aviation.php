@@ -25,8 +25,8 @@ get_header(); ?>
                                 <path d="M1 1.5L4 4.5L1 7.5" stroke="#091026" stroke-linecap="square"/>
                             </svg>
                         </li>
-                        <li class="breadcrumb-item">
-                            <a href="<?php echo esc_url(home_url('/industries')); ?>">Industries</a>
+                        <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+                            Industries
                         </li>
                         <li class="breadcrumb-separator">
                             <svg xmlns="http://www.w3.org/2000/svg" width="5" height="9" viewBox="0 0 5 9" fill="none">
@@ -51,7 +51,7 @@ get_header(); ?>
                     <div class="aviation-text-column">
                         
                         <!-- First Section -->
-                        <div class="aviation-text-section">
+                        <div class="aviation-text-section top-text-section">
                             <h2 class="aviation-section-title">Collaborative Performance. Validated Results.</h2>
                             <div class="aviation-section-content">
                                 <p>Viper bridges airlines and satellite service providers through a shared performance intelligence layer. By continuously running standardized, industry-defined tests, all stakeholders gain real-time visibility into connectivity quality. This collaboration turns passive data into proactive insight—empowering providers and airlines to jointly identify root causes, implement improvements, and validate the impact of every change. The result: stronger accountability, faster resolution, and a better-connected passenger experience.</p>
@@ -188,37 +188,37 @@ get_header(); ?>
                             
                             <div class="aviation-impact-table-wrapper">
                                 <div class="aviation-impact-table">
-                                    <div class="table-header">
-                                        <div class="table-cell">Time Period</div>
-                                        <div class="table-cell">Flights</div>
-                                        <div class="table-cell">Passengers</div>
-                                        <div class="table-cell">Samples</div>
-                                        <div class="table-cell">Complaints Prevented</div>
-                                        <div class="table-cell">Savings (USD)</div>
-                                        <div class="table-cell">NPS Gain</div>
-                                        <div class="table-cell">ROI</div>
+                                    <div class="aviation-table-header">
+                                        <div class="aviation-table-cell">Time Period</div>
+                                        <div class="aviation-table-cell">Flights</div>
+                                        <div class="aviation-table-cell">Passengers</div>
+                                        <div class="aviation-table-cell">Samples</div>
+                                        <div class="aviation-table-cell">Complaints Prevented</div>
+                                        <div class="aviation-table-cell">Savings (USD)</div>
+                                        <div class="aviation-table-cell">NPS Gain</div>
+                                        <div class="aviation-table-cell">ROI</div>
                                     </div>
                                     
-                                    <div class="table-row">
-                                        <div class="table-cell">1 Year</div>
-                                        <div class="table-cell">85,000</div>
-                                        <div class="table-cell">22,100,000</div>
-                                        <div class="table-cell">1,700,000</div>
-                                        <div class="table-cell">25,500</div>
-                                        <div class="table-cell">$2,550,000</div>
-                                        <div class="table-cell">+425</div>
-                                        <div class="table-cell">0.4x</div>
+                                    <div class="aviation-table-row">
+                                        <div class="aviation-table-cell">1 Year</div>
+                                        <div class="aviation-table-cell">85,000</div>
+                                        <div class="aviation-table-cell">22,100,000</div>
+                                        <div class="aviation-table-cell">1,700,000</div>
+                                        <div class="aviation-table-cell">25,500</div>
+                                        <div class="aviation-table-cell">$2,550,000</div>
+                                        <div class="aviation-table-cell">+425</div>
+                                        <div class="aviation-table-cell">0.4x</div>
                                     </div>
                                     
-                                    <div class="table-row">
-                                        <div class="table-cell">3 Years</div>
-                                        <div class="table-cell">255,000</div>
-                                        <div class="table-cell">66,300,000</div>
-                                        <div class="table-cell">5,100,000</div>
-                                        <div class="table-cell">76,500</div>
-                                        <div class="table-cell">$7,650,000</div>
-                                        <div class="table-cell">+1,275</div>
-                                        <div class="table-cell">0.4x</div>
+                                    <div class="aviation-table-row">
+                                        <div class="aviation-table-cell">3 Years</div>
+                                        <div class="aviation-table-cell">255,000</div>
+                                        <div class="aviation-table-cell">66,300,000</div>
+                                        <div class="aviation-table-cell">5,100,000</div>
+                                        <div class="aviation-table-cell">76,500</div>
+                                        <div class="aviation-table-cell">$7,650,000</div>
+                                        <div class="aviation-table-cell">+1,275</div>
+                                        <div class="aviation-table-cell">0.4x</div>
                                     </div>
                                 </div>
                             </div>
