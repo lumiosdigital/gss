@@ -1,0 +1,1014 @@
+/*
+===========================================
+   TELECOM PAGE STYLES
+===========================================
+*/
+
+body.page-template-page-telecom {
+    background-color: #F7F9FE !important;
+}
+
+*.telecom-page {
+    background-color: #F7F9FE;
+}
+
+.site-main.telecom-page {
+    background-color: #F7F9FE;
+}
+
+.telecom-page-wrapper {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: 0;
+    background-color: #F7F9FE;
+}
+
+/*
+===========================================
+   BREADCRUMB NAVIGATION (copied from aviation page)
+===========================================
+*/
+
+.breadcrumb-nav {
+    margin-bottom: var(--spacing-xl);
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb-item {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: -0.12px;
+    cursor: pointer;
+}
+
+.breadcrumb-item a {
+    color: var(--color-brand);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--color-brand-dark);
+}
+
+.breadcrumb-current {
+    color: var(--color-brand);
+    cursor: default;
+}
+
+.breadcrumb-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5px;
+    height: 9px;
+}
+
+.breadcrumb-separator svg {
+    flex-shrink: 0;
+}
+
+/*
+===========================================
+   MAIN CONTENT GRID (copied from aviation page with sticky behavior)
+===========================================
+*/
+
+.telecom-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 886px;
+    gap: var(--spacing-4xl);
+    align-items: start;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.telecom-heading-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: sticky;
+    top: 6rem;
+    height: fit-content;
+    margin-bottom: var(--spacing-4xl);
+}
+
+.telecom-main-heading {
+    font-size: 50px;
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: var(--color-dark-navy);
+    margin: 0;
+}
+
+.telecom-text-column {
+    padding-top: 0;
+}
+
+/*
+===========================================
+   TEXT SECTIONS
+===========================================
+*/
+
+.telecom-text-section {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.telecom-text-section.top-text-section {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.telecom-section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.3;
+    letter-spacing: -0.24px;
+    color: var(--color-dark-navy);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.telecom-section-content p {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.4;
+    letter-spacing: -0.18px;
+    color: var(--color-dark-navy);
+    opacity: 0.7;
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+.telecom-section-content p:last-child {
+    margin-bottom: 0;
+}
+
+/*
+===========================================
+   FEATURES GRID (similar to aviation page)
+===========================================
+*/
+
+.telecom-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-4xl);
+}
+
+.telecom-feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background: linear-gradient(81deg, #FFF 76.31%, #E0F4FC 101.75%);
+    border: 1px solid #e0eaf8;
+    border-radius: 10px;
+    min-height: 157px;
+    transition: var(--transition-normal);
+}
+
+.telecom-feature-item:hover {
+    background: linear-gradient(81deg, #FFF 6.31%, #E0F4FC 100%);
+    border-color: #d4e6ff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.telecom-feature-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+}
+
+.telecom-feature-item:hover .telecom-feature-icon {
+    transform: scale(1.1);
+}
+
+.telecom-feature-content {
+    flex: 1;
+}
+
+.telecom-feature-title {
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.3;
+    letter-spacing: -0.16px;
+    color: var(--color-dark-navy);
+    margin: 0;
+    transition: var(--transition-normal);
+}
+
+.telecom-feature-item:hover .telecom-feature-title {
+    color: var(--color-brand);
+}
+
+/*
+===========================================
+   INFLIGHT IMAGE SECTION
+===========================================
+*/
+
+.telecom-inflight-section {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.telecom-inflight-image {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.telecom-inflight-background {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/*
+===========================================
+   D2D PERFORMANCE SECTION
+===========================================
+*/
+
+.telecom-d2d-section {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.telecom-d2d-content {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: var(--spacing-3xl);
+    align-items: center;
+    border-radius: 0.625rem;
+    border: 1px solid #E0EAF8;
+    background: linear-gradient(314deg, #FFF 12.25%, #E0F4FC 94.96%);
+    padding: 4rem 3rem;
+}
+
+.telecom-d2d-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.telecom-d2d-subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+    color: var(--color-dark-navy);
+    margin: 0;
+}
+
+.telecom-d2d-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.telecom-d2d-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    line-height: normal;
+    letter-spacing: -0.16px;
+    color: var(--color-dark-navy);
+}
+
+.telecom-check-icon {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #f0f7ff; */
+    /* border-radius: 50%; */
+    /* padding: 2px; */
+}
+
+.telecom-d2d-impact {
+    color: #0B2051;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 1.4rem */
+    letter-spacing: -0.01rem;
+}
+
+.telecom-d2d-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 19%;
+    right: -19%;
+}
+
+.telecom-d2d-phone {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/*
+===========================================
+   BACKHAUL & IOT SECTION
+===========================================
+*/
+
+.telecom-backhaul-section {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.telecom-backhaul-features {
+    background: linear-gradient(81deg, #FFF 76.31%, #E0F4FC 101.75%);
+    border: 1px solid #e0eaf8;
+    border-radius: 10px;
+    padding: var(--spacing-xl);
+    margin: var(--spacing-lg) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.telecom-backhaul-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    line-height: normal;
+    letter-spacing: -0.16px;
+    color: var(--color-dark-navy);
+}
+
+.telecom-green-check {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(177, 254, 76, 0.2);
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.telecom-why-matters {
+    font-size: 14px;
+    font-weight: var(--font-weight-normal);
+    line-height: 1.4;
+    letter-spacing: -0.14px;
+    color: var(--color-dark-navy);
+    opacity: 0.7;
+    text-align: center;
+    margin-top: var(--spacing-md);
+}
+
+/*
+===========================================
+   PRICING TABLE (similar to aviation impact table)
+===========================================
+*/
+
+.telecom-pricing-section {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.telecom-pricing-table {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e0eaf8;
+    background: var(--color-white);
+    margin: var(--spacing-lg) 0;
+}
+
+.telecom-table-header {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    background: #f8fbff;
+}
+
+.telecom-table-row {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    background: var(--color-white);
+}
+
+.telecom-table-cell {
+    padding: 15px;
+    font-size: 14px;
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.4;
+    letter-spacing: -0.14px;
+    color: var(--color-dark-navy);
+    text-align: left;
+    border-right: 1px solid #e0eaf8;
+    border-bottom: 1px solid #e0eaf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.telecom-table-header .telecom-table-cell {
+    background: #f8fbff;
+    font-weight: var(--font-weight-semibold);
+}
+
+.telecom-table-row .telecom-table-cell {
+    font-weight: var(--font-weight-normal);
+    background: var(--color-white);
+}
+
+.telecom-table-cell:last-child {
+    border-right: none;
+}
+
+.telecom-table-row:last-child .telecom-table-cell {
+    border-bottom: none;
+}
+
+/*
+===========================================
+   PLATFORM BENEFITS SECTION
+===========================================
+*/
+
+.telecom-platform-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.telecom-platform-features {
+    background: linear-gradient(81deg, #FFF 76.31%, #E0F4FC 101.75%);
+    border: 1px solid #e0eaf8;
+    border-radius: 10px;
+    padding: var(--spacing-xl);
+    margin: var(--spacing-lg) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.telecom-platform-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    line-height: normal;
+    letter-spacing: -0.16px;
+    color: var(--color-dark-navy);
+}
+
+.telecom-green-check-large {
+    flex-shrink: 0;
+    width: 31px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+===========================================
+   CTA SECTION (copied from aviation page)
+===========================================
+*/
+
+.telecom-cta-section {
+    background: linear-gradient(135deg, #155BFF 0%, #2563EB 100%);
+    border-radius: 40px;
+    height: 750px;
+    position: relative;
+    overflow: hidden;
+    margin-top: var(--spacing-2xl);
+    max-width: 1340px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.telecom-cta-wrapper {
+    background-color: #F7F9FE;
+    padding-bottom: var(--spacing-5xl);
+}
+
+.telecom-cta-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.telecom-cta-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 40px;
+}
+
+.telecom-cta-container {
+    width: 100%;
+    max-width: var(--container-2xl);
+    position: relative;
+    z-index: 2;
+}
+
+.telecom-cta-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 550px;
+}
+
+.telecom-cta-actions {
+    display: flex;
+    justify-content: center;
+}
+
+/* CTA Button (copied from aviation page) */
+.telecom-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    gap: 0;
+}
+
+.telecom-btn-primary:hover {
+    transform: translateY(-2px);
+    color: var(--color-white);
+}
+
+.telecom-btn-primary .telecom-btn-text {
+    background: var(--color-viper-green);
+    color: var(--color-text-primary);
+    padding: var(--spacing-md) var(--spacing-2xl);
+    border-radius: var(--border-radius-full);
+    font-weight: var(--font-weight-semibold);
+    transition: var(--transition-normal);
+}
+
+.telecom-btn-primary .telecom-btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--color-viper-green);
+    border-radius: 50%;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+    transition: var(--transition-normal);
+}
+
+.telecom-btn-primary:hover .telecom-btn-text {
+    background: #9FE63A;
+}
+
+.telecom-btn-primary:hover .telecom-btn-arrow {
+    background: #9FE63A;
+    transform: translateX(4px);
+}
+
+/*
+===========================================
+   RESPONSIVE DESIGN
+===========================================
+*/
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* Large Desktop: 1400px+ */
+@media (min-width: 1400px) {
+    .telecom-content-grid {
+        grid-template-columns: 1fr 950px;
+        gap: var(--spacing-4xl);
+    }
+}
+
+/* Desktop: 1200px - 1399px */
+@media (max-width: 1399px) and (min-width: 1200px) {
+    .telecom-content-grid {
+        grid-template-columns: 1fr 886px;
+        gap: var(--spacing-3xl);
+    }
+}
+
+/* Medium Desktop: 1024px - 1199px */
+@media (max-width: 1199px) and (min-width: 1024px) {
+    .telecom-content-grid {
+        grid-template-columns: 1fr 700px;
+        gap: var(--spacing-2xl);
+    }
+
+    .telecom-main-heading {
+        font-size: 44px;
+    }
+
+    .telecom-cta-section {
+        max-width: 100%;
+        height: 650px;
+    }
+
+    .telecom-d2d-content {
+        padding: var(--spacing-2xl);
+        position: relative;
+        overflow: hidden;
+        min-height: 250px;
+    }
+    
+    .telecom-d2d-text {
+        max-width: 65%;
+    }
+    
+    .telecom-d2d-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    
+    .telecom-d2d-phone {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* Tablet: 768px - 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .telecom-content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: left;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .telecom-heading-column {
+        position: static;
+        text-align: center;
+    }
+
+    .telecom-main-heading {
+        font-size: 38px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .telecom-features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .telecom-d2d-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+        padding: var(--spacing-xl);
+        position: static;
+        overflow: visible;
+        min-height: auto;
+    }
+    
+    .telecom-d2d-text {
+        max-width: 100%;
+    }
+    
+    .telecom-d2d-image {
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: var(--spacing-lg);
+    }
+    
+    .telecom-d2d-phone {
+        max-width: 200px;
+        border-radius: 10px;
+    }
+
+    .telecom-cta-section {
+        height: 550px;
+        margin-top: var(--spacing-3xl);
+        max-width: 100%;
+    }
+}
+
+/* Mobile Large: 480px - 767px */
+@media (max-width: 767px) and (min-width: 480px) {
+    .telecom-page-wrapper {
+        padding-top: var(--spacing-lg);
+    }
+
+    .breadcrumb-nav {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .telecom-content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .telecom-heading-column {
+        position: static;
+    }
+
+    .telecom-main-heading {
+        font-size: 32px;
+        margin-bottom: var(--spacing-lg);
+        line-height: 1.1;
+    }
+
+    .telecom-section-title {
+        font-size: 20px;
+    }
+
+    .telecom-section-content p {
+        font-size: var(--font-size-base);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-lg);
+        text-align: left;
+    }
+
+    .telecom-feature-item {
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+
+    .telecom-feature-icon {
+        margin: 0 auto var(--spacing-sm);
+    }
+
+    .telecom-d2d-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+        padding: var(--spacing-lg);
+        position: static;
+        overflow: visible;
+        min-height: auto;
+    }
+    
+    .telecom-d2d-text {
+        max-width: 100%;
+    }
+    
+    .telecom-d2d-image {
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: var(--spacing-md);
+    }
+    
+    .telecom-d2d-phone {
+        max-width: 150px;
+        border-radius: 10px;
+    }
+
+    .telecom-d2d-item {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .telecom-cta-section {
+        height: 350px;
+        border-radius: 24px;
+        margin-top: var(--spacing-2xl);
+        margin-bottom: var(--spacing-3xl);
+    }
+
+    .telecom-cta-background-image {
+        border-radius: 24px;
+    }
+
+    .telecom-btn-primary {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: center;
+    }
+
+    .telecom-btn-primary .telecom-btn-text {
+        border-radius: var(--border-radius-full);
+        padding: var(--spacing-md) var(--spacing-xl);
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .telecom-btn-primary .telecom-btn-arrow {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Mobile Small: 320px - 479px */
+@media (max-width: 479px) {
+    .telecom-page-wrapper {
+        padding-top: var(--spacing-md);
+    }
+
+    .breadcrumb-nav {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .breadcrumb-item {
+        font-size: 11px;
+    }
+
+    .telecom-content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+
+    .telecom-heading-column {
+        position: static;
+    }
+
+    .telecom-main-heading {
+        font-size: 26px;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.2;
+        letter-spacing: -0.3px;
+    }
+
+    .telecom-section-title {
+        font-size: 18px;
+    }
+
+    .telecom-section-content p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: var(--spacing-md);
+        text-align: left;
+    }
+
+    .telecom-cta-section {
+        height: 280px;
+        border-radius: 20px;
+        margin-top: var(--spacing-xl);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .telecom-cta-background-image {
+        border-radius: 20px;
+    }
+
+    .telecom-btn-primary .telecom-btn-text {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+        max-width: 240px;
+    }
+
+    .telecom-btn-primary .telecom-btn-arrow {
+        width: 45px;
+        height: 45px;
+    }
+
+    .telecom-btn-primary .telecom-btn-arrow svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Mobile Extra Small: 320px and below */
+@media (max-width: 320px) {
+    .telecom-page-wrapper {
+        padding-top: var(--spacing-sm);
+    }
+
+    .telecom-main-heading {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .telecom-section-content p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .telecom-cta-section {
+        height: 240px;
+        border-radius: 16px;
+    }
+
+    .telecom-cta-background-image {
+        border-radius: 16px;
+    }
+}
+
+/*
+===========================================
+   ACCESSIBILITY
+===========================================
+*/
+
+.telecom-cta-background-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+===========================================
+   HIGH CONTRAST MODE
+===========================================
+*/
+
+@media (prefers-contrast: high) {
+    .telecom-cta-section {
+        background: #0033CC;
+        border: 2px solid var(--color-white);
+    }
+
+    .telecom-btn-primary .telecom-btn-text,
+    .telecom-btn-primary .telecom-btn-arrow {
+        background: var(--color-white);
+        color: var(--color-text-primary);
+        border: 2px solid var(--color-text-primary);
+    }
+}
+
+/*
+===========================================
+   REDUCED MOTION
+===========================================
+*/
+
+@media (prefers-reduced-motion: reduce) {
+    .telecom-btn-primary {
+        transition: none;
+    }
+
+    .telecom-btn-primary:hover {
+        transform: none;
+    }
+
+    .telecom-btn-primary:hover .telecom-btn-arrow {
+        transform: none;
+    }
+
+    .telecom-feature-item {
+        transition: none;
+    }
+
+    .telecom-feature-item:hover {
+        transform: none;
+    }
+
+    .telecom-feature-icon {
+        transition: none;
+    }
+
+    .telecom-feature-item:hover .telecom-feature-icon {
+        transform: none;
+    }
+}
+
+/* Focus states for keyboard navigation */
+.telecom-btn-primary:focus {
+    outline: 2px solid var(--color-white);
+    outline-offset: 4px;
+}
