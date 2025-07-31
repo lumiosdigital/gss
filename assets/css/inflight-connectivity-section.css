@@ -316,6 +316,11 @@
         gap: var(--spacing-lg);
     }
 
+    .matters-description {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .charts-container {
         position: relative;
         height: 220px;
@@ -346,7 +351,17 @@
 
     .inflight-connectivity-content {
         min-height: auto;
-        border-radius: var(--border-radius-lg);
+        /* REMOVE BACKGROUND IMAGE ON MOBILE */
+        background-image: none !important;
+        /* SOFT COLORED BACKGROUND FOR MOBILE */
+        background: #f8fbff;
+        /* SPECIFIC BORDER RADIUS FOR MOBILE */
+        border-radius: 1.875rem !important;
+    }
+
+    /* REMOVE OVERLAY ON MOBILE SINCE WE HAVE SOLID BACKGROUND */
+    .inflight-connectivity-content::before {
+        display: none;
     }
 
     .inflight-connectivity-title {
@@ -376,30 +391,41 @@
         gap: var(--spacing-lg);
     }
 
+    .matters-description {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
     .charts-container {
-        position: relative;
-        height: 180px;
-        width: 100%;
+        position: static;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        /* gap: var(--spacing-md); */
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .chart-item:nth-child(1) {
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .chart-item:nth-child(2) {
-        right: 0;
-        top: 0;
-    }
-
-    .chart-item:nth-child(3) {
-        right: 0;
-        bottom: 0;
+    .chart-item {
+        position: static !important;
+        /* Reset all positioning */
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        /* Animation overrides for mobile stacked layout */
+        opacity: 1 !important;
     }
 
     .chart-image {
-        max-width: 140px;
+        max-width: 160px;
+        margin: 0 auto;
+    }
+
+    .chart-item {
+        max-width: 175px;
     }
 
     .inflight-connectivity-matters-section {
@@ -440,30 +466,32 @@
         position: static;
         height: auto;
         display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
+        flex-direction: row;
+        /* gap: var(--spacing-md); */
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .chart-item {
-        position: static;
+        position: static !important;
         /* Animation overrides for mobile stacked layout */
         opacity: 1 !important;
         transform: none !important;
-    }
-
-    .chart-item:nth-child(1),
-    .chart-item:nth-child(2),
-    .chart-item:nth-child(3) {
-        transform: none;
-        left: auto;
-        right: auto;
-        top: auto;
-        bottom: auto;
+        /* Reset all positioning */
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
     }
 
     .chart-image {
-        max-width: 250px;
+        /* max-width: 175px; */
         margin: 0 auto;
+    }
+
+    .chart-item {
+        max-width: 175px;
     }
 
     .inflight-connectivity-matters-section {

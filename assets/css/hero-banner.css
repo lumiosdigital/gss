@@ -703,13 +703,29 @@
     .hero-content {
         max-width: none;
         order: 1;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
     }
 
+    /* HIDE ALL VISUAL ELEMENTS ON MOBILE */
     .hero-visual {
-        order: 2;
-        min-height: 300px;
-        margin: 0 auto;
-        max-width: 400px;
+        display: none !important;
+    }
+
+    /* HIDE FOREGROUND SVG ON MOBILE */
+    .hero-fg-svg {
+        display: none !important;
+    }
+
+    /* HIDE ALL FLOATING VISUAL ELEMENTS */
+    .globe-container,
+    .dashboard-container,
+    .chart-container,
+    .airplane-container,
+    .location-pin,
+    .hero-bg-elements {
+        display: none !important;
     }
 
     .hero-title {
@@ -722,61 +738,44 @@
 
     .hero-actions {
         align-items: center;
+        margin-bottom: var(--spacing-2xl);
     }
 
-    .btn-primary,
-    .btn-secondary {
+    /* FIX BUTTON LAYOUT - KEEP ARROW INLINE */
+    .btn-primary {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
         min-width: 280px;
-        justify-content: center;
+        max-width: 100%;
+        gap: 0 !important;
+        flex-wrap: nowrap !important;
     }
 
     .btn-primary .btn-text {
-        flex: 1;
-        text-align: center;
+        flex: 0 1 auto !important;
+        /* Don't grow, but can shrink */
+        text-align: left !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
+        /* Allow shrinking */
+    }
+
+    .btn-primary .btn-arrow {
+        flex: 0 0 56px !important;
+        /* Fixed width, no grow/shrink */
+        margin-left: 0 !important;
+    }
+
+    .btn-secondary {
+        width: 365px;
+        justify-content: center;
     }
 
     .partners-logos {
         justify-content: center;
-    }
-
-    /* Adjust SVGs for mobile */
-    .hero-bg-svg,
-    .hero-fg-svg {
-        display: block;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* Adjust visual elements for mobile */
-    .globe-container {
-        position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
-        width: 250px;
-        height: 250px;
-        margin: 0 auto;
-    }
-
-    .dashboard-container {
-        top: 5%;
-        right: 5%;
-        width: 180px;
-    }
-
-    .chart-container {
-        bottom: 5%;
-        left: 5%;
-        width: 140px;
-    }
-
-    .airplane-container {
-        right: 15%;
-        bottom: 25%;
-        width: 40px;
-        height: 40px;
     }
 }
 
@@ -789,22 +788,25 @@
         font-size: var(--font-size-xl);
     }
 
-    .btn-primary,
-    .btn-secondary {
+    /* SMALLER MOBILE BUTTON ADJUSTMENTS */
+    .btn-primary {
         min-width: 100%;
+        max-width: 100%;
     }
 
     .btn-primary .btn-text {
-        flex: 1;
-        text-align: center;
+        font-size: var(--font-size-sm) !important;
+        padding: var(--spacing-sm) var(--spacing-lg) !important;
     }
 
-    .dashboard-container {
-        width: 140px;
+    .btn-primary .btn-arrow {
+        width: 48px !important;
+        height: 48px !important;
+        flex: 0 0 48px !important;
     }
 
-    .chart-container {
-        width: 120px;
+    .btn-secondary {
+        min-width: 100%;
     }
 }
 
