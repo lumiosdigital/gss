@@ -348,8 +348,8 @@
     }
 
     .footer-btn-primary {
-        flex-direction: column;
-        gap: var(--spacing-sm);
+        flex-direction: row;
+        /* gap: var(--spacing-sm); */
         align-items: center;
     }
 

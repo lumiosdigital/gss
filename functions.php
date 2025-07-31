@@ -118,6 +118,9 @@ function gss_scripts() {
     // Telecom page stylesheet
     wp_enqueue_style('gss-telecom-page', get_template_directory_uri() . '/assets/css/telecom-page.css', array('gss-main'), '1.0.0');
 
+    // Contact page stylesheet
+    wp_enqueue_style('gss-contact-page', get_template_directory_uri() . '/assets/css/contact-page.css', array('gss-main'), '1.0.0');
+
     // Main JavaScript file
     wp_enqueue_script('gss-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0.0', true);
     
