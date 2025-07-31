@@ -146,7 +146,7 @@
 
 .table-header .table-cell {
     background: #f8fbff;
-        font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
 }
 
 .table-row .table-cell {
@@ -189,14 +189,15 @@
     height: 120px;
     width: 433px;
     max-width: 433px;
+    transition: var(--transition-normal);
 }
 
 .benefit-summary-box:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(21, 91, 255, 0.1);
     background: linear-gradient(81deg, #FFF 6.31%, #E0F4FC 100%);
+    border-color: #d4e6ff;
 }
-
 
 .benefit-summary-box:last-child {
     background: linear-gradient(70.98deg, #ffffff 78.07%, #e0fce5 100%);
@@ -204,6 +205,7 @@
 
 .benefit-summary-box:last-child:hover {
     background: linear-gradient(81deg, #FFF 6.31%, #E0FCE5 100%);
+    border-color: #d4e6ff;
 }
 
 .benefit-icon {
@@ -213,6 +215,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--transition-normal);
 }
 
 .placeholder-icon {
@@ -240,6 +243,15 @@
     letter-spacing: -0.16px;
     color: #0b2051;
     margin-bottom: var(--spacing-sm);
+    transition: var(--transition-normal);
+}
+
+.benefit-summary-box:hover .benefit-icon {
+    transform: scale(1.1);
+}
+
+.benefit-summary-box:hover .benefit-label {
+    color: var(--color-brand);
 }
 
 .benefit-value {
@@ -302,7 +314,7 @@
     color: #091026;
     text-align: center;
     margin-bottom: var(--spacing-xl);
-    
+
 }
 
 .benefits-table-content {
@@ -357,7 +369,7 @@
 
 .benefits-table-header .benefits-table-cell {
     background: #f8fbff;
-        font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
 }
 
 .benefits-table-row .benefits-table-cell {
