@@ -329,6 +329,7 @@
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-xl);
         justify-items: center;
+        justify-content: center;
     }
 
     .footer-menu {
@@ -345,6 +346,7 @@
 
     .footer-social {
         align-items: center;
+        flex-direction: row;
     }
 
     .footer-btn-primary {

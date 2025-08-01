@@ -349,6 +349,10 @@
         padding: var(--spacing-xl) 0;
     }
 
+    .inflight-connectivity-header {
+        margin-top: 0;
+    }
+
     .inflight-connectivity-content {
         min-height: auto;
         /* REMOVE BACKGROUND IMAGE ON MOBILE */
@@ -429,7 +433,7 @@
     }
 
     .inflight-connectivity-matters-section {
-        padding: 0 var(--spacing-lg) var(--spacing-2xl);
+        padding: 0 var(--spacing-lg) var(--spacing-md);
     }
 
     .matters-card {

@@ -468,13 +468,14 @@
 
 @media (max-width: 768px) {
     .strategic-takeaways-section {
-        padding: 60px 0;
+        padding: 60px 0 0;
     }
 
     .strategic-takeaways-grid {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 10px;
+        margin-bottom: 3rem;
     }
 
     .strategic-timeline-svg {
@@ -485,7 +486,7 @@
         width: 100%;
         max-width: 100%;
         text-align: center;
-        gap: 40px;
+        gap: 10px;
     }
 
     .strategic-column-left,
@@ -526,6 +527,10 @@
     .strategic-airplane-image {
         width: 100%;
         max-width: 500px;
+    }
+
+    .strategic-column.strategic-column-middle {
+        display: none;
     }
 }
 

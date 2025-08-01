@@ -188,7 +188,7 @@
 
 @media (max-width: 768px) {
     .experience-viper-section {
-        padding: var(--spacing-xl) 0 var(--spacing-2xl);
+        padding: 0 0 var(--spacing-2xl);
     }
 
     .world-background {
@@ -216,7 +216,7 @@
     }
 
     .experience-viper-section .btn-primary {
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--spacing-sm);
         align-items: center;
     }
@@ -225,13 +225,13 @@
         border-radius: var(--border-radius-full);
         padding: var(--spacing-md) var(--spacing-xl);
         width: 100%;
-        max-width: 280px;
+        /* max-width: 280px; */
         text-align: center;
     }
 
     .experience-viper-section .btn-primary .btn-arrow {
-        width: 50px;
-        height: 50px;
+        width: 56px;
+        height: 56px;
     }
 }
 

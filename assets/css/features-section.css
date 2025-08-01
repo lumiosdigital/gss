@@ -175,7 +175,8 @@
 
 @media (max-width: 768px) {
     .features-section {
-        padding: var(--spacing-2xl) 0;
+        padding: var(--spacing-2xl) 0 0;
+        margin: 2rem auto 0;
     }
 
     .features-header {
