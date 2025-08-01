@@ -346,7 +346,7 @@
 
 @media (max-width: 768px) {
     .inflight-connectivity-section {
-        padding: var(--spacing-3xl) 0;
+        padding: var(--spacing-xl) 0;
     }
 
     .inflight-connectivity-content {
