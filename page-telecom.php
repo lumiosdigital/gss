@@ -115,53 +115,42 @@ get_header(); ?>
 
                         <!-- D2D Performance Section -->
                         <div class="telecom-d2d-section">
-                            <h2 class="telecom-section-title">Optimize Direct-to-Device (D2D) performance</h2>
+                            <h2 class="telecom-section-title">Why MNOs Should Use Viper</h2>
                             
-                            <div class="telecom-d2d-content">
-                                <div class="telecom-d2d-text">
-                                    <h3 class="telecom-d2d-subtitle">As $10/month satellite D2D services roll out, Viper helps:</h3>
-                                    
-                                    <div class="telecom-d2d-list">
-                                        <div class="telecom-d2d-item">
-                                            <div class="telecom-check-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none">
-                                                <path d="M0.998107 5.50012L11.1974 5.49993M11.1974 5.49993L7.49129 1.79383M11.1974 5.49993L7.4913 9.20603" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
-                                                </svg>
-                                            </div>
-                                            <span>Benchmark coverage and QoE by device and geography</span>
-                                        </div>
-                                        
-                                        <div class="telecom-d2d-item">
-                                            <div class="telecom-check-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none">
-                                                <path d="M0.998107 5.50012L11.1974 5.49993M11.1974 5.49993L7.49129 1.79383M11.1974 5.49993L7.4913 9.20603" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
-                                                </svg>
-                                            </div>
-                                            <span>Performance data across devices and geographies</span>
-                                        </div>
-                                        
-                                        <div class="telecom-d2d-item">
-                                            <div class="telecom-check-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none">
-                                                <path d="M0.998107 5.50012L11.1974 5.49993M11.1974 5.49993L7.49129 1.79383M11.1974 5.49993L7.4913 9.20603" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
-                                                </svg>
-                                            </div>
-                                            <span>Optimized rollout from pilot to scale</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="telecom-d2d-impact">
-                                        <strong>Impact:</strong><br>
-                                        Reduce churn. Increase ARPU. Deliver measurable D2D quality.
-                                    </div>
+                            <div class="telecom-pricing-table">
+                                <div class="telecom-table-header">
+                                    <div class="telecom-table-cell">Critical Function</div>
+                                    <div class="telecom-table-cell">Viper Benefit</div>
                                 </div>
                                 
-                                <div class="telecom-d2d-image">
-                                    <!-- This should be uploaded as PNG -->
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/telecom-d2d-phone.png" 
-                                         alt="D2D Performance Mobile Interface" 
-                                         class="telecom-d2d-phone"
-                                         loading="lazy" />
+                                <div class="telecom-table-row">
+                                    <div class="telecom-table-cell">Satellite QoS/QoE Monitoring</div>
+                                    <div class="telecom-table-cell">Purpose-built test suite, cloud-based analytics</div>
+                                </div>
+                                
+                                <div class="telecom-table-row">
+                                    <div class="telecom-table-cell">SLA Validation</div>
+                                    <div class="telecom-table-cell">Independent verification of vendor claims</div>
+                                </div>
+                                
+                                <div class="telecom-table-row">
+                                    <div class="telecom-table-cell">D2D Subscriber Experience</div>
+                                    <div class="telecom-table-cell">Device-based end-to-end quality metrics</div>
+                                </div>
+                                
+                                <div class="telecom-table-row">
+                                    <div class="telecom-table-cell">Disaster Recovery</div>
+                                    <div class="telecom-table-cell">Real-time network health during outages</div>
+                                </div>
+                                
+                                <div class="telecom-table-row">
+                                    <div class="telecom-table-cell">Cost Management</div>
+                                    <div class="telecom-table-cell">Unlimited, low-cost testing at flat rates</div>
+                                </div>
+                                
+                                <div class="telecom-table-row">
+                                    <div class="telecom-table-cell">Benchmarking</div>
+                                    <div class="telecom-table-cell">Competitive intelligence across providers</div>
                                 </div>
                             </div>
                         </div>

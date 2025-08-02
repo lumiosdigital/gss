@@ -183,265 +183,228 @@ get_header(); ?>
                             </div>
                         </div>
 
-                        <!-- Fleet-Wide Impact Table -->
-                        <!-- <div class="aviation-impact-section">
-                            <h3 class="aviation-impact-title">Fleet-Wide Aggregated Viper Impact</h3>
-                            
-                            <div class="aviation-impact-table-wrapper">
-                                <div class="aviation-impact-table">
-                                    <div class="aviation-table-header">
-                                        <div class="aviation-table-cell">Time Period</div>
-                                        <div class="aviation-table-cell">Flights</div>
-                                        <div class="aviation-table-cell">Passengers</div>
-                                        <div class="aviation-table-cell">Samples</div>
-                                        <div class="aviation-table-cell">Complaints Prevented</div>
-                                        <div class="aviation-table-cell">Savings (USD)</div>
-                                        <div class="aviation-table-cell">NPS Gain</div>
-                                        <div class="aviation-table-cell">ROI</div>
-                                    </div>
-                                    
-                                    <div class="aviation-table-row">
-                                        <div class="aviation-table-cell">1 Year</div>
-                                        <div class="aviation-table-cell">85,000</div>
-                                        <div class="aviation-table-cell">22,100,000</div>
-                                        <div class="aviation-table-cell">1,700,000</div>
-                                        <div class="aviation-table-cell">25,500</div>
-                                        <div class="aviation-table-cell">$2,550,000</div>
-                                        <div class="aviation-table-cell">+425</div>
-                                        <div class="aviation-table-cell">0.4x</div>
-                                    </div>
-                                    
-                                    <div class="aviation-table-row">
-                                        <div class="aviation-table-cell">3 Years</div>
-                                        <div class="aviation-table-cell">255,000</div>
-                                        <div class="aviation-table-cell">66,300,000</div>
-                                        <div class="aviation-table-cell">5,100,000</div>
-                                        <div class="aviation-table-cell">76,500</div>
-                                        <div class="aviation-table-cell">$7,650,000</div>
-                                        <div class="aviation-table-cell">+1,275</div>
-                                        <div class="aviation-table-cell">0.4x</div>
-                                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Inflight Connectivity Section -->
+        <?php get_template_part('template-parts/inflight-connectivity-section'); ?>
+
+        <!-- Strategic Takeaways Section -->
+        <div class="aviation-page-wrapper">
+            <div class="container">
+                <div class="aviation-strategic-section">
+                    <h3 class="aviation-strategic-title">Strategic Takeaways</h3>
+
+                    <div class="aviation-strategic-grid">
+                        <!-- Left Column -->
+                        <div class="aviation-strategic-column aviation-strategic-left">
+                            <!-- Operational Confidence -->
+                            <div class="aviation-strategic-item">
+                                <div class="aviation-strategic-content">
+                                    <h4 class="aviation-strategic-item-title">Operational Confidence</h4>
+                                    <p class="aviation-strategic-description">
+                                        Identify aircraft-specific or provider-linked performance issues before they impact service, using visual dashboards to isolate trends quickly.
+                                    </p>
                                 </div>
                             </div>
-                            
-                            <p class="aviation-table-note">These results are based on ~150 long-haul aircraft operating ~1.2 flights/day with 260 passengers per flight and 20 QoE/QoS test samples per flight.</p>
-                        </div> -->
 
-                        <!-- Strategic Takeaways Section -->
-                        <div class="aviation-strategic-section">
-                            <h3 class="aviation-strategic-title">Strategic Takeaways</h3>
-
-                            <div class="aviation-strategic-grid">
-                                <!-- Left Column -->
-                                <div class="aviation-strategic-column aviation-strategic-left">
-                                    <!-- Operational Confidence -->
-                                    <div class="aviation-strategic-item">
-                                        <div class="aviation-strategic-content">
-                                            <h4 class="aviation-strategic-item-title">Operational Confidence</h4>
-                                            <p class="aviation-strategic-description">
-                                                Identify aircraft-specific or provider-linked performance issues before they impact service, using visual dashboards to isolate trends quickly.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Engineering Efficiency -->
-                                    <div class="aviation-strategic-item">
-                                        <div class="aviation-strategic-content">
-                                            <h4 class="aviation-strategic-item-title">Engineering Efficiency</h4>
-                                            <p class="aviation-strategic-description">
-                                                Reduce downtime and troubleshooting through preemptive maintenance insights powered by tail-level trends and anomaly detection.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Performance Transparency -->
-                                    <div class="aviation-strategic-item">
-                                        <div class="aviation-strategic-content">
-                                            <h4 class="aviation-strategic-item-title">Performance Transparency</h4>
-                                            <p class="aviation-strategic-description">
-                                                Enable executives and frontline staff to make informed decisions with fleet-wide dashboards, route-level heatmaps, and alerting tools.
-                                            </p>
-                                        </div>
-                                    </div>
+                            <!-- Engineering Efficiency -->
+                            <div class="aviation-strategic-item">
+                                <div class="aviation-strategic-content">
+                                    <h4 class="aviation-strategic-item-title">Engineering Efficiency</h4>
+                                    <p class="aviation-strategic-description">
+                                        Reduce downtime and troubleshooting through preemptive maintenance insights powered by tail-level trends and anomaly detection.
+                                    </p>
                                 </div>
+                            </div>
 
-                                <!-- Middle Column - SVG Timeline (same as strategic takeaways) -->
-                                <div class="aviation-strategic-column aviation-strategic-middle">
-                                    <div class="aviation-timeline-svg">
-                                        <svg width="312" height="720" viewBox="0 0 312 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M156 31L156 709" stroke="#E0EAF8" stroke-width="1.5" stroke-dasharray="4 4"/>
-                                            
-                                            <!-- Connection Point 1 -->
-                                            <line x1="7" y1="15.5" x2="156" y2="15.5" stroke="#E0EAF8"/>
-                                            <!-- Moving rectangle along line 1 -->
-                                            <rect x="152" y="14.5" width="8" height="2" rx="1" fill="#2866F7" opacity="0">
-                                                <animateTransform
-                                                    attributeName="transform"
-                                                    type="translate"
-                                                    values="0,0;-145,0"
-                                                    dur="4.2s"
-                                                    repeatCount="indefinite"/>
-                                                <animate
-                                                    attributeName="opacity"
-                                                    values="0;0;0.8;0.8;0"
-                                                    dur="4.2s"
-                                                    repeatCount="indefinite"/>
-                                            </rect>
-                                            <circle cx="156" cy="15" r="15" transform="rotate(-90 156 15)" fill="#2866F7" fill-opacity="0.18"/>
-                                            <circle cx="156" cy="15" r="6" fill="#2866F7" class="scintillate-delay-1"/>
-                                            <circle cx="4" cy="15" r="4" transform="rotate(-90 4 15)" fill="#2866F7"/>
-                                            
-                                            <!-- Connection Point 2 -->
-                                            <line x1="7" y1="289.5" x2="156" y2="289.5" stroke="#E0EAF8"/>
-                                            <!-- Moving rectangle along line 2 -->
-                                            <rect x="150" y="288.5" width="6" height="2" rx="1" fill="#2866F7" opacity="0">
-                                                <animateTransform
-                                                    attributeName="transform"
-                                                    type="translate"
-                                                    values="0,0;-143,0"
-                                                    dur="2.8s"
-                                                    begin="1.3s"
-                                                    repeatCount="indefinite"/>
-                                                <animate
-                                                    attributeName="opacity"
-                                                    values="0;0;0.8;0.8;0"
-                                                    dur="2.8s"
-                                                    begin="1.3s"
-                                                    repeatCount="indefinite"/>
-                                            </rect>
-                                            <circle cx="156" cy="289" r="15" transform="rotate(-90 156 289)" fill="#2866F7" fill-opacity="0.18"/>
-                                            <circle cx="156" cy="289" r="6" fill="#2866F7" class="scintillate-delay-2"/>
-                                            <circle cx="4" cy="289" r="4" transform="rotate(-90 4 289)" fill="#2866F7"/>
-                                            
-                                            <!-- Connection Point 3 -->
-                                            <line x1="305" y1="151.499" x2="156" y2="151.499" stroke="#E0EAF8"/>
-                                            <!-- Moving rectangle along line 3 -->
-                                            <rect x="156" y="150.5" width="9" height="2" rx="1" fill="#2866F7" opacity="0">
-                                                <animateTransform
-                                                    attributeName="transform"
-                                                    type="translate"
-                                                    values="0,0;140,0"
-                                                    dur="3.6s"
-                                                    begin="2.1s"
-                                                    repeatCount="indefinite"/>
-                                                <animate
-                                                    attributeName="opacity"
-                                                    values="0;0;0.8;0.8;0"
-                                                    dur="3.6s"
-                                                    begin="2.1s"
-                                                    repeatCount="indefinite"/>
-                                            </rect>
-                                            <circle cx="156" cy="152" r="12" transform="rotate(90 156 152)" fill="#2866F7" fill-opacity="0.18"/>
-                                            <circle cx="156" cy="152" r="4" fill="#2866F7" class="scintillate-delay-3"/>
-                                            <circle cx="308" cy="152" r="4" transform="rotate(90 308 152)" fill="#2866F7"/>
-                                            
-                                            <!-- Connection Point 4 -->
-                                            <line x1="305" y1="425.499" x2="156" y2="425.499" stroke="#E0EAF8"/>
-                                            <!-- Moving rectangle along line 4 -->
-                                            <rect x="156" y="424.5" width="5" height="2" rx="1" fill="#2866F7" opacity="0">
-                                                <animateTransform
-                                                    attributeName="transform"
-                                                    type="translate"
-                                                    values="0,0;144,0"
-                                                    dur="4.7s"
-                                                    begin="0.7s"
-                                                    repeatCount="indefinite"/>
-                                                <animate
-                                                    attributeName="opacity"
-                                                    values="0;0;0.8;0.8;0"
-                                                    dur="4.7s"
-                                                    begin="0.7s"
-                                                    repeatCount="indefinite"/>
-                                            </rect>
-                                            <circle cx="156" cy="426" r="12" transform="rotate(90 156 426)" fill="#2866F7" fill-opacity="0.18"/>
-                                            <circle cx="156" cy="426" r="4" fill="#2866F7" class="scintillate-delay-4"/>
-                                            <circle cx="308" cy="426" r="4" transform="rotate(90 308 426)" fill="#2866F7"/>
-                                            
-                                            <!-- Connection Point 5 -->
-                                            <line x1="7" y1="564.5" x2="156" y2="564.5" stroke="#E0EAF8"/>
-                                            <!-- Moving rectangle along line 5 -->
-                                            <rect x="149" y="563.5" width="7" height="2" rx="1" fill="#2866F7" opacity="0">
-                                                <animateTransform
-                                                    attributeName="transform"
-                                                    type="translate"
-                                                    values="0,0;-142,0"
-                                                    dur="3.1s"
-                                                    begin="3.2s"
-                                                    repeatCount="indefinite"/>
-                                                <animate
-                                                    attributeName="opacity"
-                                                    values="0;0;0.8;0.8;0"
-                                                    dur="3.1s"
-                                                    begin="3.2s"
-                                                    repeatCount="indefinite"/>
-                                            </rect>
-                                            <circle cx="157" cy="564" r="16" transform="rotate(-90 157 564)" fill="#2866F7" fill-opacity="0.18"/>
-                                            <circle cx="157" cy="564" r="8" fill="#2866F7" class="scintillate-delay-5"/>
-                                            <circle cx="4" cy="565" r="4" transform="rotate(-90 4 565)" fill="#2866F7"/>
-                                            
-                                            <!-- Connection Point 6 -->
-                                            <line x1="305" y1="704.5" x2="156" y2="704.5" stroke="#E0EAF8"/>
-                                            <!-- Moving rectangle along line 6 -->
-                                            <rect x="156" y="703.5" width="6" height="2" rx="1" fill="#2866F7" opacity="0">
-                                                <animateTransform
-                                                    attributeName="transform"
-                                                    type="translate"
-                                                    values="0,0;143,0"
-                                                    dur="2.9s"
-                                                    begin="1.8s"
-                                                    repeatCount="indefinite"/>
-                                                <animate
-                                                    attributeName="opacity"
-                                                    values="0;0;0.8;0.8;0"
-                                                    dur="2.9s"
-                                                    begin="1.8s"
-                                                    repeatCount="indefinite"/>
-                                            </rect>
-                                            <circle cx="156" cy="705" r="15" transform="rotate(90 156 705)" fill="#2866F7" fill-opacity="0.18"/>
-                                            <circle cx="156" cy="705" r="6" fill="#2866F7" class="scintillate-delay-6"/>
-                                            <circle cx="308" cy="705" r="4" transform="rotate(90 308 705)" fill="#2866F7"/>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <!-- Right Column -->
-                                <div class="aviation-strategic-column aviation-strategic-right">
-                                    <!-- SLA Enforcement -->
-                                    <div class="aviation-strategic-item">
-                                        <div class="aviation-strategic-content">
-                                            <h4 class="aviation-strategic-item-title">SLA Enforcement</h4>
-                                            <p class="aviation-strategic-description">
-                                                Use tail-specific, route-linked data to benchmark and negotiate with connectivity vendors — supported by real-time evidence from high-traffic routes.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Customer Experience -->
-                                    <div class="aviation-strategic-item">
-                                        <div class="aviation-strategic-content">
-                                            <h4 class="aviation-strategic-item-title">Customer Experience</h4>
-                                            <p class="aviation-strategic-description">
-                                                Support brand promise with verifiable QoE improvements and faster complaint resolution — reducing service credits and increasing retention.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Vendor Strategy Alignment -->
-                                    <div class="aviation-strategic-item">
-                                        <div class="aviation-strategic-content">
-                                            <h4 class="aviation-strategic-item-title">Vendor Strategy Alignment</h4>
-                                            <p class="aviation-strategic-description">
-                                                Build a baseline of performance to guide RFPs, transitions, and future upgrades with trusted, independent data.
-                                            </p>
-                                        </div>
-                                    </div>
+                            <!-- Performance Transparency -->
+                            <div class="aviation-strategic-item">
+                                <div class="aviation-strategic-content">
+                                    <h4 class="aviation-strategic-item-title">Performance Transparency</h4>
+                                    <p class="aviation-strategic-description">
+                                        Enable executives and frontline staff to make informed decisions with fleet-wide dashboards, route-level heatmaps, and alerting tools.
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Middle Column - SVG Timeline (same as strategic takeaways) -->
+                        <div class="aviation-strategic-column aviation-strategic-middle">
+                            <div class="aviation-timeline-svg">
+                                <svg width="312" height="720" viewBox="0 0 312 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M156 31L156 709" stroke="#E0EAF8" stroke-width="1.5" stroke-dasharray="4 4"/>
+                                    
+                                    <!-- Connection Point 1 -->
+                                    <line x1="7" y1="15.5" x2="156" y2="15.5" stroke="#E0EAF8"/>
+                                    <!-- Moving rectangle along line 1 -->
+                                    <rect x="152" y="14.5" width="8" height="2" rx="1" fill="#2866F7" opacity="0">
+                                        <animateTransform
+                                            attributeName="transform"
+                                            type="translate"
+                                            values="0,0;-145,0"
+                                            dur="4.2s"
+                                            repeatCount="indefinite"/>
+                                        <animate
+                                            attributeName="opacity"
+                                            values="0;0;0.8;0.8;0"
+                                            dur="4.2s"
+                                            repeatCount="indefinite"/>
+                                    </rect>
+                                    <circle cx="156" cy="15" r="15" transform="rotate(-90 156 15)" fill="#2866F7" fill-opacity="0.18"/>
+                                    <circle cx="156" cy="15" r="6" fill="#2866F7" class="scintillate-delay-1"/>
+                                    <circle cx="4" cy="15" r="4" transform="rotate(-90 4 15)" fill="#2866F7"/>
+                                    
+                                    <!-- Connection Point 2 -->
+                                    <line x1="7" y1="289.5" x2="156" y2="289.5" stroke="#E0EAF8"/>
+                                    <!-- Moving rectangle along line 2 -->
+                                    <rect x="150" y="288.5" width="6" height="2" rx="1" fill="#2866F7" opacity="0">
+                                        <animateTransform
+                                            attributeName="transform"
+                                            type="translate"
+                                            values="0,0;-143,0"
+                                            dur="2.8s"
+                                            begin="1.3s"
+                                            repeatCount="indefinite"/>
+                                        <animate
+                                            attributeName="opacity"
+                                            values="0;0;0.8;0.8;0"
+                                            dur="2.8s"
+                                            begin="1.3s"
+                                            repeatCount="indefinite"/>
+                                    </rect>
+                                    <circle cx="156" cy="289" r="15" transform="rotate(-90 156 289)" fill="#2866F7" fill-opacity="0.18"/>
+                                    <circle cx="156" cy="289" r="6" fill="#2866F7" class="scintillate-delay-2"/>
+                                    <circle cx="4" cy="289" r="4" transform="rotate(-90 4 289)" fill="#2866F7"/>
+                                    
+                                    <!-- Connection Point 3 -->
+                                    <line x1="305" y1="151.499" x2="156" y2="151.499" stroke="#E0EAF8"/>
+                                    <!-- Moving rectangle along line 3 -->
+                                    <rect x="156" y="150.5" width="9" height="2" rx="1" fill="#2866F7" opacity="0">
+                                        <animateTransform
+                                            attributeName="transform"
+                                            type="translate"
+                                            values="0,0;140,0"
+                                            dur="3.6s"
+                                            begin="2.1s"
+                                            repeatCount="indefinite"/>
+                                        <animate
+                                            attributeName="opacity"
+                                            values="0;0;0.8;0.8;0"
+                                            dur="3.6s"
+                                            begin="2.1s"
+                                            repeatCount="indefinite"/>
+                                    </rect>
+                                    <circle cx="156" cy="152" r="12" transform="rotate(90 156 152)" fill="#2866F7" fill-opacity="0.18"/>
+                                    <circle cx="156" cy="152" r="4" fill="#2866F7" class="scintillate-delay-3"/>
+                                    <circle cx="308" cy="152" r="4" transform="rotate(90 308 152)" fill="#2866F7"/>
+                                    
+                                    <!-- Connection Point 4 -->
+                                    <line x1="305" y1="425.499" x2="156" y2="425.499" stroke="#E0EAF8"/>
+                                    <!-- Moving rectangle along line 4 -->
+                                    <rect x="156" y="424.5" width="5" height="2" rx="1" fill="#2866F7" opacity="0">
+                                        <animateTransform
+                                            attributeName="transform"
+                                            type="translate"
+                                            values="0,0;144,0"
+                                            dur="4.7s"
+                                            begin="0.7s"
+                                            repeatCount="indefinite"/>
+                                        <animate
+                                            attributeName="opacity"
+                                            values="0;0;0.8;0.8;0"
+                                            dur="4.7s"
+                                            begin="0.7s"
+                                            repeatCount="indefinite"/>
+                                    </rect>
+                                    <circle cx="156" cy="426" r="12" transform="rotate(90 156 426)" fill="#2866F7" fill-opacity="0.18"/>
+                                    <circle cx="156" cy="426" r="4" fill="#2866F7" class="scintillate-delay-4"/>
+                                    <circle cx="308" cy="426" r="4" transform="rotate(90 308 426)" fill="#2866F7"/>
+                                    
+                                    <!-- Connection Point 5 -->
+                                    <line x1="7" y1="564.5" x2="156" y2="564.5" stroke="#E0EAF8"/>
+                                    <!-- Moving rectangle along line 5 -->
+                                    <rect x="149" y="563.5" width="7" height="2" rx="1" fill="#2866F7" opacity="0">
+                                        <animateTransform
+                                            attributeName="transform"
+                                            type="translate"
+                                            values="0,0;-142,0"
+                                            dur="3.1s"
+                                            begin="3.2s"
+                                            repeatCount="indefinite"/>
+                                        <animate
+                                            attributeName="opacity"
+                                            values="0;0;0.8;0.8;0"
+                                            dur="3.1s"
+                                            begin="3.2s"
+                                            repeatCount="indefinite"/>
+                                    </rect>
+                                    <circle cx="157" cy="564" r="16" transform="rotate(-90 157 564)" fill="#2866F7" fill-opacity="0.18"/>
+                                    <circle cx="157" cy="564" r="8" fill="#2866F7" class="scintillate-delay-5"/>
+                                    <circle cx="4" cy="565" r="4" transform="rotate(-90 4 565)" fill="#2866F7"/>
+                                    
+                                    <!-- Connection Point 6 -->
+                                    <line x1="305" y1="704.5" x2="156" y2="704.5" stroke="#E0EAF8"/>
+                                    <!-- Moving rectangle along line 6 -->
+                                    <rect x="156" y="703.5" width="6" height="2" rx="1" fill="#2866F7" opacity="0">
+                                        <animateTransform
+                                            attributeName="transform"
+                                            type="translate"
+                                            values="0,0;143,0"
+                                            dur="2.9s"
+                                            begin="1.8s"
+                                            repeatCount="indefinite"/>
+                                        <animate
+                                            attributeName="opacity"
+                                            values="0;0;0.8;0.8;0"
+                                            dur="2.9s"
+                                            begin="1.8s"
+                                            repeatCount="indefinite"/>
+                                    </rect>
+                                    <circle cx="156" cy="705" r="15" transform="rotate(90 156 705)" fill="#2866F7" fill-opacity="0.18"/>
+                                    <circle cx="156" cy="705" r="6" fill="#2866F7" class="scintillate-delay-6"/>
+                                    <circle cx="308" cy="705" r="4" transform="rotate(90 308 705)" fill="#2866F7"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="aviation-strategic-column aviation-strategic-right">
+                            <!-- SLA Enforcement -->
+                            <div class="aviation-strategic-item">
+                                <div class="aviation-strategic-content">
+                                    <h4 class="aviation-strategic-item-title">SLA Enforcement</h4>
+                                    <p class="aviation-strategic-description">
+                                        Use tail-specific, route-linked data to benchmark and negotiate with connectivity vendors — supported by real-time evidence from high-traffic routes.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Customer Experience -->
+                            <div class="aviation-strategic-item">
+                                <div class="aviation-strategic-content">
+                                    <h4 class="aviation-strategic-item-title">Customer Experience</h4>
+                                    <p class="aviation-strategic-description">
+                                        Support brand promise with verifiable QoE improvements and faster complaint resolution — reducing service credits and increasing retention.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Vendor Strategy Alignment -->
+                            <div class="aviation-strategic-item">
+                                <div class="aviation-strategic-content">
+                                    <h4 class="aviation-strategic-item-title">Vendor Strategy Alignment</h4>
+                                    <p class="aviation-strategic-description">
+                                        Build a baseline of performance to guide RFPs, transitions, and future upgrades with trusted, independent data.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
