@@ -19,9 +19,6 @@ get_header(); ?>
         <!-- Features Section -->
         <?php get_template_part('template-parts/features-section'); ?>
         
-        <!-- Inflight Connectivity Section (QoS vs QoE section) -->
-        <?php get_template_part('template-parts/inflight-connectivity-section'); ?>
-        
         <!-- Airline Case Study Section -->
         <?php get_template_part('template-parts/airline-case-study-section'); ?>
 

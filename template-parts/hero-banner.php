@@ -48,7 +48,7 @@
         <!-- Left Content -->
         <div class="hero-content">
             <h1 class="hero-title">
-                Airline Industry Unites to Enhance In-Flight Connectivity Quality
+                The Industry’s Trusted Benchmark for Measuring IFC Experience
             </h1>
             
             <p class="hero-description">
@@ -72,8 +72,8 @@
             <div class="hero-partners">
                 <span class="partners-label">Powered By</span>
                 <div class="partners-logos">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/globalreach-logo.png" alt="Global Reach Technology" class="partner-logo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/seamless-air-alliance-logo.png" alt="Seamless Air Alliance" class="partner-logo">
+                    <a href="https://globalreachtech.com/" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/globalreach-logo.png" alt="Global Reach Technology" ></a>
+                    <a href="https://www.seamlessalliance.com/" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/seamless-air-alliance-logo.png" alt="Seamless Air Alliance"></a>
                 </div>
             </div>
         </div>

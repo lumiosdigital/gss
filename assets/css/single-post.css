@@ -483,7 +483,7 @@
     }
 }
 
-.back-to-news-link:focus {
+/* .back-to-news-link:focus {
     outline: 2px solid var(--color-brand);
     outline-offset: 2px;
-}
+} */

@@ -62,7 +62,8 @@ get_header(); ?>
                         <div class="aviation-text-section">
                             <h2 class="aviation-section-title">Tail-Level Intelligence Brings Visibility to Every Aircraft</h2>
                             <div class="aviation-section-content">
-                                <p>Imagine zooming in on each aircraft as it travels across the globe—seeing not only where it's flying, but how it's performing. Viper makes this possible by integrating with FlightAware tail number data, transforming every tail into a traceable digital signature of inflight experience.</p>
+                                <p>Full-Fleet Visibility. Tail-Level Precision.
+                                Viper goes beyond basic monitoring—giving you the power to see, map, and manage connectivity performance down to each individual aircraft. Every flight becomes a traceable digital record of the passenger experience, enabling smarter decisions and faster fixes.</p>
                             </div>
                         </div>
 
@@ -183,7 +184,7 @@ get_header(); ?>
                         </div>
 
                         <!-- Fleet-Wide Impact Table -->
-                        <div class="aviation-impact-section">
+                        <!-- <div class="aviation-impact-section">
                             <h3 class="aviation-impact-title">Fleet-Wide Aggregated Viper Impact</h3>
                             
                             <div class="aviation-impact-table-wrapper">
@@ -224,7 +225,7 @@ get_header(); ?>
                             </div>
                             
                             <p class="aviation-table-note">These results are based on ~150 long-haul aircraft operating ~1.2 flights/day with 260 passengers per flight and 20 QoE/QoS test samples per flight.</p>
-                        </div>
+                        </div> -->
 
                         <!-- Strategic Takeaways Section -->
                         <div class="aviation-strategic-section">

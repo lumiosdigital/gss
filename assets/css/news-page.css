@@ -503,7 +503,7 @@
     }
 }
 
-.news-card:focus-within {
+/* .news-card:focus-within {
     outline: 2px solid var(--color-brand);
     outline-offset: 2px;
 }
@@ -512,4 +512,4 @@
 .load-more-btn:focus {
     outline: 2px solid var(--color-brand);
     outline-offset: 2px;
-}
+} */

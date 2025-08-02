@@ -12,7 +12,7 @@
             Actionable Intelligence for Every Flight, Every Device, Every Passenger.
         </h2>
         <p class="features-description">
-            Viper can be deployed without hardware or through crew devices, airline apps, and other methods adapting to meet the needs of your fleet.
+            Viper can be deployed without hardware or through crew devices, airline apps, and other methods adapting to meet the needs of your fleet and passengers.
         </p>
     </div>
     

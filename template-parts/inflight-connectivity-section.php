@@ -96,7 +96,7 @@
                     
                     <p class="matters-intro">
                         Airlines often find themselves stuck—providers say the network is "meeting the SLA" (based on QoS),
-                        while passengers report a poor experience (QoE). VIPER bridges this gap.
+                        while passengers report a poor experience (QoE). Viper bridges this gap.
                     </p>
 
                     <div class="matters-content-grid">
@@ -104,7 +104,7 @@
                         <div class="matters-text">
                             <p class="matters-description">
                                 By combining network performance metrics (QoS) with passenger-
-                                centric performance data (QoE), VIPER delivers a complete,
+                                centric performance data (QoE), Viper delivers a complete,
                                 transparent view of IFC quality. This empowers airlines to:
                             </p>
                             

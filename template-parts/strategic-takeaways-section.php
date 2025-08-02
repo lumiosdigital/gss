@@ -6,15 +6,15 @@
 
 <section class="strategic-takeaways-section">
     <div class="strategic-takeaways-container">
-        <h2 class="strategic-takeaways-title">
+        <!-- <h2 class="strategic-takeaways-title">
             Strategic Takeaways<br>
             for Airlines
         </h2>
 
         <div class="strategic-takeaways-grid">
-            <!-- Left Column -->
+
             <div class="strategic-column strategic-column-left">
-                <!-- Operational Confidence -->
+
                 <div class="strategic-takeaway-item">
                     <div class="strategic-takeaway-content">
                         <h3 class="strategic-takeaway-title">Operational Confidence</h3>
@@ -24,7 +24,6 @@
                     </div>
                 </div>
 
-                <!-- Engineering Efficiency -->
                 <div class="strategic-takeaway-item">
                     <div class="strategic-takeaway-content">
                         <h3 class="strategic-takeaway-title">Engineering Efficiency</h3>
@@ -34,7 +33,6 @@
                     </div>
                 </div>
 
-                <!-- Performance Transparency -->
                 <div class="strategic-takeaway-item">
                     <div class="strategic-takeaway-content">
                         <h3 class="strategic-takeaway-title">Performance Transparency</h3>
@@ -45,15 +43,14 @@
                 </div>
             </div>
 
-            <!-- Middle Column - SVG Timeline -->
             <div class="strategic-column strategic-column-middle">
                 <div class="strategic-timeline-svg">
                     <svg width="312" height="720" viewBox="0 0 312 720" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M156 31L156 709" stroke="#E0EAF8" stroke-width="1.5" stroke-dasharray="4 4"/>
                         
-                        <!-- Connection Point 1 -->
+       
                         <line x1="7" y1="15.5" x2="156" y2="15.5" stroke="#E0EAF8"/>
-                        <!-- Moving rectangle along line 1 -->
+          
                         <rect x="152" y="14.5" width="8" height="2" rx="1" fill="#2866F7" opacity="0">
                             <animateTransform
                                 attributeName="transform"
@@ -71,9 +68,9 @@
                         <circle cx="156" cy="15" r="6" fill="#2866F7" class="scintillate-delay-1"/>
                         <circle cx="4" cy="15" r="4" transform="rotate(-90 4 15)" fill="#2866F7"/>
                         
-                        <!-- Connection Point 2 -->
+
                         <line x1="7" y1="289.5" x2="156" y2="289.5" stroke="#E0EAF8"/>
-                        <!-- Moving rectangle along line 2 -->
+ 
                         <rect x="150" y="288.5" width="6" height="2" rx="1" fill="#2866F7" opacity="0">
                             <animateTransform
                                 attributeName="transform"
@@ -93,9 +90,9 @@
                         <circle cx="156" cy="289" r="6" fill="#2866F7" class="scintillate-delay-2"/>
                         <circle cx="4" cy="289" r="4" transform="rotate(-90 4 289)" fill="#2866F7"/>
                         
-                        <!-- Connection Point 3 -->
+     
                         <line x1="305" y1="151.499" x2="156" y2="151.499" stroke="#E0EAF8"/>
-                        <!-- Moving rectangle along line 3 -->
+        
                         <rect x="156" y="150.5" width="9" height="2" rx="1" fill="#2866F7" opacity="0">
                             <animateTransform
                                 attributeName="transform"
@@ -115,9 +112,9 @@
                         <circle cx="156" cy="152" r="4" fill="#2866F7" class="scintillate-delay-3"/>
                         <circle cx="308" cy="152" r="4" transform="rotate(90 308 152)" fill="#2866F7"/>
                         
-                        <!-- Connection Point 4 -->
+                      
                         <line x1="305" y1="425.499" x2="156" y2="425.499" stroke="#E0EAF8"/>
-                        <!-- Moving rectangle along line 4 -->
+                        
                         <rect x="156" y="424.5" width="5" height="2" rx="1" fill="#2866F7" opacity="0">
                             <animateTransform
                                 attributeName="transform"
@@ -137,9 +134,9 @@
                         <circle cx="156" cy="426" r="4" fill="#2866F7" class="scintillate-delay-4"/>
                         <circle cx="308" cy="426" r="4" transform="rotate(90 308 426)" fill="#2866F7"/>
                         
-                        <!-- Connection Point 5 -->
+             
                         <line x1="7" y1="564.5" x2="156" y2="564.5" stroke="#E0EAF8"/>
-                        <!-- Moving rectangle along line 5 -->
+           
                         <rect x="149" y="563.5" width="7" height="2" rx="1" fill="#2866F7" opacity="0">
                             <animateTransform
                                 attributeName="transform"
@@ -159,9 +156,9 @@
                         <circle cx="157" cy="564" r="8" fill="#2866F7" class="scintillate-delay-5"/>
                         <circle cx="4" cy="565" r="4" transform="rotate(-90 4 565)" fill="#2866F7"/>
                         
-                        <!-- Connection Point 6 -->
+                        
                         <line x1="305" y1="704.5" x2="156" y2="704.5" stroke="#E0EAF8"/>
-                        <!-- Moving rectangle along line 6 -->
+              
                         <rect x="156" y="703.5" width="6" height="2" rx="1" fill="#2866F7" opacity="0">
                             <animateTransform
                                 attributeName="transform"
@@ -184,9 +181,9 @@
                 </div>
             </div>
 
-            <!-- Right Column -->
+
             <div class="strategic-column strategic-column-right">
-                <!-- SLA Enforcement -->
+          
                 <div class="strategic-takeaway-item">
                     <div class="strategic-takeaway-content">
                         <h3 class="strategic-takeaway-title">SLA Enforcement</h3>
@@ -196,7 +193,7 @@
                     </div>
                 </div>
 
-                <!-- Customer Experience -->
+ 
                 <div class="strategic-takeaway-item">
                     <div class="strategic-takeaway-content">
                         <h3 class="strategic-takeaway-title">Customer Experience</h3>
@@ -206,7 +203,7 @@
                     </div>
                 </div>
 
-                <!-- Vendor Strategy Alignment -->
+   
                 <div class="strategic-takeaway-item">
                     <div class="strategic-takeaway-content">
                         <h3 class="strategic-takeaway-title">Vendor Strategy Alignment</h3>
@@ -216,7 +213,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Bottom Description -->
         <div class="strategic-bottom-description">

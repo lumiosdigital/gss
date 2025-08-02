@@ -11,14 +11,21 @@
         <div class="case-study-header">
             <div class="case-study-title-column">
                 <h2 class="case-study-title">
-                    Airline<br>
-                    Case Study
+                    Why Viper?
                 </h2>
             </div>
             
             <div class="case-study-content-column">
                 <div class="case-study-description">
-                    <p>On a red-eye flight from Calgary to Halifax, a passenger attempting to finish a business proposal encountered repeated timeouts while trying to access cloud-based documents. Despite the system indicating connectivity was available, the experience was frustratingly slow, with long delays in opening simple files. Cabin crew confirmed similar reports from other guests, but had no way to diagnose or escalate the issue. With Viper integrated, our Airline would have had real-time visibility into application-level performance from the passenger perspective—identifying degraded throughput over eastern Canada and highlighting a pattern specific to that aircraft's modem configuration. The passenger experience could have been preserved, and the fix proactively applied across similar tails.</p>
+                    <h4>Viper makes the invisible visible.</h4>
+                    <p>Connectivity issues often go undetected by traditional systems. Viper surfaces the root causes that others overlook, like antenna alignment problems, degraded signal strength, or intermittent interference, giving airlines and service providers the clarity they need to take targeted action.</p>
+                    <p>Without Viper, underperformance remains hidden. With it, you get data-backed visibility to identify which aircraft are struggling and why.</p>
+                    <h4>From Data to Action </h4>
+                    <p>Insights that drive improvement.</p>
+                    <p>Viper doesn’t fix the system, it reveals where and why it’s failing. This allows teams to move beyond guesswork and focus their efforts on areas that matter most. It’s not about assuming the modem is misbehaving, it’s uncovering less obvious but critical issues like bad beams or noise-floor interference that only surface under certain conditions.</p>
+                    <h4>More Than Monitoring</h4>
+                    <p>Better awareness. Better action. Better outcomes.</p>
+                    <p>The real value of Viper isn’t just in tracking performance, it’s in enabling change. While fewer complaints aren’t guaranteed by data alone, they become a natural outcome when Viper insights lead to real improvements. Without Viper, problems persist. With Viper, status quo ends and better passenger experience begins.</p>
                     
                     <p>By aggregating performance data across the Airline's full connected fleet using Viper, the airline unlocks powerful operational and strategic benefits. Below is a summary of impact based on their estimated long-haul activity:</p>
                 </div>
