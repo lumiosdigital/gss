@@ -65,6 +65,9 @@ get_header(); ?>
                         <!-- News Card -->
                         <article class="news-card">
                             
+                            <!-- Card Clickable Overlay -->
+                            <a href="<?php the_permalink(); ?>" class="news-card-link-overlay" aria-label="Read article: <?php the_title_attribute(); ?>"></a>
+                            
                             <!-- Featured Image (if available) -->
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="news-card-image">

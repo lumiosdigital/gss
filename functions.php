@@ -194,6 +194,9 @@ function gss_load_more_posts() {
             <!-- News Card -->
             <article class="news-card">
                 
+                <!-- Card Clickable Overlay -->
+                <a href="<?php the_permalink(); ?>" class="news-card-link-overlay" aria-label="Read article: <?php the_title_attribute(); ?>"></a>
+                
                 <!-- Featured Image (if available) -->
                 <?php if (has_post_thumbnail()) : ?>
                     <div class="news-card-image">
@@ -204,25 +207,27 @@ function gss_load_more_posts() {
                 <?php endif; ?>
                 
                 <div class="news-card-content">
-                    <!-- Date -->
-                    <div class="news-card-date">
-                        <?php echo get_the_date('M j, Y'); ?>
-                    </div>
-                    
-                    <!-- Title -->
-                    <h3 class="news-card-title">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </h3>
-                    
-                    <!-- Excerpt -->
-                    <div class="news-card-excerpt">
-                        <?php 
-                        if (has_excerpt()) {
-                            echo wp_trim_words(get_the_excerpt(), 25, '...');
-                        } else {
-                            echo wp_trim_words(get_the_content(), 25, '...');
-                        }
-                        ?>
+                    <div class="news-card-main-content">
+                        <!-- Date -->
+                        <div class="news-card-date">
+                            <?php echo get_the_date('M j, Y'); ?>
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="news-card-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </h3>
+                        
+                        <!-- Excerpt -->
+                        <div class="news-card-excerpt">
+                            <?php 
+                            if (has_excerpt()) {
+                                echo wp_trim_words(get_the_excerpt(), 25, '...');
+                            } else {
+                                echo wp_trim_words(get_the_content(), 25, '...');
+                            }
+                            ?>
+                        </div>
                     </div>
                     
                     <!-- Read More Link -->

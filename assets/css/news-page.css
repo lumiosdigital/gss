@@ -70,12 +70,12 @@
 */
 
 .news-header {
-    padding: var(--spacing-xl) 0 var(--spacing-4xl);
-    text-align: center;
+    padding: 0 0 var(--spacing-3xl);
+    text-align: left;
 }
 
 .news-title {
-    font-size: 2.75rem;
+    font-size: 50px;
     /* 44px */
     font-weight: var(--font-weight-semibold);
     color: var(--color-text-primary);
@@ -100,7 +100,7 @@
     gap: 1rem;
     max-width: 1340px;
     margin: 0 auto;
-    padding: 0 var(--spacing-2xl);
+    /* padding: 0 var(--spacing-2xl); */
 }
 
 /*
@@ -189,8 +189,8 @@
 
     /* Limit to 3 lines but allow flexible height */
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
     /* Standard property for compatibility */
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -225,8 +225,8 @@
 
     /* Limit to 3-4 lines */
     display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
     /* Standard property for compatibility */
     -webkit-box-orient: vertical;
     overflow: hidden;
