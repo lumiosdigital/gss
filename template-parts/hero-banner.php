@@ -64,7 +64,7 @@
                         </svg>
                     </span>
                 </a>
-                <a href="#" class="btn-secondary">
+                <a href="#case-study" class="btn-secondary">
                     Case Study
                 </a>
             </div>
@@ -72,8 +72,8 @@
             <div class="hero-partners">
                 <span class="partners-label">Powered By</span>
                 <div class="partners-logos">
-                    <a href="https://globalreachtech.com/" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/globalreach-logo.png" alt="Global Reach Technology" ></a>
-                    <a href="https://www.seamlessalliance.com/" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/seamless-air-alliance-logo.png" alt="Seamless Air Alliance"></a>
+                    <a href="https://globalreachtech.com/" target="_blank" rel="noopener noreferrer" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/globalreach-logo.png" alt="Global Reach Technology" ></a>
+                    <a href="https://www.seamlessalliance.com/" target="_blank" rel="noopener noreferrer" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/seamless-air-alliance-logo.png" alt="Seamless Air Alliance"></a>
                 </div>
             </div>
         </div>

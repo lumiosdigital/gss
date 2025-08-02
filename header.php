@@ -69,7 +69,7 @@
                     
                     <!-- Mobile CTA Button - Always Present -->
                     <div class="mobile-cta">
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>" class="cta-button">
+                        <a href="https://calendly.com/gsandridge-satqoe" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Schedule a Discovery Call
                         </a>
                     </div>
@@ -79,7 +79,7 @@
 
             <!-- CTA Button - Right -->
             <div class="header-cta">
-                <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>" class="cta-button">
+                <a href="https://calendly.com/gsandridge-satqoe" target="_blank" rel="noopener noreferrer" class="cta-button">
                     Schedule a Discovery Call
                 </a>
             </div>

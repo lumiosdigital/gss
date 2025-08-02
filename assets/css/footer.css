@@ -53,6 +53,7 @@
     flex-shrink: 0;
     width: 64px;
     height: 47px;
+    margin-bottom: var(--spacing-lg);
 }
 
 .footer-description {

@@ -4,7 +4,7 @@
  */
 ?>
 
-<section class="airline-case-study-section">
+<section class="airline-case-study-section" id="case-study">
     <div class="airline-case-study-container">
         
         <!-- Main Header with Title and Description -->
