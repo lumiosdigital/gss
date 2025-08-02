@@ -121,6 +121,12 @@ function gss_scripts() {
     // Contact page stylesheet
     wp_enqueue_style('gss-contact-page', get_template_directory_uri() . '/assets/css/contact-page.css', array('gss-main'), '1.0.0');
 
+    // News page stylesheet
+    wp_enqueue_style('gss-news-page', get_template_directory_uri() . '/assets/css/news-page.css', array('gss-main'), '1.0.0');
+
+    // Single post stylesheet
+    wp_enqueue_style('gss-single-post', get_template_directory_uri() . '/assets/css/single-post.css', array('gss-main'), '1.0.0');
+
     // Main JavaScript file
     wp_enqueue_script('gss-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0.0', true);
     
@@ -139,6 +145,118 @@ function gss_scripts() {
     }
 }
 add_action('wp_enqueue_scripts', 'gss_scripts');
+
+/**
+ * Enqueue news page scripts and localize AJAX
+ */
+function gss_enqueue_news_scripts() {
+    // Only load on news page or post-related pages
+    if (is_page('news') || is_page_template('page-news.php') || is_home() || is_category() || is_tag() || is_single()) {
+        wp_enqueue_script('gss-news-page', get_template_directory_uri() . '/assets/js/news-page.js', array('jquery'), '1.0.0', true);
+        
+        // Localize script for AJAX
+        wp_localize_script('gss-news-page', 'ajax_object', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('load_more_posts_nonce')
+        ));
+    }
+}
+add_action('wp_enqueue_scripts', 'gss_enqueue_news_scripts');
+
+/**
+ * AJAX handler for loading more posts
+ */
+function gss_load_more_posts() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'load_more_posts_nonce')) {
+        wp_die('Security check failed');
+    }
+    
+    $page = intval($_POST['page']);
+    
+    // Query for posts
+    $news_query = new WP_Query(array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'posts_per_page' => 12,
+        'paged' => $page,
+        'orderby' => 'date',
+        'order' => 'DESC'
+    ));
+    
+    $html = '';
+    
+    if ($news_query->have_posts()) {
+        ob_start(); // Start output buffering
+        
+        while ($news_query->have_posts()) : $news_query->the_post();
+            ?>
+            <!-- News Card -->
+            <article class="news-card">
+                
+                <!-- Featured Image (if available) -->
+                <?php if (has_post_thumbnail()) : ?>
+                    <div class="news-card-image">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail('medium', array('class' => 'news-thumbnail')); ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
+                
+                <div class="news-card-content">
+                    <!-- Date -->
+                    <div class="news-card-date">
+                        <?php echo get_the_date('M j, Y'); ?>
+                    </div>
+                    
+                    <!-- Title -->
+                    <h3 class="news-card-title">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h3>
+                    
+                    <!-- Excerpt -->
+                    <div class="news-card-excerpt">
+                        <?php 
+                        if (has_excerpt()) {
+                            echo wp_trim_words(get_the_excerpt(), 25, '...');
+                        } else {
+                            echo wp_trim_words(get_the_content(), 25, '...');
+                        }
+                        ?>
+                    </div>
+                    
+                    <!-- Read More Link -->
+                    <div class="news-card-link">
+                        <a href="<?php the_permalink(); ?>" class="read-more-link">
+                            <span>Read More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none">
+                                <path d="M0.999507 7.50012L15.1414 7.49985M15.1414 7.49985L10.0027 2.36114M15.1414 7.49985L10.0027 12.6386" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <?php
+        endwhile;
+        
+        $html = ob_get_clean(); // Get the buffered content
+        wp_reset_postdata();
+        
+        wp_send_json_success(array(
+            'html' => $html,
+            'max_pages' => $news_query->max_num_pages,
+            'current_page' => $page
+        ));
+    } else {
+        wp_send_json_error(array(
+            'message' => 'No more posts found'
+        ));
+    }
+}
+
+// Hook for both logged-in and non-logged-in users
+add_action('wp_ajax_load_more_posts', 'gss_load_more_posts');
+add_action('wp_ajax_nopriv_load_more_posts', 'gss_load_more_posts');
 
 /**
  * Custom template tags for this theme
@@ -240,3 +358,89 @@ function gss_footer_fallback_menu() {
     echo '<li><a href="' . esc_url(home_url('/news')) . '">News</a></li>';
     echo '</ul>';
 }
+
+/**
+ * Add news page specific body class
+ */
+function gss_news_page_body_class($classes) {
+    if (is_page('news') || is_page_template('page-news.php')) {
+        $classes[] = 'news-page';
+    }
+    if (is_single()) {
+        $classes[] = 'single-post-page';
+    }
+    return $classes;
+}
+add_filter('body_class', 'gss_news_page_body_class');
+
+/**
+ * Ensure WordPress creates news page if it doesn't exist
+ */
+function gss_create_news_page() {
+    // Check if news page exists
+    $news_page = get_page_by_path('news');
+    
+    if (!$news_page) {
+        // Create news page
+        $page_data = array(
+            'post_title' => 'News',
+            'post_content' => 'This page displays all news articles and updates from Global Satellite Solutions.',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_name' => 'news',
+            'page_template' => 'page-news.php'
+        );
+        
+        $page_id = wp_insert_post($page_data);
+        
+        if ($page_id) {
+            // Set the page template
+            update_post_meta($page_id, '_wp_page_template', 'page-news.php');
+        }
+    }
+}
+add_action('after_setup_theme', 'gss_create_news_page');
+
+/**
+ * Add custom meta fields for posts (optional)
+ */
+function gss_add_post_meta_boxes() {
+    add_meta_box(
+        'gss_post_settings',
+        'Post Display Settings',
+        'gss_post_settings_callback',
+        'post',
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'gss_add_post_meta_boxes');
+
+function gss_post_settings_callback($post) {
+    wp_nonce_field('gss_save_post_settings', 'gss_post_settings_nonce');
+    
+    $featured_on_homepage = get_post_meta($post->ID, '_featured_on_homepage', true);
+    
+    echo '<label for="featured_on_homepage">';
+    echo '<input type="checkbox" id="featured_on_homepage" name="featured_on_homepage" value="1" ' . checked(1, $featured_on_homepage, false) . '>';
+    echo ' Feature this post on homepage';
+    echo '</label>';
+}
+
+function gss_save_post_settings($post_id) {
+    if (!isset($_POST['gss_post_settings_nonce']) || !wp_verify_nonce($_POST['gss_post_settings_nonce'], 'gss_save_post_settings')) {
+        return;
+    }
+    
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    
+    $featured_on_homepage = isset($_POST['featured_on_homepage']) ? 1 : 0;
+    update_post_meta($post_id, '_featured_on_homepage', $featured_on_homepage);
+}
+add_action('save_post', 'gss_save_post_settings');
