@@ -144,7 +144,7 @@ body.page-template-page-telecom {
     color: var(--color-dark-navy);
     opacity: 0.7;
     margin-bottom: var(--spacing-md);
-    text-align: left;
+    text-align: center;
 }
 
 .telecom-section-content p:last-child {
@@ -344,8 +344,16 @@ body.page-template-page-telecom {
     background: linear-gradient(81deg, #FFF 76.31%, #E0F4FC 101.75%);
     border: 1px solid #e0eaf8;
     border-radius: 10px;
-    padding: var(--spacing-xl);
-    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-xl) 5rem var(--spacing-xl) 2.5rem;
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: var(--spacing-md); */
+}
+
+.telecom-backhaul-list {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
@@ -401,7 +409,7 @@ body.page-template-page-telecom {
     overflow: hidden;
     border: 1px solid #e0eaf8;
     background: var(--color-white);
-    margin: var(--spacing-lg) 0;
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
 }
 
 .telecom-table-header {
@@ -769,7 +777,7 @@ body.page-template-page-telecom {
         font-size: var(--font-size-base);
         line-height: 1.6;
         margin-bottom: var(--spacing-lg);
-        text-align: left;
+        text-align: center;
     }
 
     .telecom-feature-item {

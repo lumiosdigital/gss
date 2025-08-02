@@ -174,26 +174,29 @@ get_header(); ?>
                             </div>
                             
                             <div class="telecom-backhaul-features">
-                                <div class="telecom-backhaul-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
-                                        <path d="M0.998107 6.09979L11.1974 6.0996M11.1974 6.0996L7.49129 2.3935M11.1974 6.0996L7.4913 9.8057" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
-                                        </svg>
-                                    <span>Audit satellite links with real performance logs</span>
+                                <div class="telecom-backhaul-list">
+                                    <div class="telecom-backhaul-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
+                                            <path d="M0.998107 6.09979L11.1974 6.0996M11.1974 6.0996L7.49129 2.3935M11.1974 6.0996L7.4913 9.8057" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
+                                            </svg>
+                                        <span>Audit satellite links with real performance logs</span>
+                                    </div>
+                                    
+                                    <div class="telecom-backhaul-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
+                                            <path d="M0.998107 6.09979L11.1974 6.0996M11.1974 6.0996L7.49129 2.3935M11.1974 6.0996L7.4913 9.8057" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
+                                            </svg>
+                                        <span>Validate latency, jitter, and throughput</span>
+                                    </div>
+                                    
+                                    <div class="telecom-backhaul-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
+                                            <path d="M0.998107 6.09979L11.1974 6.0996M11.1974 6.0996L7.49129 2.3935M11.1974 6.0996L7.4913 9.8057" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
+                                            </svg>
+                                        <span>Prove uptime to internal stakeholders or regulators</span>
+                                    </div>
                                 </div>
-                                
-                                <div class="telecom-backhaul-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
-                                        <path d="M0.998107 6.09979L11.1974 6.0996M11.1974 6.0996L7.49129 2.3935M11.1974 6.0996L7.4913 9.8057" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
-                                        </svg>
-                                    <span>Validate latency, jitter, and throughput</span>
-                                </div>
-                                
-                                <div class="telecom-backhaul-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
-                                        <path d="M0.998107 6.09979L11.1974 6.0996M11.1974 6.0996L7.49129 2.3935M11.1974 6.0996L7.4913 9.8057" stroke="#155BFF" stroke-width="2" stroke-linecap="square"/>
-                                        </svg>
-                                    <span>Prove uptime to internal stakeholders or regulators</span>
-                                </div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/antenna-backhaul.svg">
                             </div>
                             
                             <p class="telecom-why-matters">

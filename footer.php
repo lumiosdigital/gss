@@ -91,8 +91,6 @@
                                 <li><a href="<?php echo esc_url(home_url('/terms-of-service')); ?>">Terms of Service</a></li>
                                 <li><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a></li>
                                 <li><a href="<?php echo esc_url(home_url('/cookies-policy')); ?>">Cookies Policy</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/careers')); ?>">Careers</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/contact')); ?>">Contact Us</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -141,7 +139,7 @@
                     <div class="footer-contact-info">
                         <p class="footer-contact-label">Get in Touch:</p>
                         <a href="mailto:info@globalsatellitesolutions.com" class="footer-contact-email">
-                            info@globalsatellitesolutions.com
+                            info@satqoe.com
                         </a>
                     </div>
                 </div>
