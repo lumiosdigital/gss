@@ -315,9 +315,9 @@
 }
 
 .benefits-table-content {
-    /* background: var(--color-white); */
-    /* border-radius: 10px; */
-    /* border: 1px solid #e0eaf8; */
+    background: var(--color-white);
+    border-radius: 10px;
+    border: 1px solid #e0eaf8;
     overflow: hidden;
 }
 
