@@ -1,0 +1,592 @@
+/*
+===========================================
+   ENHANCED VIPER MODAL FORM STYLES
+===========================================
+*/
+
+/* Modal Overlay */
+.viper-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.61);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.viper-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Container */
+.viper-modal {
+    background: #f7f9fe;
+    border-radius: 20px;
+    width: 950px;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow: hidden;
+    box-shadow: 0px -6px 104px 0px rgba(0, 0, 0, 0.05);
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.viper-modal-overlay.active .viper-modal {
+    transform: translateY(0) scale(1);
+}
+
+/* Close Button */
+.viper-modal-close {
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.viper-modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.viper-modal-close:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Header Section */
+.viper-modal-header {
+    background: #155bff;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../images/form-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viper-modal-title {
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-bold);
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    line-height: 1.1;
+    letter-spacing: -0.64px;
+    z-index: 2;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Section */
+.viper-modal-content {
+    padding: 7rem 60px 7rem;
+    overflow-y: auto;
+    max-height: calc(95vh - 160px);
+}
+
+.viper-modal-subtitle {
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    font-size: 18px;
+    color: var(--color-text-primary);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: -0.18px;
+    margin-bottom: 40px;
+}
+
+/* Form Layout */
+.viper-form-grid {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.viper-form-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.viper-form-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Form Fields */
+.viper-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.viper-field-label {
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: -0.28px;
+}
+
+.viper-field-required {
+    color: #ff4444;
+}
+
+.viper-field-wrapper {
+    background: #ffffff;
+    border: 1px solid #e0eaf8;
+    border-radius: 10px;
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.viper-field-wrapper:focus-within {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 3px rgba(21, 91, 255, 0.1);
+}
+
+.viper-field-wrapper.textarea-wrapper {
+    height: auto;
+    min-height: 240px;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+/* Error States */
+.viper-field-wrapper:has(.viper-field-input.error) {
+    border-color: #ff4444;
+}
+
+.viper-field-input.error {
+    color: #ff4444;
+}
+
+.viper-field-error {
+    font-family: var(--font-family-primary);
+    font-size: 12px;
+    color: #ff4444;
+    margin-top: 4px;
+    min-height: 16px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 0.2s ease;
+}
+
+.viper-field-error:not(:empty) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.viper-field-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.viper-field-input {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    font-size: 16px;
+    color: var(--color-text-primary);
+    letter-spacing: -0.16px;
+    flex: 1;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.viper-field-input::placeholder {
+    opacity: 0.5;
+    color: var(--color-text-primary);
+}
+
+.viper-field-textarea {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    font-size: 16px;
+    color: var(--color-text-primary);
+    letter-spacing: -0.16px;
+    flex: 1;
+    resize: none;
+    line-height: 1.4;
+    min-height: 200px;
+}
+
+.viper-field-textarea::placeholder {
+    opacity: 0.5;
+    color: var(--color-text-primary);
+}
+
+/* Submit Button - Match Hero Banner Style Exactly */
+.viper-submit-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.viper-submit-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    gap: 0;
+    cursor: pointer;
+}
+
+.viper-submit-button:hover {
+    transform: translateY(-2px);
+}
+
+.viper-submit-button:focus {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+}
+
+.viper-submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.viper-submit-button:disabled:hover {
+    transform: none;
+}
+
+.viper-submit-button .btn-text {
+    background: var(--color-viper-green);
+    color: var(--color-dark-navy);
+    padding: var(--spacing-md) var(--spacing-2xl);
+    border-radius: var(--border-radius-full);
+    font-weight: var(--font-weight-semibold);
+    transition: var(--transition-normal);
+}
+
+.viper-submit-button .btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--color-viper-green);
+    border-radius: 50%;
+    font-size: var(--font-size-lg);
+    color: var(--color-dark-navy);
+    transition: var(--transition-normal);
+}
+
+.viper-submit-button:hover .btn-text {
+    background: #9FE63A;
+}
+
+.viper-submit-button:hover .btn-arrow {
+    background: #9FE63A;
+    transform: translateX(4px);
+}
+
+.viper-submit-arrow {
+    width: 20px;
+    height: 20px;
+    background: var(--color-dark-navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.viper-submit-button:hover .viper-submit-arrow {
+    transform: rotate(45deg);
+}
+
+/* Terms Text */
+.viper-terms-text {
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    font-size: 14px;
+    color: rgba(9, 16, 38, 0.7);
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: -0.28px;
+}
+
+.viper-terms-link {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-brand);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.viper-terms-link:hover {
+    text-decoration: underline;
+    color: var(--color-brand-dark);
+}
+
+/* Separator Line */
+.viper-separator {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e0eaf8, transparent);
+    margin: 30px 0 20px;
+}
+
+/* Loading State */
+.viper-submit-button.loading {
+    position: relative;
+}
+
+.viper-submit-button.loading span {
+    opacity: 0.7;
+}
+
+.viper-submit-button.loading::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-dark-navy);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: viperSpin 1s linear infinite;
+}
+
+@keyframes viperSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success/Error Messages */
+.viper-message {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-family: var(--font-family-primary);
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: viperMessageSlideIn 0.3s ease forwards;
+}
+
+@keyframes viperMessageSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.viper-message.success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.viper-message.success::before {
+    content: '✓';
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.viper-message.error {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.viper-message.error::before {
+    content: '⚠';
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Form Animation */
+.viper-form-grid {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: viperFormSlideIn 0.5s ease 0.2s forwards;
+}
+
+@keyframes viperFormSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Focus Indicators */
+.viper-field-input:focus,
+.viper-field-textarea:focus {
+    box-shadow: none;
+    /* Remove default browser focus */
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+
+    .viper-modal-overlay,
+    .viper-modal,
+    .viper-submit-button,
+    .viper-message,
+    .viper-form-grid {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .viper-field-wrapper {
+        border-width: 2px;
+    }
+
+    .viper-field-wrapper:focus-within {
+        border-width: 3px;
+    }
+
+    .viper-submit-button {
+        border: 2px solid var(--color-dark-navy);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .viper-modal {
+        width: 90vw;
+        margin: 20px;
+    }
+
+    .viper-form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .viper-modal-content {
+        padding: 30px 40px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .viper-modal {
+        width: 95vw;
+        margin: 10px;
+        max-height: 90vh;
+    }
+
+    .viper-modal-content {
+        padding: 20px 30px 30px;
+    }
+
+    .viper-modal-title {
+        font-size: 24px;
+    }
+
+    .viper-modal-subtitle {
+        font-size: 16px;
+    }
+
+    .viper-field-wrapper.textarea-wrapper {
+        min-height: 150px;
+    }
+
+    .viper-submit-button {
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .viper-submit-button .btn-text {
+        padding: 14px 30px;
+        font-size: 14px;
+    }
+
+    .viper-submit-button .btn-arrow {
+        width: 48px;
+        height: 48px;
+    }
+
+    .viper-form-left {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .viper-modal-header {
+        height: 120px;
+    }
+
+    .viper-modal-title {
+        font-size: 20px;
+        padding: 0 20px;
+    }
+
+    .viper-modal-content {
+        padding: 20px;
+    }
+
+    .viper-submit-button {
+        padding: 14px 30px;
+        font-size: 14px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .viper-modal-overlay {
+        display: none !important;
+    }
+}
