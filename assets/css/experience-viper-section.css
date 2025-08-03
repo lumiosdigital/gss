@@ -167,7 +167,7 @@
     }
 
     .experience-viper-container {
-        padding: 0 var(--spacing-md);
+        padding: 0 var(--spacing-md) 125px;
     }
 
     .experience-viper-card {
@@ -189,10 +189,6 @@
 @media (max-width: 768px) {
     .experience-viper-section {
         padding: 0 0 var(--spacing-2xl);
-    }
-
-    .world-background {
-        min-width: 800px;
     }
 
     .world-background-image {

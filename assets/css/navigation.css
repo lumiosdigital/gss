@@ -347,7 +347,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
-        margin-bottom: var(--spacing-lg);
+        /* margin-bottom: var(--spacing-lg); */
         width: 100%;
         max-width: 300px;
     }
@@ -372,7 +372,7 @@
     /* Mobile Dropdown */
     .primary-menu .sub-menu {
         position: static;
-        background-color: var(--color-gray-50);
+        /* background-color: var(--color-gray-50); */
         border: none;
         border-radius: 0;
         box-shadow: none;
@@ -393,7 +393,7 @@
 
     .primary-menu .sub-menu a {
         padding: var(--spacing-md) var(--spacing-md);
-        margin-left: var(--spacing-md);
+        margin-left: var(--spacing-sm);
         font-size: var(--font-size-base);
         text-align: left;
     }

@@ -225,7 +225,7 @@
     }
 
     .insights-to-action-content {
-        border-radius: var(--border-radius-xl);
+        border-radius: 30px;
     }
 
     .insights-to-action-header {
@@ -258,7 +258,7 @@
 
     .insights-to-action-content {
         min-height: auto;
-        border-radius: var(--border-radius-lg);
+        border-radius: 30px;
     }
 
     .insights-to-action-title {

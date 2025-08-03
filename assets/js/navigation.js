@@ -10,29 +10,21 @@
         initMobileMenu();
         initDropdownMenus();
         initAccessibility();
-        preventIndustriesClick();
+        preventIndustriesNavigation();
         initHeaderScrollBehavior(); // Enable header scroll behavior
     });
 
     /**
-     * Prevent Industries parent link from being clickable
+     * Prevent navigation to non-existent Industries page
      */
-    function preventIndustriesClick() {
-        // Only prevent clicks on the main Industries link, not sub-items
+    function preventIndustriesNavigation() {
+        // Prevent navigation to /industries page but allow dropdown toggle
         $('.menu-item-has-children > a[href="#"], .menu-item-has-children > a[href*="industries"]').on('click', function(e) {
-            e.preventDefault();
-            return false;
-        });
-        
-        // Handle dropdown toggle spans (non-clickable)
-        $('.menu-item-has-children .dropdown-toggle').on('click', function(e) {
+            // Always prevent navigation to non-existent pages
             e.preventDefault();
             
-            // Toggle dropdown on mobile
-            if ($(window).width() <= 768) {
-                $(this).closest('.menu-item-has-children').toggleClass('menu-open');
-            }
-            
+            // On mobile, the dropdown toggle will be handled by initDropdownMenus()
+            // On desktop, just prevent the navigation (hover handles dropdown)
             return false;
         });
     }
@@ -80,27 +72,56 @@
     function initDropdownMenus() {
         const dropdownItems = $('.menu-item-has-children');
         
-        // Handle mobile dropdown toggles - only for parent items
+        // Handle mobile dropdown toggles
         dropdownItems.each(function() {
             const $this = $(this);
             const $parentLink = $this.children('a, .dropdown-toggle');
             
-            // Add click handler for mobile - only for parent items
+            // Add click handler for mobile dropdown toggle
             $parentLink.on('click', function(e) {
+                // Handle dropdown toggle on mobile
                 if ($(window).width() <= 768) {
-                    // Only prevent default for parent items that don't have real URLs
-                    if ($(this).attr('href') === '#' || $(this).hasClass('dropdown-toggle')) {
+                    // Check if this is a parent item (Industries) that should toggle dropdown
+                    const isParentDropdown = $(this).attr('href') === '#' || 
+                                           $(this).attr('href') === '' || 
+                                           ($(this).attr('href') && $(this).attr('href').includes('industries')) ||
+                                           $(this).hasClass('dropdown-toggle');
+                    
+                    if (isParentDropdown) {
+                        // Always prevent navigation for parent dropdown items
                         e.preventDefault();
+                        e.stopPropagation();
                         
                         // Close other open dropdowns
                         dropdownItems.not($this).removeClass('menu-open');
                         
                         // Toggle current dropdown
                         $this.toggleClass('menu-open');
+                        
+                        return false;
                     }
-                    // Let real links (Aviation, Telecom) work normally
+                    // Let real links (Aviation, Telecom) work normally on mobile
                 }
             });
+        });
+
+        // Handle dropdown toggle spans specifically (from fallback menu)
+        $('.menu-item-has-children .dropdown-toggle').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle dropdown on mobile
+            if ($(window).width() <= 768) {
+                const $parent = $(this).closest('.menu-item-has-children');
+                
+                // Close other open dropdowns
+                dropdownItems.not($parent).removeClass('menu-open');
+                
+                // Toggle current dropdown
+                $parent.toggleClass('menu-open');
+            }
+            
+            return false;
         });
 
         // Desktop hover behavior is handled by CSS
@@ -118,12 +139,17 @@
             const $parentToggle = $this.children('a, .dropdown-toggle');
             const $submenu = $this.children('.sub-menu');
             
-            // Handle Enter key and Space key for dropdown toggles - only for parent items
+            // Handle Enter key and Space key for dropdown toggles
             $parentToggle.on('keydown', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     if ($(window).width() <= 768) {
-                        // Only prevent default for parent items that don't have real URLs
-                        if ($(this).attr('href') === '#' || $(this).hasClass('dropdown-toggle')) {
+                        // Check if this should toggle dropdown
+                        const isParentDropdown = $(this).attr('href') === '#' || 
+                                               $(this).attr('href') === '' || 
+                                               ($(this).attr('href') && $(this).attr('href').includes('industries')) ||
+                                               $(this).hasClass('dropdown-toggle');
+                        
+                        if (isParentDropdown) {
                             e.preventDefault();
                             
                             // Close other open dropdowns
@@ -132,7 +158,7 @@
                             // Toggle current dropdown
                             $this.toggleClass('menu-open');
                         }
-                        // Let real links (Aviation, Telecom) work normally
+                        // Let real links work normally
                     }
                 }
                 
@@ -143,7 +169,7 @@
                 }
             });
             
-            // Handle focus management for submenus - don't prevent clicks here
+            // Handle focus management for submenus
             $submenu.find('a').on('keydown', function(e) {
                 if (e.key === 'Escape') {
                     $this.removeClass('menu-open');

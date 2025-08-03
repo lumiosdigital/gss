@@ -553,6 +553,9 @@
 
     .benefits-table-content {
         display: block;
+        border: none;
+        background: none;
+        border-radius: 0;
     }
 
     .benefits-table-header,
