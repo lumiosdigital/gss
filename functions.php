@@ -550,9 +550,6 @@ function gss_build_viper_email_content($data) {
                         Reply to ' . esc_html($data['full_name'] ?: 'Customer') . '
                     </a>
                 </p>
-                
-                <p><strong>Submitted:</strong> ' . $current_time . '<br>
-                <strong>IP:</strong> ' . esc_html($data['ip_address']) . '</p>
             </div>
         </div>
     </body>
@@ -629,7 +626,7 @@ function gss_viper_submissions_page() {
             echo '<p><strong>Source:</strong> ' . esc_html($submission->source) . '</p>';
             echo '<p><strong>IP Address:</strong> ' . esc_html($submission->ip_address) . '</p>';
             echo '<h3>Notes:</h3>';
-            echo '<div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #0073aa; white-space: pre-wrap;">' . esc_html($submission->notes) . '</div>';
+            echo '<div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #0073aa; white-space: pre-wrap; word-wrap: break-word; word-break: break-word; max-width: 100%; overflow-wrap: break-word;">' . esc_html($submission->notes) . '</div>';
             echo '</div>';
             
             echo '</div>';
@@ -720,7 +717,8 @@ function gss_viper_submissions_page() {
             echo '<td><a href="mailto:' . esc_attr($submission->email) . '">' . esc_html($submission->email) . '</a></td>';
             echo '<td>' . esc_html($submission->company) . '</td>';
             echo '<td>' . esc_html($submission->source) . '</td>';
-            echo '<td>' . esc_html(wp_trim_words($submission->notes, 8)) . '</td>';
+            $notes_preview = strlen($submission->notes) > 80 ? substr($submission->notes, 0, 80) . '...' : $submission->notes;
+            echo '<td style="max-width: 200px; word-wrap: break-word; overflow: hidden;">' . esc_html($notes_preview) . '</td>';
             
             echo '<td>';
             echo '<a href="' . admin_url('tools.php?page=viper-submissions&view=' . $submission->id) . '" class="button-small">View</a>';

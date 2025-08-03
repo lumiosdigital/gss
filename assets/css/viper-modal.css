@@ -366,34 +366,39 @@
 /* Loading State */
 .viper-modal .btn-primary.loading {
     position: relative;
+    background: transparent !important;
+    border: none !important;
 }
 
+/* Hide the entire button content during loading */
 .viper-modal .btn-primary.loading .btn-text,
 .viper-modal .btn-primary.loading .btn-arrow {
-    opacity: 0.7;
+    opacity: 0 !important;
+    visibility: hidden !important;
 }
 
+/* Show loading spinner in button's place */
 .viper-modal .btn-primary.loading::after {
     content: '';
     position: absolute;
-    right: 15px;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--color-dark-navy);
-    border-top: 2px solid transparent;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border: 3px solid #e0eaf8;
+    border-top: 3px solid var(--color-brand);
     border-radius: 50%;
     animation: viperSpin 1s linear infinite;
 }
 
 @keyframes viperSpin {
     0% {
-        transform: translateY(-50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     100% {
-        transform: translateY(-50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
@@ -466,6 +471,112 @@
 .viper-field-textarea:focus {
     box-shadow: none;
     /* Remove default browser focus */
+}
+
+/* Success state - hide form and show clean message */
+.viper-modal.success-state #viperForm {
+    display: none !important;
+}
+
+.viper-modal.success-state .viper-form-grid {
+    display: none !important;
+}
+
+.viper-modal.success-state .viper-separator {
+    display: none !important;
+}
+
+.viper-modal.success-state .viper-submit-wrapper {
+    display: none !important;
+}
+
+.viper-modal.success-state .viper-terms-text {
+    display: none !important;
+}
+
+.viper-modal.success-state .viper-modal-subtitle {
+    margin-bottom: 0;
+}
+
+/* Error icon next to submit button */
+.viper-submit-error {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viper-error-icon {
+    position: absolute;
+    right: 235px;
+    /* Position to the right of the button */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: #ff4444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: help;
+    z-index: 10;
+}
+
+/* Error tooltip */
+.viper-error-tooltip {
+    position: absolute;
+    bottom: 164%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 1000;
+    margin-bottom: 5px;
+}
+
+.viper-error-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #333;
+}
+
+.viper-error-icon:hover .viper-error-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Success message styling */
+.viper-success-content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.viper-success-content h3 {
+    color: #00a32a;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.viper-success-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
 }
 
 /* Accessibility Improvements */

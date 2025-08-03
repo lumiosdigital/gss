@@ -275,13 +275,16 @@
      * Close the modal
      */
     function closeViperModal() {
-        viperModal.removeClass('active');
+        viperModal.removeClass('active success-state'); // Add success-state here
         $('body').css('overflow', '');
         
         // Reset form and clear messages
         $('#viperForm')[0].reset();
+        $('#viperForm').show(); // Make sure form is visible again
         $('#viperMessage').html('');
         $('#viperSubmitButton').removeClass('loading').prop('disabled', false);
+        $('.viper-submit-wrapper').removeClass('viper-submit-error');
+        $('.viper-error-icon').remove();
         
         modalOpenSource = null;
     }
@@ -293,6 +296,11 @@
         const form = $('#viperForm');
         const submitButton = $('#viperSubmitButton');
         const messageDiv = $('#viperMessage');
+        const modal = $('#viperModal');
+
+        // Remove any existing error states
+        $('.viper-submit-wrapper').removeClass('viper-submit-error');
+        $('.viper-error-icon').remove();
 
         // Collect form data
         const formData = {
@@ -317,24 +325,52 @@
             dataType: 'json',
             success: function(response) {
                 if (response.success) {
-                    messageDiv.html('<div class="viper-message success">' + response.data + '</div>');
-                    form[0].reset();
+                    // Success: Hide form and show success message
+                    modal.addClass('success-state');
                     
-                    // Auto-close modal after 3 seconds on success
+                    // Also hide form elements directly as backup
+                    $('#viperForm').hide();
+                    
+                    messageDiv.html(`
+                        <div class="viper-success-content">
+                            <h3>🚀 Request Submitted!</h3>
+                            <p>${response.data}</p>
+                        </div>
+                    `);
+                    
+                    // Auto-close modal after 4 seconds
                     setTimeout(function() {
                         closeViperModal();
-                    }, 3000);
+                    }, 4000);
                 } else {
-                    messageDiv.html('<div class="viper-message error">' + (response.data || 'Something went wrong. Please try again.') + '</div>');
+                    // Error: Show icon next to button
+                    showSubmitError(response.data || 'Something went wrong. Please try again.');
                 }
             },
             error: function(xhr, status, error) {
-                messageDiv.html('<div class="viper-message error">Network error. Please try again.</div>');
+                showSubmitError('Network error. Please try again.');
             },
             complete: function() {
                 submitButton.removeClass('loading').prop('disabled', false);
             }
         });
+    }
+
+    /**
+     * Show error icon next to submit button
+     */
+    function showSubmitError(errorMessage) {
+        const submitWrapper = $('.viper-submit-wrapper');
+        submitWrapper.addClass('viper-submit-error');
+        
+        const errorIcon = $(`
+            <div class="viper-error-icon">
+                !
+                <div class="viper-error-tooltip">${errorMessage}</div>
+            </div>
+        `);
+        
+        submitWrapper.append(errorIcon);
     }
 
     // Expose functions globally if needed
