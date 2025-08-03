@@ -1,7 +1,5 @@
 /**
  * Enhanced Viper Experience Modal Functionality
- * 
- * Includes analytics tracking, better error handling, and additional features
  */
 
 (function($) {
@@ -9,13 +7,12 @@
 
     let viperModal = null;
     let isModalInitialized = false;
-    let modalOpenSource = null; // Track where the modal was opened from
+    let modalOpenSource = null;
 
     // Initialize modal when DOM is ready
     $(document).ready(function() {
         initViperModal();
         bindViperTriggers();
-        setupAnalytics();
     });
 
     /**
@@ -68,7 +65,6 @@
                                                 class="viper-field-input" 
                                                 placeholder="Type your email" 
                                                 required
-                                                aria-describedby="emailError"
                                             >
                                         </div>
                                     </div>
@@ -151,7 +147,6 @@
 
         // Bind modal events
         bindModalEvents();
-        setupFormValidation();
     }
 
     /**
@@ -164,14 +159,12 @@
         // Close modal
         closeBtn.on('click', function(e) {
             e.preventDefault();
-            trackEvent('modal_closed', 'close_button');
             closeViperModal();
         });
 
         // Close on overlay click
         viperModal.on('click', function(e) {
             if (e.target === this) {
-                trackEvent('modal_closed', 'overlay_click');
                 closeViperModal();
             }
         });
@@ -179,7 +172,6 @@
         // Close on escape key
         $(document).on('keydown', function(e) {
             if (e.key === 'Escape' && viperModal.hasClass('active')) {
-                trackEvent('modal_closed', 'escape_key');
                 closeViperModal();
             }
         });
@@ -188,31 +180,6 @@
         form.on('submit', function(e) {
             e.preventDefault();
             submitViperForm();
-        });
-    }
-
-    /**
-     * Setup form validation
-     */
-    function setupFormValidation() {
-        const emailInput = $('#viperEmail');
-        const emailError = $('#emailError');
-
-        // Real-time email validation
-        emailInput.on('blur', function() {
-            const email = $(this).val().trim();
-            if (email && !isValidEmail(email)) {
-                emailError.text('Please enter a valid email address');
-                $(this).addClass('error');
-            } else {
-                emailError.text('');
-                $(this).removeClass('error');
-            }
-        });
-
-        emailInput.on('input', function() {
-            $(this).removeClass('error');
-            emailError.text('');
         });
     }
 
@@ -298,9 +265,6 @@
         // Set the source
         $('#viperSource').val(modalOpenSource || 'unknown');
         
-        // Track modal open
-        trackEvent('modal_opened', modalOpenSource || 'unknown');
-        
         // Focus on first input for accessibility
         setTimeout(function() {
             $('#viperEmail').focus();
@@ -318,8 +282,6 @@
         $('#viperForm')[0].reset();
         $('#viperMessage').html('');
         $('#viperSubmitButton').removeClass('loading').prop('disabled', false);
-        $('.viper-field-input').removeClass('error');
-        $('.viper-field-error').text('');
         
         modalOpenSource = null;
     }
@@ -332,12 +294,6 @@
         const submitButton = $('#viperSubmitButton');
         const messageDiv = $('#viperMessage');
 
-        // Validate form
-        if (!validateForm()) {
-            trackEvent('form_validation_failed', modalOpenSource);
-            return;
-        }
-
         // Collect form data
         const formData = {
             action: 'submit_viper_form',
@@ -345,13 +301,9 @@
             email: $('#viperEmail').val().trim(),
             fullName: $('#viperFullName').val().trim(),
             company: $('#viperCompany').val().trim(),
-            phone: $('#viperPhone').val().trim(),
             notes: $('#viperNotes').val().trim(),
             source: $('#viperSource').val()
         };
-
-        // Track form submission attempt
-        trackEvent('form_submitted', modalOpenSource);
 
         // Show loading state
         submitButton.addClass('loading').prop('disabled', true);
@@ -363,11 +315,8 @@
             type: 'POST',
             data: formData,
             dataType: 'json',
-            timeout: 30000, // 30 second timeout
             success: function(response) {
-                console.log('AJAX Success Response:', response);
                 if (response.success) {
-                    trackEvent('form_success', modalOpenSource);
                     messageDiv.html('<div class="viper-message success">' + response.data + '</div>');
                     form[0].reset();
                     
@@ -376,21 +325,11 @@
                         closeViperModal();
                     }, 3000);
                 } else {
-                    trackEvent('form_error', modalOpenSource);
                     messageDiv.html('<div class="viper-message error">' + (response.data || 'Something went wrong. Please try again.') + '</div>');
                 }
             },
             error: function(xhr, status, error) {
-                console.error('AJAX Error:', error);
-                console.error('XHR Response:', xhr.responseText);
-                trackEvent('form_network_error', modalOpenSource);
-                
-                let errorMessage = 'Network error. Please try again.';
-                if (status === 'timeout') {
-                    errorMessage = 'Request timed out. Please check your connection and try again.';
-                }
-                
-                messageDiv.html('<div class="viper-message error">' + errorMessage + '</div>');
+                messageDiv.html('<div class="viper-message error">Network error. Please try again.</div>');
             },
             complete: function() {
                 submitButton.removeClass('loading').prop('disabled', false);
@@ -398,82 +337,10 @@
         });
     }
 
-    /**
-     * Validate form before submission
-     */
-    function validateForm() {
-        let isValid = true;
-        const email = $('#viperEmail').val().trim();
-        const emailError = $('#emailError');
-
-        // Reset errors
-        $('.viper-field-input').removeClass('error');
-        $('.viper-field-error').text('');
-
-        // Validate email
-        if (!email) {
-            emailError.text('Email is required');
-            $('#viperEmail').addClass('error');
-            isValid = false;
-        } else if (!isValidEmail(email)) {
-            emailError.text('Please enter a valid email address');
-            $('#viperEmail').addClass('error');
-            isValid = false;
-        }
-
-        return isValid;
-    }
-
-    /**
-     * Check if email is valid
-     */
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    /**
-     * Setup analytics tracking
-     */
-    function setupAnalytics() {
-        // Track page load with modal available
-        trackEvent('modal_available', window.location.pathname);
-    }
-
-    /**
-     * Track events (integrate with your analytics platform)
-     */
-    function trackEvent(eventName, eventData) {
-        // Google Analytics 4
-        if (typeof gtag !== 'undefined') {
-            gtag('event', eventName, {
-                event_category: 'viper_modal',
-                event_label: eventData,
-                value: 1
-            });
-        }
-
-        // Google Analytics Universal
-        if (typeof ga !== 'undefined') {
-            ga('send', 'event', 'viper_modal', eventName, eventData, 1);
-        }
-
-        // Facebook Pixel
-        if (typeof fbq !== 'undefined') {
-            fbq('trackCustom', 'ViperModal_' + eventName, {
-                source: eventData
-            });
-        }
-
-        // Console log for debugging
-        console.log('Viper Modal Event:', eventName, eventData);
-    }
-
     // Expose functions globally if needed
     window.ViperModal = {
         open: openViperModal,
-        close: closeViperModal,
-        track: trackEvent
+        close: closeViperModal
     };
 
 })(jQuery);
