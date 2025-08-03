@@ -31,6 +31,8 @@ get_header(); ?>
         <!-- Experience Viper Section -->
         <?php get_template_part('template-parts/experience-viper-section'); ?>
         
+        <!-- News Section -->
+        <?php get_template_part('template-parts/news-section'); ?>
         
     </main><!-- #main -->
 </div><!-- #primary -->

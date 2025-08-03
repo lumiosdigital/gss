@@ -105,6 +105,9 @@ function gss_scripts() {
 
     // Experience Viper section stylesheet
     wp_enqueue_style('gss-experience-viper-section', get_template_directory_uri() . '/assets/css/experience-viper-section.css', array('gss-main'), '1.0.0');
+
+    // Homepage News section stylesheet
+    wp_enqueue_style('gss-homepage-news-section', get_template_directory_uri() . '/assets/css/homepage-news-section.css', array('gss-main'), '1.0.0');
     
     // Footer stylesheet
     wp_enqueue_style('gss-footer', get_template_directory_uri() . '/assets/css/footer.css', array('gss-main'), '1.0.0');
