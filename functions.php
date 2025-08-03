@@ -630,7 +630,7 @@ function gss_viper_submissions_page() {
             echo '<p><strong>Name:</strong> ' . esc_html($submission->full_name) . '</p>';
             echo '<p><strong>Company:</strong> ' . esc_html($submission->company) . '</p>';
             echo '<p><strong>Source:</strong> ' . esc_html($submission->source) . '</p>';
-            echo '<p><strong>IP Address:</strong> ' . esc_html($submission->ip_address) . '</p>';
+            // echo '<p><strong>IP Address:</strong> ' . esc_html($submission->ip_address) . '</p>';
             echo '<h3>Notes:</h3>';
             echo '<div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #0073aa; white-space: pre-wrap; word-wrap: break-word; word-break: break-word; max-width: 100%; overflow-wrap: break-word;">' . esc_html($submission->notes) . '</div>';
             echo '</div>';
