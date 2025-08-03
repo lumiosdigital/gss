@@ -130,6 +130,9 @@ function gss_scripts() {
     // Viper Modal stylesheet
     wp_enqueue_style('gss-viper-modal', get_template_directory_uri() . '/assets/css/viper-modal.css', array('gss-main'), '1.0.0');
 
+    // Legal pages stylesheet
+    wp_enqueue_style('gss-legal-pages', get_template_directory_uri() . '/assets/css/legal-pages.css', array('gss-main'), '1.0.0');
+
     // Main JavaScript file
     wp_enqueue_script('gss-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0.0', true);
     
@@ -930,6 +933,15 @@ function gss_enhanced_page_body_class($classes) {
     if (is_page('about') || is_page_template('page-about.php')) {
         $classes[] = 'about-page';
     }
+    if (is_page('terms-of-service') || is_page_template('page-terms-of-service.php')) {
+        $classes[] = 'terms-of-service-page legal-page';
+    }
+    if (is_page('cookies-policy') || is_page_template('page-cookies-policy.php')) {
+        $classes[] = 'cookies-policy-page legal-page';
+    }
+    if (is_page('privacy-policy') || is_page_template('page-privacy-policy.php')) {
+        $classes[] = 'privacy-policy-page legal-page';
+    }
     if (is_page('aviation') || strpos($_SERVER['REQUEST_URI'], '/aviation') !== false) {
         $classes[] = 'aviation-page';
     }
@@ -941,7 +953,6 @@ function gss_enhanced_page_body_class($classes) {
     }
     return $classes;
 }
-add_filter('body_class', 'gss_enhanced_page_body_class');
 
 /**
  * Ensure WordPress creates news page if it doesn't exist
@@ -970,6 +981,63 @@ function gss_create_news_page() {
     }
 }
 add_action('after_setup_theme', 'gss_create_news_page');
+
+/**
+ * Ensure WordPress creates legal pages if they don't exist
+ * Add this function after the existing gss_create_news_page() function:
+ */
+function gss_create_legal_pages() {
+    // Terms of Service page
+    $terms_page = get_page_by_path('terms-of-service');
+    if (!$terms_page) {
+        $page_data = array(
+            'post_title' => 'Terms of Service',
+            'post_content' => 'This page contains our Terms of Service.',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_name' => 'terms-of-service',
+            'page_template' => 'page-terms-of-service.php'
+        );
+        
+        $page_id = wp_insert_post($page_data);
+        if ($page_id) {
+            update_post_meta($page_id, '_wp_page_template', 'page-terms-of-service.php');
+        }
+    }
+
+    // Cookies Policy page
+    $cookies_page = get_page_by_path('cookies-policy');
+    if (!$cookies_page) {
+        $page_data = array(
+            'post_title' => 'Cookies Policy',
+            'post_content' => 'This page contains our Cookies Policy.',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_name' => 'cookies-policy',
+            'page_template' => 'page-cookies-policy.php'
+        );
+        
+        $page_id = wp_insert_post($page_data);
+        if ($page_id) {
+            update_post_meta($page_id, '_wp_page_template', 'page-cookies-policy.php');
+        }
+    }
+
+    // Privacy Policy page (if you want to create it later)
+    $privacy_page = get_page_by_path('privacy-policy');
+    if (!$privacy_page) {
+        $page_data = array(
+            'post_title' => 'Privacy Policy',
+            'post_content' => 'This page contains our Privacy Policy.',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_name' => 'privacy-policy'
+        );
+        
+        $page_id = wp_insert_post($page_data);
+    }
+}
+add_action('after_setup_theme', 'gss_create_legal_pages');
 
 /**
  * Add custom meta fields for posts (optional)

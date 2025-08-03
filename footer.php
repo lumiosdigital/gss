@@ -78,7 +78,7 @@
                         <nav class="footer-nav">
                             <ul class="footer-menu">
                                 <li><a href="<?php echo esc_url(home_url('/terms-of-service')); ?>">Terms of Service</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a></li>
+                                <!-- <li><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a></li> -->
                                 <li><a href="<?php echo esc_url(home_url('/cookies-policy')); ?>">Cookies Policy</a></li>
                             </ul>
                         </nav>
