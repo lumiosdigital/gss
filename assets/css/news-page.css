@@ -1,6 +1,6 @@
 /*
 ===========================================
-   NEWS PAGE STYLES
+   NEWS PAGE STYLES - FIXED
 ===========================================
 */
 
@@ -195,6 +195,12 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    /* FIXED: Add word breaking properties */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 /* Dynamic spacing - closer when title is shorter */
@@ -233,6 +239,12 @@
     text-overflow: ellipsis;
     min-height: 90px;
     max-height: 90px;
+
+    /* FIXED: Add word breaking properties */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .news-card-link {
@@ -502,14 +514,3 @@
         transform: none;
     }
 }
-
-/* .news-card:focus-within {
-    outline: 2px solid var(--color-brand);
-    outline-offset: 2px;
-}
-
-.read-more-link:focus,
-.load-more-btn:focus {
-    outline: 2px solid var(--color-brand);
-    outline-offset: 2px;
-} */
