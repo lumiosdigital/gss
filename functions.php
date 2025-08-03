@@ -299,6 +299,7 @@ function gss_handle_viper_form_submission() {
     $email = sanitize_email($_POST['email']);
     $full_name = sanitize_text_field($_POST['fullName']);
     $company = sanitize_text_field($_POST['company']);
+    $phone = sanitize_text_field($_POST['phone']);
     $notes = sanitize_textarea_field($_POST['notes']);
     $source = sanitize_text_field($_POST['source']);
     
@@ -319,6 +320,11 @@ function gss_handle_viper_form_submission() {
         return;
     }
     
+    if (!empty($phone) && !preg_match('/^[\+]?[0-9\(\)\-\s\.]{7,20}$/', $phone)) {
+        wp_send_json_error('Please enter a valid phone number.');
+        return;
+    }
+    
     // Check for spam patterns
     if (gss_is_spam_submission($email, $full_name, $company, $notes)) {
         wp_send_json_error('Your submission appears to be spam. Please contact us directly.');
@@ -330,6 +336,7 @@ function gss_handle_viper_form_submission() {
         'email' => $email,
         'full_name' => $full_name,
         'company' => $company,
+        'phone' => $phone,
         'notes' => $notes,
         'source' => $source,
         'ip_address' => $user_ip,
@@ -428,13 +435,14 @@ function gss_store_viper_submission($data) {
             'email' => $data['email'],
             'full_name' => $data['full_name'],
             'company' => $data['company'],
+            'phone' => $data['phone'],
             'notes' => $data['notes'],
             'source' => $data['source'],
             'ip_address' => $data['ip_address'],
             'user_agent' => $data['user_agent'],
             'submitted_at' => $data['submitted_at']
         ),
-        array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
+        array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
     );
 }
 
@@ -453,6 +461,7 @@ function gss_create_viper_submissions_table() {
         email varchar(255) NOT NULL,
         full_name varchar(255) DEFAULT '',
         company varchar(255) DEFAULT '',
+        phone varchar(50) DEFAULT '',
         notes text DEFAULT '',
         source varchar(100) DEFAULT '',
         ip_address varchar(45) DEFAULT '',
@@ -743,6 +752,13 @@ function gss_build_viper_email_content($data) {
                     </div>
                     ' : '') . '
                     
+                    ' . (!empty($data['phone']) ? '
+                    <div class="field-group">
+                        <span class="field-label">Phone</span>
+                        <div class="field-value">' . esc_html($data['phone']) . '</div>
+                    </div>
+                    ' : '') . '
+                    
                     ' . (!empty($data['notes']) ? '
                     <div class="field-group">
                         <span class="field-label">Notes</span>
@@ -816,7 +832,7 @@ function gss_viper_submissions_page() {
     } else {
         echo '<table class="wp-list-table widefat fixed striped">';
         echo '<thead><tr>';
-        echo '<th>Date</th><th>Name</th><th>Email</th><th>Company</th><th>Source</th><th>Notes</th>';
+        echo '<th>Date</th><th>Name</th><th>Email</th><th>Company</th><th>Phone</th><th>Source</th><th>Notes</th>';
         echo '</tr></thead>';
         echo '<tbody>';
         
@@ -826,6 +842,7 @@ function gss_viper_submissions_page() {
             echo '<td>' . esc_html($submission->full_name) . '</td>';
             echo '<td><a href="mailto:' . esc_attr($submission->email) . '">' . esc_html($submission->email) . '</a></td>';
             echo '<td>' . esc_html($submission->company) . '</td>';
+            echo '<td>' . esc_html($submission->phone) . '</td>';
             echo '<td>' . esc_html($submission->source) . '</td>';
             echo '<td>' . esc_html(wp_trim_words($submission->notes, 10)) . '</td>';
             echo '</tr>';

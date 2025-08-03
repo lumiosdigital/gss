@@ -33,7 +33,7 @@
     border-radius: 20px;
     width: 950px;
     max-width: 95vw;
-    max-height: 95vh;
+    max-height: 80vh;
     overflow: hidden;
     box-shadow: 0px -6px 104px 0px rgba(0, 0, 0, 0.05);
     transform: translateY(30px) scale(0.95);
@@ -70,10 +70,10 @@
     transform: scale(1.1);
 }
 
-.viper-modal-close:focus {
+/* .viper-modal-close:focus {
     outline: 2px solid rgba(255, 255, 255, 0.5);
     outline-offset: 2px;
-}
+} */
 
 /* Header Section */
 .viper-modal-header {
@@ -105,15 +105,15 @@
 
 /* Content Section */
 .viper-modal-content {
-    padding: 7rem 60px 7rem;
+    padding: 2rem 60px 4rem;
     overflow-y: auto;
     max-height: calc(95vh - 160px);
 }
 
 .viper-modal-subtitle {
     font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-normal);
-    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    font-size: 20px;
     color: var(--color-text-primary);
     text-align: center;
     line-height: 1.4;
@@ -256,14 +256,15 @@
     color: var(--color-text-primary);
 }
 
-/* Submit Button - Match Hero Banner Style Exactly */
+/* Submit Button - Use EXACT Hero Banner Style */
 .viper-submit-wrapper {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-.viper-submit-button {
+/* Override the hero banner button styles for modal context */
+.viper-modal .btn-primary {
     display: inline-flex;
     align-items: center;
     padding: 0;
@@ -277,28 +278,31 @@
     transition: var(--transition-normal);
     gap: 0;
     cursor: pointer;
+    position: relative;
+    z-index: 13;
 }
 
-.viper-submit-button:hover {
+.viper-modal .btn-primary:hover {
     transform: translateY(-2px);
+    color: var(--color-text-primary);
 }
 
-.viper-submit-button:focus {
+/* .viper-modal .btn-primary:focus {
     outline: 2px solid var(--color-brand);
     outline-offset: 2px;
-}
+} */
 
-.viper-submit-button:disabled {
+.viper-modal .btn-primary:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
 }
 
-.viper-submit-button:disabled:hover {
+.viper-modal .btn-primary:disabled:hover {
     transform: none;
 }
 
-.viper-submit-button .btn-text {
+.viper-modal .btn-primary .btn-text {
     background: var(--color-viper-green);
     color: var(--color-dark-navy);
     padding: var(--spacing-md) var(--spacing-2xl);
@@ -307,7 +311,7 @@
     transition: var(--transition-normal);
 }
 
-.viper-submit-button .btn-arrow {
+.viper-modal .btn-primary .btn-arrow {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -320,28 +324,13 @@
     transition: var(--transition-normal);
 }
 
-.viper-submit-button:hover .btn-text {
+.viper-modal .btn-primary:hover .btn-text {
     background: #9FE63A;
 }
 
-.viper-submit-button:hover .btn-arrow {
+.viper-modal .btn-primary:hover .btn-arrow {
     background: #9FE63A;
     transform: translateX(4px);
-}
-
-.viper-submit-arrow {
-    width: 20px;
-    height: 20px;
-    background: var(--color-dark-navy);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-}
-
-.viper-submit-button:hover .viper-submit-arrow {
-    transform: rotate(45deg);
 }
 
 /* Terms Text */
@@ -375,18 +364,21 @@
 }
 
 /* Loading State */
-.viper-submit-button.loading {
+.viper-modal .btn-primary.loading {
     position: relative;
 }
 
-.viper-submit-button.loading span {
+.viper-modal .btn-primary.loading .btn-text,
+.viper-modal .btn-primary.loading .btn-arrow {
     opacity: 0.7;
 }
 
-.viper-submit-button.loading::after {
+.viper-modal .btn-primary.loading::after {
     content: '';
     position: absolute;
     right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 20px;
     height: 20px;
     border: 2px solid var(--color-dark-navy);
@@ -397,11 +389,11 @@
 
 @keyframes viperSpin {
     0% {
-        transform: rotate(0deg);
+        transform: translateY(-50%) rotate(0deg);
     }
 
     100% {
-        transform: rotate(360deg);
+        transform: translateY(-50%) rotate(360deg);
     }
 }
 
@@ -481,7 +473,7 @@
 
     .viper-modal-overlay,
     .viper-modal,
-    .viper-submit-button,
+    .viper-modal .btn-primary,
     .viper-message,
     .viper-form-grid {
         animation: none;
@@ -499,7 +491,7 @@
         border-width: 3px;
     }
 
-    .viper-submit-button {
+    .viper-modal .btn-primary {
         border: 2px solid var(--color-dark-navy);
     }
 }
@@ -544,17 +536,16 @@
         min-height: 150px;
     }
 
-    .viper-submit-button {
-        padding: 0;
+    .viper-modal .btn-primary {
         font-size: 14px;
     }
 
-    .viper-submit-button .btn-text {
+    .viper-modal .btn-primary .btn-text {
         padding: 14px 30px;
         font-size: 14px;
     }
 
-    .viper-submit-button .btn-arrow {
+    .viper-modal .btn-primary .btn-arrow {
         width: 48px;
         height: 48px;
     }
@@ -578,7 +569,7 @@
         padding: 20px;
     }
 
-    .viper-submit-button {
+    .viper-modal .btn-primary .btn-text {
         padding: 14px 30px;
         font-size: 14px;
     }

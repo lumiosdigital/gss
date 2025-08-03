@@ -71,7 +71,6 @@
                                                 aria-describedby="emailError"
                                             >
                                         </div>
-                                        <div id="emailError" class="viper-field-error" role="alert"></div>
                                     </div>
 
                                     <div class="viper-field-group">
@@ -99,24 +98,6 @@
                                             >
                                         </div>
                                     </div>
-
-                                    <div class="viper-field-group">
-                                        <label class="viper-field-label" for="viperPhone">Phone (Optional)</label>
-                                        <div class="viper-field-wrapper">
-                                            <div class="viper-field-icon">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#155bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                                </svg>
-                                            </div>
-                                            <input 
-                                                type="tel" 
-                                                id="viperPhone" 
-                                                name="phone" 
-                                                class="viper-field-input" 
-                                                placeholder="Your phone number"
-                                            >
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="viper-form-right">
@@ -140,13 +121,13 @@
                             <div class="viper-separator"></div>
 
                             <div class="viper-submit-wrapper">
-                                <button type="submit" class="viper-submit-button" id="viperSubmitButton">
-                                    <span>Let's Get Started</span>
-                                    <div class="viper-submit-arrow">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H2.5M9.5 2.5V9.5" stroke="#091026" stroke-width="2" stroke-linecap="square"/>
+                                <button type="submit" class="btn-primary viper-submit-button" id="viperSubmitButton">
+                                    <span class="btn-text">Let's Get Started</span>
+                                    <span class="btn-arrow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M2.5 17.5L17.5 2.5M17.5 2.5H2.5M17.5 2.5V17.5" stroke="#091026" stroke-width="2" stroke-linecap="square"/>
                                         </svg>
-                                    </div>
+                                    </span>
                                 </button>
                             </div>
 
@@ -364,6 +345,7 @@
             email: $('#viperEmail').val().trim(),
             fullName: $('#viperFullName').val().trim(),
             company: $('#viperCompany').val().trim(),
+            phone: $('#viperPhone').val().trim(),
             notes: $('#viperNotes').val().trim(),
             source: $('#viperSource').val()
         };
@@ -383,6 +365,7 @@
             dataType: 'json',
             timeout: 30000, // 30 second timeout
             success: function(response) {
+                console.log('AJAX Success Response:', response);
                 if (response.success) {
                     trackEvent('form_success', modalOpenSource);
                     messageDiv.html('<div class="viper-message success">' + response.data + '</div>');
@@ -399,6 +382,7 @@
             },
             error: function(xhr, status, error) {
                 console.error('AJAX Error:', error);
+                console.error('XHR Response:', xhr.responseText);
                 trackEvent('form_network_error', modalOpenSource);
                 
                 let errorMessage = 'Network error. Please try again.';
