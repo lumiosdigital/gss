@@ -322,7 +322,7 @@ function gss_handle_viper_form_submission() {
     gss_store_viper_submission_with_status($submission_data);
     
     // Send email notification
-    $to = 'lumiosdigital@gmail.com';
+    $to = 'gsandridge@satqoe.com';
     $subject = 'New Viper Demo Request from ' . get_bloginfo('name');
     $message = gss_build_viper_email_content($submission_data);
     

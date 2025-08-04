@@ -102,7 +102,7 @@
                             </defs>
                             </svg>
                         </a> -->
-                        <a href="#" class="footer-social-btn" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/company/global-satellite-solutions-inc/" class="footer-social-btn" target="_blank" rel="noopener noreferrer">
                             <span>LinkedIn</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <g clip-path="url(#clip0_329_6491)">
