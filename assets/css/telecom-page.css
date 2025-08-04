@@ -662,23 +662,35 @@ body.page-template-page-telecom {
         overflow: hidden;
         min-height: 250px;
     }
-    
+
     .telecom-d2d-text {
         max-width: 65%;
     }
-    
+
     .telecom-d2d-image {
         position: absolute;
         bottom: 0;
         right: 0;
     }
-    
+
     .telecom-d2d-phone {
         max-width: 200px;
     }
 }
 
+/* iPad Air and tablets - Use mobile layout */
 @media (max-width: 1024px) {
+    .telecom-page-wrapper {
+        padding-top: var(--spacing-2xl);
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
+    }
+
+    /* Hide breadcrumbs on tablet and mobile */
+    .breadcrumb-nav {
+        display: none;
+    }
+
     .header-container {
         padding: 0 var(--spacing-md);
     }
@@ -689,7 +701,7 @@ body.page-template-page-telecom {
     .telecom-content-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
-        text-align: left;
+        text-align: center;
         max-width: 900px;
         margin: 0 auto;
     }
@@ -697,6 +709,7 @@ body.page-template-page-telecom {
     .telecom-heading-column {
         position: static;
         text-align: center;
+        margin-bottom: var(--spacing-lg);
     }
 
     .telecom-main-heading {
@@ -704,9 +717,54 @@ body.page-template-page-telecom {
         margin-bottom: var(--spacing-lg);
     }
 
+    .telecom-text-section {
+        margin-bottom: var(--spacing-2xl);
+        text-align: center;
+    }
+
+    .telecom-text-section.top-text-section {
+        margin-bottom: var(--spacing-3xl);
+    }
+
+    .telecom-section-content p {
+        text-align: center;
+        font-size: var(--font-size-base);
+    }
+
     .telecom-features-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+        max-width: 600px;
+        margin: 0 auto var(--spacing-4xl);
+    }
+
+    .telecom-feature-item {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: var(--spacing-lg);
+        gap: var(--spacing-md);
+        min-height: auto;
+    }
+
+    .telecom-feature-icon {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    .telecom-feature-content {
+        flex: 1;
+    }
+
+    .telecom-feature-title {
+        font-size: 16px;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    /* Hide inflight image on tablet */
+    .telecom-inflight-section {
+        display: none;
     }
 
     .telecom-d2d-content {
@@ -718,22 +776,14 @@ body.page-template-page-telecom {
         overflow: visible;
         min-height: auto;
     }
-    
+
     .telecom-d2d-text {
         max-width: 100%;
     }
-    
+
+    /* Hide d2d image on tablet */
     .telecom-d2d-image {
-        position: static;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: var(--spacing-lg);
-    }
-    
-    .telecom-d2d-phone {
-        max-width: 200px;
-        border-radius: 10px;
+        display: none;
     }
 
     .telecom-cta-section {
@@ -743,14 +793,17 @@ body.page-template-page-telecom {
     }
 }
 
-/* Mobile Large: 480px - 767px */
-@media (max-width: 767px) and (min-width: 480px) {
+/* Mobile Large: 768px and below */
+@media (max-width: 768px) {
     .telecom-page-wrapper {
         padding-top: var(--spacing-lg);
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
     }
 
+    /* Hide breadcrumbs on mobile */
     .breadcrumb-nav {
-        margin-bottom: var(--spacing-lg);
+        display: none;
     }
 
     .telecom-content-grid {
@@ -761,6 +814,7 @@ body.page-template-page-telecom {
 
     .telecom-heading-column {
         position: static;
+        margin-bottom: var(--spacing-lg);
     }
 
     .telecom-main-heading {
@@ -771,22 +825,58 @@ body.page-template-page-telecom {
 
     .telecom-section-title {
         font-size: 20px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .telecom-text-section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .telecom-text-section.top-text-section {
+        margin-bottom: var(--spacing-2xl);
     }
 
     .telecom-section-content p {
-        font-size: var(--font-size-base);
-        line-height: 1.6;
-        margin-bottom: var(--spacing-lg);
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: var(--spacing-md);
         text-align: center;
+    }
+
+    .telecom-features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        max-width: 500px;
+        margin: 0 auto var(--spacing-4xl);
     }
 
     .telecom-feature-item {
-        text-align: center;
-        padding: var(--spacing-md);
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: var(--spacing-md) var(--spacing-lg);
+        gap: var(--spacing-md);
+        min-height: auto;
     }
 
     .telecom-feature-icon {
-        margin: 0 auto var(--spacing-sm);
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+    }
+
+    .telecom-feature-content {
+        flex: 1;
+    }
+
+    .telecom-feature-title {
+        font-size: 16px;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    /* Hide inflight image on mobile */
+    .telecom-inflight-section {
+        display: none;
     }
 
     .telecom-d2d-content {
@@ -798,22 +888,14 @@ body.page-template-page-telecom {
         overflow: visible;
         min-height: auto;
     }
-    
+
     .telecom-d2d-text {
         max-width: 100%;
     }
-    
+
+    /* Hide d2d image on mobile */
     .telecom-d2d-image {
-        position: static;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: var(--spacing-md);
-    }
-    
-    .telecom-d2d-phone {
-        max-width: 150px;
-        border-radius: 10px;
+        display: none;
     }
 
     .telecom-d2d-item {
@@ -852,18 +934,17 @@ body.page-template-page-telecom {
     }
 }
 
-/* Mobile Small: 320px - 479px */
-@media (max-width: 479px) {
+/* Mobile Small: 480px and below */
+@media (max-width: 480px) {
     .telecom-page-wrapper {
         padding-top: var(--spacing-md);
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
     }
 
+    /* Hide breadcrumbs on mobile */
     .breadcrumb-nav {
-        margin-bottom: var(--spacing-md);
-    }
-
-    .breadcrumb-item {
-        font-size: 11px;
+        display: none;
     }
 
     .telecom-content-grid {
@@ -874,6 +955,7 @@ body.page-template-page-telecom {
 
     .telecom-heading-column {
         position: static;
+        margin-bottom: var(--spacing-md);
     }
 
     .telecom-main-heading {
@@ -885,13 +967,45 @@ body.page-template-page-telecom {
 
     .telecom-section-title {
         font-size: 18px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .telecom-text-section {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .telecom-text-section.top-text-section {
+        margin-bottom: var(--spacing-xl);
     }
 
     .telecom-section-content p {
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: var(--spacing-md);
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: var(--spacing-sm);
         text-align: left;
+    }
+
+    .telecom-features-grid {
+        max-width: 100%;
+        margin: 0 auto var(--spacing-3xl);
+    }
+
+    .telecom-feature-item {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: var(--spacing-sm) var(--spacing-md);
+        gap: var(--spacing-sm);
+    }
+
+    .telecom-feature-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .telecom-feature-title {
+        font-size: 15px;
+        margin-bottom: var(--spacing-xs);
     }
 
     .telecom-cta-section {
@@ -926,16 +1040,52 @@ body.page-template-page-telecom {
 @media (max-width: 320px) {
     .telecom-page-wrapper {
         padding-top: var(--spacing-sm);
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    /* Hide breadcrumbs on mobile */
+    .breadcrumb-nav {
+        display: none;
     }
 
     .telecom-main-heading {
         font-size: 24px;
         line-height: 1.2;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .telecom-text-section {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .telecom-text-section.top-text-section {
+        margin-bottom: var(--spacing-lg);
     }
 
     .telecom-section-content p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .telecom-features-grid {
+        margin: 0 auto var(--spacing-2xl);
+    }
+
+    .telecom-feature-item {
+        padding: calc(var(--spacing-xs) * 1.5) var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    .telecom-feature-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .telecom-feature-title {
         font-size: 14px;
-        line-height: 1.7;
+        margin-bottom: calc(var(--spacing-xs) * 0.5);
     }
 
     .telecom-cta-section {

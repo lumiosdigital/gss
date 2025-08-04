@@ -55,9 +55,9 @@
             }
         });
 
-        // Close mobile menu on window resize
+        // Close mobile menu on window resize - Updated to 1024px for iPad
         $(window).on('resize', function() {
-            if ($(window).width() > 768) {
+            if ($(window).width() > 1024) {
                 menuToggle.attr('aria-expanded', 'false');
                 primaryMenuWrapper.removeClass('menu-open');
                 // Close any open mobile dropdowns
@@ -79,8 +79,8 @@
             
             // Add click handler for mobile dropdown toggle
             $parentLink.on('click', function(e) {
-                // Handle dropdown toggle on mobile
-                if ($(window).width() <= 768) {
+                // Handle dropdown toggle on mobile/tablet - Updated to 1024px for iPad
+                if ($(window).width() <= 1024) {
                     // Check if this is a parent item (Industries) that should toggle dropdown
                     const isParentDropdown = $(this).attr('href') === '#' || 
                                            $(this).attr('href') === '' || 
@@ -110,8 +110,8 @@
             e.preventDefault();
             e.stopPropagation();
             
-            // Toggle dropdown on mobile
-            if ($(window).width() <= 768) {
+            // Toggle dropdown on mobile/tablet - Updated to 1024px for iPad
+            if ($(window).width() <= 1024) {
                 const $parent = $(this).closest('.menu-item-has-children');
                 
                 // Close other open dropdowns
@@ -142,7 +142,8 @@
             // Handle Enter key and Space key for dropdown toggles
             $parentToggle.on('keydown', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
-                    if ($(window).width() <= 768) {
+                    // Updated to 1024px for iPad
+                    if ($(window).width() <= 1024) {
                         // Check if this should toggle dropdown
                         const isParentDropdown = $(this).attr('href') === '#' || 
                                                $(this).attr('href') === '' || 

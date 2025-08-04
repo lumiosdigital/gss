@@ -125,7 +125,7 @@
 
 
 .about-graphics-section {
-    background: linear-gradient(135deg, #155BFF 0%, #2563EB 100%);
+    /* background: linear-gradient(135deg, #155BFF 0%, #2563EB 100%); */
     border-radius: 40px;
     height: 750px;
     position: relative;
@@ -218,8 +218,8 @@
     }
 
     .about-graphics-section {
-        height: 550px;
-        margin-top: var(--spacing-3xl);
+        height: 100%;
+        /* margin-top: var(--spacing-3xl); */
         max-width: 100%;
     }
 }
@@ -260,7 +260,7 @@
     .about-graphics-section {
         height: 350px;
         border-radius: 24px;
-        margin-top: var(--spacing-2xl);
+        /* margin-top: var(--spacing-2xl); */
         margin-bottom: var(--spacing-3xl);
     }
 
@@ -310,7 +310,7 @@
     .about-graphics-section {
         height: 280px;
         border-radius: 20px;
-        margin-top: var(--spacing-xl);
+        /* margin-top: var(--spacing-xl); */
         margin-bottom: var(--spacing-2xl);
     }
 

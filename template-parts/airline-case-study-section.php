@@ -22,10 +22,10 @@
                     <p>Without Viper, underperformance remains hidden. With it, you get data-backed visibility to identify which aircraft are struggling and why.</p>
                     <h4>From Data to Action </h4>
                     <p>Insights that drive improvement.</p>
-                    <p>Viper doesn’t fix the system, it reveals where and why it’s failing. This allows teams to move beyond guesswork and focus their efforts on areas that matter most. It’s not about assuming the modem is misbehaving, it’s uncovering less obvious but critical issues like bad beams or noise-floor interference that only surface under certain conditions.</p>
+                    <p>Viper doesn't fix the system, it reveals where and why it's failing. This allows teams to move beyond guesswork and focus their efforts on areas that matter most. It's not about assuming the modem is misbehaving, it's uncovering less obvious but critical issues like bad beams or noise-floor interference that only surface under certain conditions.</p>
                     <h4>More Than Monitoring</h4>
                     <p>Better awareness. Better action. Better outcomes.</p>
-                    <p>The real value of Viper isn’t just in tracking performance, it’s in enabling change. While fewer complaints aren’t guaranteed by data alone, they become a natural outcome when Viper insights lead to real improvements. Without Viper, problems persist. With Viper, status quo ends and better passenger experience begins.</p>
+                    <p>The real value of Viper isn't just in tracking performance, it's in enabling change. While fewer complaints aren't guaranteed by data alone, they become a natural outcome when Viper insights lead to real improvements. Without Viper, problems persist. With Viper, status quo ends and better passenger experience begins.</p>
                     
                     <p>By aggregating performance data across the Airline's full connected fleet using Viper, the airline unlocks powerful operational and strategic benefits. Below is a summary of impact based on their estimated long-haul activity:</p>
                 </div>
@@ -69,7 +69,47 @@
                         </div>
                     </div>
 
-                    <!-- Mobile Cards (hidden on desktop, shown on mobile) -->
+                    <!-- Mobile Vertical Table (shown on mobile instead of cards) -->
+                    <div class="fleet-impact-mobile-vertical" style="display: none;">
+                        <div class="fleet-impact-vertical-table">
+                            <!-- Headers -->
+                            <div class="fleet-impact-vertical-header">Metric</div>
+                            <div class="fleet-impact-vertical-header">1 Year</div>
+                            <div class="fleet-impact-vertical-header">3 Years</div>
+                            
+                            <!-- Flights Row -->
+                            <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Flights</div>
+                            <div class="fleet-impact-vertical-cell">85,000</div>
+                            <div class="fleet-impact-vertical-cell">255,000</div>
+                            
+                            <!-- Passengers Row -->
+                            <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Passengers</div>
+                            <div class="fleet-impact-vertical-cell">22,100,000</div>
+                            <div class="fleet-impact-vertical-cell">66,300,000</div>
+                            
+                            <!-- Samples Row -->
+                            <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Samples</div>
+                            <div class="fleet-impact-vertical-cell">1,700,000</div>
+                            <div class="fleet-impact-vertical-cell">5,100,000</div>
+                            
+                            <!-- Complaints Prevented Row -->
+                            <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Complaints Prevented</div>
+                            <div class="fleet-impact-vertical-cell">25,500</div>
+                            <div class="fleet-impact-vertical-cell">76,500</div>
+                            
+                            <!-- Savings Row -->
+                            <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Savings (USD)</div>
+                            <div class="fleet-impact-vertical-cell">$2,550,000</div>
+                            <div class="fleet-impact-vertical-cell">$7,650,000</div>
+                            
+                            <!-- NPS Gain Row -->
+                            <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">NPS Gain</div>
+                            <div class="fleet-impact-vertical-cell">+425</div>
+                            <div class="fleet-impact-vertical-cell">+1,275</div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Cards (kept as fallback, but hidden in favor of vertical table) -->
                     <div class="fleet-impact-mobile-cards" style="display: none;">
                         <div class="fleet-impact-card">
                             <div class="fleet-impact-card-title">1 Year Impact</div>

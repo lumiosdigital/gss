@@ -51,13 +51,13 @@
 /* Responsive animations */
 @media (max-width: 1024px) {
     .charts-container {
-        height: 220px;
+        display: none;
     }
 }
 
 @media (max-width: 768px) {
     .charts-container {
-        height: 180px;
+        display: none;
     }
 
     .chart-item svg {
@@ -67,11 +67,7 @@
 
 @media (max-width: 480px) {
     .charts-container {
-        position: static;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
+        display: none;
     }
 
     .chart-item {

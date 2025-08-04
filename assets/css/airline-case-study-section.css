@@ -46,7 +46,7 @@
     letter-spacing: -0.4px;
     color: #0b2051;
     margin: 0;
-    text-align: center;
+    text-align: left;
 }
 
 .case-study-content-column {
@@ -379,26 +379,56 @@
 ===========================================
 */
 
+/* iPad Air and tablets - Use mobile layout */
 @media (max-width: 1024px) {
     .airline-case-study-container {
         padding: 0 var(--spacing-md);
     }
 
+    /* Switch to mobile layout */
     .case-study-header {
-        gap: var(--spacing-2xl);
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .case-study-title-column {
+        position: static;
+        display: flex;
+        justify-content: center;
+    }
+
+    .case-study-content-column {
+        align-items: center;
+        gap: var(--spacing-3xl);
     }
 
     .case-study-title {
-        font-size: 32px;
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .case-study-description {
+        text-align: center;
+        max-width: 100%;
     }
 
     .case-study-description p {
-        font-size: 16px;
+        text-align: center;
+        font-size: 17px;
     }
 
     .fleet-impact-section,
     .benefits-summary {
         max-width: 100%;
+    }
+
+    /* Use vertical table on tablets */
+    .fleet-impact-table {
+        display: none;
+    }
+
+    .fleet-impact-mobile-vertical {
+        display: block !important;
     }
 
     .benefits-summary {
@@ -422,37 +452,12 @@
         padding: var(--spacing-xl) 0;
     }
 
-    /* Remove sticky positioning on mobile */
-    .case-study-header {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-
-    .case-study-title-column {
-        position: static;
-        /* Remove sticky */
-        display: flex;
-        justify-content: center;
-    }
-
-    .case-study-content-column {
-        align-items: center;
-        gap: var(--spacing-3xl);
-    }
-
-    .case-study-description {
-        text-align: center;
-        max-width: 100%;
-    }
-
     .case-study-description p {
-        text-align: center;
         font-size: 16px;
     }
 
     .case-study-title {
         font-size: 28px;
-        text-align: center;
     }
 
     .section-title,
@@ -460,75 +465,69 @@
         font-size: 20px;
     }
 
-    /* Fleet Impact Table - Card Layout for Mobile */
-    .fleet-impact-table {
-        display: none;
-        /* Hide original table */
-    }
-
-    .fleet-impact-mobile-cards {
-        display: block;
-    }
-
-    .fleet-impact-card {
+    /* Fleet Impact Table - Vertical Layout for Mobile */
+    .fleet-impact-mobile-vertical {
         background: var(--color-white);
-        border: 1px solid #e0eaf8;
         border-radius: 10px;
-        padding: var(--spacing-lg);
-        margin-bottom: var(--spacing-md);
+        border: 1px solid #e0eaf8;
+        overflow: hidden;
+        width: 100%;
     }
 
-    .fleet-impact-card:last-child {
-        margin-bottom: 0;
-    }
-
-    .fleet-impact-card-title {
-        font-size: 18px;
-        font-weight: var(--font-weight-semibold);
-        color: #0b2051;
-        margin-bottom: var(--spacing-md);
-        text-align: center;
-        background: #f8fbff;
-        padding: var(--spacing-sm);
-        border-radius: var(--border-radius-md);
-    }
-
-    .fleet-impact-card-content {
+    .fleet-impact-vertical-table {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-sm);
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
     }
 
-    .fleet-impact-card-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: var(--spacing-sm);
-    }
-
-    .fleet-impact-card-label {
-        font-size: 14px;
+    .fleet-impact-vertical-header {
+        background: #f8fbff;
+        padding: var(--spacing-md) var(--spacing-sm);
         font-weight: var(--font-weight-semibold);
+        font-size: 14px;
         color: #0b2051;
-        margin-bottom: var(--spacing-xs);
+        border-right: 1px solid #e0eaf8;
+        border-bottom: 1px solid #e0eaf8;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
     }
 
-    .fleet-impact-card-value {
-        font-size: 16px;
+    .fleet-impact-vertical-header:last-child {
+        border-right: none;
+    }
+
+    .fleet-impact-vertical-cell {
+        padding: var(--spacing-md) var(--spacing-sm);
+        font-size: 14px;
         color: #0b2051;
-        opacity: 0.8;
+        border-right: 1px solid #e0eaf8;
+        border-bottom: 1px solid #e0eaf8;
+        display: flex;
+        align-items: center;
+        min-height: 45px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .fleet-impact-vertical-cell:nth-child(3n) {
+        border-right: none;
+    }
+
+    .fleet-impact-vertical-cell:nth-last-child(-n+3) {
+        border-bottom: none;
+    }
+
+    .fleet-impact-vertical-label {
+        font-weight: var(--font-weight-semibold);
+        background: #f8fbff;
     }
 
     .table-note {
         font-size: 14px;
         margin-top: var(--spacing-md);
-    }
-
-    .benefits-summary {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-lg);
     }
 
     .benefit-summary-box {
@@ -647,16 +646,16 @@
         font-size: 18px;
     }
 
-    .fleet-impact-card-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+    .fleet-impact-vertical-table {
+        grid-template-columns: 1fr 1fr 1fr;
+        font-size: 13px;
     }
 
-    .fleet-impact-card-item {
-        padding: var(--spacing-md);
-        border: 1px solid #e0eaf8;
-        border-radius: var(--border-radius-md);
-        background: #f8fbff;
+    .fleet-impact-vertical-header,
+    .fleet-impact-vertical-cell {
+        padding: var(--spacing-sm);
+        font-size: 13px;
+        min-height: 40px;
     }
 
     .table-note {

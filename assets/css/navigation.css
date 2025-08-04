@@ -289,17 +289,13 @@
 ===========================================
 */
 
+/* iPad Air and tablets - Use mobile navigation layout */
 @media (max-width: 1024px) {
     .header-container {
         padding: 0 var(--spacing-md);
+        height: 75px;
     }
 
-    .primary-menu {
-        gap: var(--spacing-lg);
-    }
-}
-
-@media (max-width: 768px) {
     .menu-toggle {
         display: flex;
         margin-left: auto;
@@ -313,7 +309,7 @@
     .mobile-cta {
         display: block !important;
         width: 100%;
-        max-width: 300px;
+        max-width: 350px;
         margin-top: var(--spacing-md);
     }
 
@@ -325,7 +321,7 @@
         background-color: var(--color-white);
         border-top: 1px solid var(--color-gray-200);
         box-shadow: var(--shadow-md);
-        padding: var(--spacing-lg);
+        padding: var(--spacing-xl);
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
@@ -347,9 +343,8 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
-        /* margin-bottom: var(--spacing-lg); */
         width: 100%;
-        max-width: 300px;
+        max-width: 350px;
     }
 
     .primary-menu li {
@@ -363,7 +358,7 @@
 
     .primary-menu a,
     .primary-menu .dropdown-toggle {
-        padding: var(--spacing-md) 0;
+        padding: var(--spacing-lg) 0;
         font-size: var(--font-size-lg);
         width: 100%;
         text-align: left;
@@ -372,7 +367,6 @@
     /* Mobile Dropdown */
     .primary-menu .sub-menu {
         position: static;
-        /* background-color: var(--color-gray-50); */
         border: none;
         border-radius: 0;
         box-shadow: none;
@@ -392,7 +386,7 @@
     }
 
     .primary-menu .sub-menu a {
-        padding: var(--spacing-md) var(--spacing-md);
+        padding: var(--spacing-md) var(--spacing-lg);
         margin-left: var(--spacing-sm);
         font-size: var(--font-size-base);
         text-align: left;
@@ -401,11 +395,27 @@
     .mobile-cta .cta-button {
         width: 100%;
         text-align: center;
+        height: 50px;
+        font-size: var(--font-size-base);
     }
+}
 
-    /* Mobile header height adjustment */
+/* Mobile phones */
+@media (max-width: 768px) {
     .header-container {
         height: 70px;
+    }
+
+    .primary-menu-wrapper {
+        padding: var(--spacing-lg);
+    }
+
+    .mobile-cta {
+        max-width: 300px;
+    }
+
+    .primary-menu {
+        max-width: 300px;
     }
 }
 

@@ -647,6 +647,10 @@
         min-height: 150px;
     }
 
+    .viper-field-textarea {
+        min-height: 160px;
+    }
+
     .viper-modal .btn-primary {
         font-size: 14px;
     }
