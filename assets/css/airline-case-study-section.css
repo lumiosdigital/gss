@@ -429,44 +429,6 @@
 
     .fleet-impact-mobile-vertical {
         display: block !important;
-    }
-
-    .benefits-summary {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-lg);
-    }
-
-    .benefit-summary-box {
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .benefits-tables {
-        gap: var(--spacing-lg);
-    }
-}
-
-@media (max-width: 768px) {
-    .airline-case-study-section {
-        padding: var(--spacing-xl) 0;
-    }
-
-    .case-study-description p {
-        font-size: 16px;
-    }
-
-    .case-study-title {
-        font-size: 28px;
-    }
-
-    .section-title,
-    .table-title {
-        font-size: 20px;
-    }
-
-    /* Fleet Impact Table - Vertical Layout for Mobile */
-    .fleet-impact-mobile-vertical {
         background: var(--color-white);
         border-radius: 10px;
         border: 1px solid #e0eaf8;
@@ -523,6 +485,40 @@
     .fleet-impact-vertical-label {
         font-weight: var(--font-weight-semibold);
         background: #f8fbff;
+    }
+
+    .benefits-summary {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-lg);
+    }
+
+    .benefit-summary-box {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .benefits-tables {
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .airline-case-study-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .case-study-description p {
+        font-size: 16px;
+    }
+
+    .case-study-title {
+        font-size: 28px;
+    }
+
+    .section-title,
+    .table-title {
+        font-size: 20px;
     }
 
     .table-note {
