@@ -2,6 +2,7 @@
 /**
  * The template for displaying single posts (news articles)
  * Updated to match Figma design with title on left, content on right
+ * Now includes custom author field support
  */
 
 get_header(); ?>
@@ -52,8 +53,11 @@ get_header(); ?>
                                 <?php echo get_the_date('F j, Y'); ?>
                             </time>
                             
-                            <?php if (get_the_author()) : ?>
-                                <br>Author: <?php echo get_the_author(); ?>
+                            <?php 
+                            // Use custom author function (falls back to WordPress author if custom author is empty)
+                            $author_name = get_post_author_name(get_the_ID());
+                            if ($author_name) : ?>
+                                <br>Author: <?php echo esc_html($author_name); ?>
                             <?php endif; ?>
                             
                             <?php if (get_the_category()) : ?>

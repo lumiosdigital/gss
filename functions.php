@@ -1130,3 +1130,76 @@ function gss_store_viper_submission_with_status($data) {
         $wpdb->query($wpdb->prepare("UPDATE $table_name SET status = 'new' WHERE id = %d", $wpdb->insert_id));
     }
 }
+
+// Add custom meta box to post editor
+function add_custom_author_meta_box() {
+    add_meta_box(
+        'custom_author_meta_box',           // Meta box ID
+        'Custom Author',                     // Title
+        'custom_author_meta_box_callback',  // Callback function
+        'post',                             // Post type
+        'side',                             // Context (side, normal, advanced)
+        'default'                           // Priority
+    );
+}
+add_action('add_meta_boxes', 'add_custom_author_meta_box');
+
+// Meta box callback function
+function custom_author_meta_box_callback($post) {
+    // Add nonce field for security
+    wp_nonce_field('custom_author_meta_box', 'custom_author_meta_box_nonce');
+    
+    // Get current value
+    $custom_author = get_post_meta($post->ID, '_custom_author', true);
+    
+    // Display the field
+    echo '<table class="form-table">';
+    echo '<tr>';
+    echo '<td>';
+    echo '<label for="custom_author"><strong>Author Name:</strong></label><br>';
+    echo '<input type="text" id="custom_author" name="custom_author" value="' . esc_attr($custom_author) . '" style="width: 100%; margin-top: 5px;" placeholder="Enter author name..." />';
+    echo '<p class="description" style="margin-top: 5px; font-size: 12px; color: #666;">Leave blank to use default WordPress author (' . get_the_author_meta('display_name', $post->post_author) . ')</p>';
+    echo '</td>';
+    echo '</tr>';
+    echo '</table>';
+}
+
+// Save custom author meta field
+function save_custom_author_meta($post_id) {
+    // Check if nonce is valid
+    if (!isset($_POST['custom_author_meta_box_nonce']) || !wp_verify_nonce($_POST['custom_author_meta_box_nonce'], 'custom_author_meta_box')) {
+        return;
+    }
+    
+    // Check if user has permission to edit post
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    
+    // Check if not an autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    
+    // Save custom author
+    if (isset($_POST['custom_author'])) {
+        $custom_author = sanitize_text_field($_POST['custom_author']);
+        update_post_meta($post_id, '_custom_author', $custom_author);
+    }
+}
+add_action('save_post', 'save_custom_author_meta');
+
+// Helper function to get the author (custom or default)
+function get_post_author_name($post_id = null) {
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+    
+    $custom_author = get_post_meta($post_id, '_custom_author', true);
+    
+    if (!empty($custom_author)) {
+        return $custom_author;
+    }
+    
+    return get_the_author_meta('display_name', get_post_field('post_author', $post_id));
+}
