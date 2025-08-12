@@ -95,64 +95,39 @@
 
 /*
 ===========================================
-   ACTIONS/BUTTON
+   SECTOR BUTTONS
 ===========================================
 */
 
 .experience-viper-actions {
     display: flex;
     justify-content: center;
+    gap: var(--spacing-lg);
     margin-top: var(--spacing-2xl);
 }
 
-/* Reuse button styles from hero banner */
-.experience-viper-section .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    padding: 0;
-    background: transparent;
-    color: var(--color-white);
+.btn-sector {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-3xl);
+    background: var(--color-viper-green);
+    color: var(--color-text-primary);
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
-    transition: var(--transition-normal);
-    gap: 0;
-}
-
-.experience-viper-section .btn-primary:hover {
-    transform: translateY(-2px);
-    color: var(--color-white);
-}
-
-.experience-viper-section .btn-primary .btn-text {
-    background: var(--color-viper-green);
-    color: var(--color-text-primary);
-    padding: var(--spacing-md) var(--spacing-2xl);
     border-radius: var(--border-radius-full);
-    font-weight: var(--font-weight-semibold);
-    transition: var(--transition-normal);
+    transition: background-color 0.3s ease;
+    min-width: 260px;
+    text-align: center;
 }
 
-.experience-viper-section .btn-primary .btn-arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: var(--color-viper-green);
-    border-radius: 50%;
-    font-size: var(--font-size-lg);
+.btn-sector:hover {
+    background: #9FE63A;
     color: var(--color-text-primary);
-    transition: var(--transition-normal);
 }
 
-.experience-viper-section .btn-primary:hover .btn-text {
-    background: #9FE63A;
-}
-
-.experience-viper-section .btn-primary:hover .btn-arrow {
-    background: #9FE63A;
-    transform: translateX(4px);
+.btn-sector:focus {
+    outline: 2px solid var(--color-white);
+    outline-offset: 4px;
 }
 
 /*
@@ -211,23 +186,16 @@
         margin-bottom: var(--spacing-xl);
     }
 
-    .experience-viper-section .btn-primary {
-        flex-direction: row;
-        gap: var(--spacing-sm);
+    .experience-viper-actions {
+        flex-direction: column;
         align-items: center;
+        gap: var(--spacing-md);
     }
 
-    .experience-viper-section .btn-primary .btn-text {
-        border-radius: var(--border-radius-full);
-        padding: var(--spacing-md) var(--spacing-xl);
+    .btn-sector {
         width: 100%;
-        /* max-width: 280px; */
-        text-align: center;
-    }
-
-    .experience-viper-section .btn-primary .btn-arrow {
-        width: 56px;
-        height: 56px;
+        max-width: 280px;
+        padding: var(--spacing-md) var(--spacing-xl);
     }
 }
 
@@ -244,39 +212,12 @@
         font-size: 14px;
     }
 
-    .experience-viper-section .btn-primary .btn-text {
+    .btn-sector {
         padding: var(--spacing-sm) var(--spacing-lg);
         font-size: var(--font-size-sm);
-    }
-
-    .experience-viper-section .btn-primary .btn-arrow {
-        width: 45px;
-        height: 45px;
+        min-width: 120px;
     }
 }
-
-/* Example animations you can apply to .world-background-image:
-
-@keyframes slowRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes subtleFloat {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-20px) scale(1.02); }
-}
-
-@keyframes pulseGlow {
-    0%, 100% { opacity: 0.8; filter: brightness(1); }
-    50% { opacity: 0.9; filter: brightness(1.1); }
-}
-
-Uncomment and apply like:
-.world-background-image {
-    animation: slowRotate 120s linear infinite;
-}
-*/
 
 /*
 ===========================================
@@ -285,23 +226,9 @@ Uncomment and apply like:
 */
 
 @media (prefers-reduced-motion: reduce) {
-    .experience-viper-section .btn-primary {
+    .btn-sector {
         transition: none;
     }
-
-    .experience-viper-section .btn-primary:hover {
-        transform: none;
-    }
-
-    .experience-viper-section .btn-primary:hover .btn-arrow {
-        transform: none;
-    }
-}
-
-/* Focus states for keyboard navigation */
-.experience-viper-section .btn-primary:focus {
-    outline: 2px solid var(--color-white);
-    outline-offset: 4px;
 }
 
 /* High contrast mode support */
@@ -311,10 +238,14 @@ Uncomment and apply like:
         border: 2px solid var(--color-white);
     }
 
-    .experience-viper-section .btn-primary .btn-text,
-    .experience-viper-section .btn-primary .btn-arrow {
+    .btn-sector {
         background: var(--color-white);
         color: var(--color-text-primary);
         border: 2px solid var(--color-text-primary);
+    }
+
+    .btn-sector:hover {
+        background: var(--color-viper-green);
+        border-color: var(--color-viper-green);
     }
 }

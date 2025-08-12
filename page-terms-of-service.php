@@ -43,13 +43,18 @@ get_header(); ?>
                     <!-- Right Column - Content -->
                     <div class="legal-text-column">
                         <div class="legal-text-content">
-                            <?php if (have_posts()) : ?>
-                                <?php while (have_posts()) : the_post(); ?>
-                                    <?php if (get_the_content()) : ?>
-                                        <!-- Use page content if available -->
-                                        <?php the_content(); ?>
-                                    <?php else : ?>
-                                        <!-- Default content if no page content is set -->
+                            <?php
+                            if (have_posts()) {
+                                while (have_posts()) {
+                                    the_post();
+                                    $content = get_the_content();
+                                    
+                                    // If page has content, show it
+                                    if (!empty(trim(strip_tags($content)))) {
+                                        the_content();
+                                    } else {
+                                        // Show default content
+                                        ?>
                                         <p>Welcome to <span class="GSS-branding">Global Satellite Solutions ("GSS")</span>. These Terms of Service ("Terms") govern your access to and use of our website, platform, products, and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
 
                                         <h2>1. Overview</h2>
@@ -62,7 +67,7 @@ get_header(); ?>
                                         <p>Some features may require registration. You agree to provide accurate, complete, and updated information and to maintain the security of your account credentials. You are responsible for all activity on your account.</p>
 
                                         <h2>4. Data Collection and Use</h2>
-                                        <p>GSS may collect and process data derived from the use of our Services, including synthetic network tests and related metadata. All such data is anonymized and aggregated, unless explicitly agreed otherwise in a signed customer agreement. For more details, please review our <a href="">Privacy Policy</a>.</p>
+                                        <p>GSS may collect and process data derived from the use of our Services, including synthetic network tests and related metadata. All such data is anonymized and aggregated, unless explicitly agreed otherwise in a signed customer agreement. For more details, please review our <a href="<?php echo home_url('/privacy-policy'); ?>">Privacy Policy</a>.</p>
 
                                         <h2>5. Intellectual Property</h2>
                                         <p>All content, trademarks, and software associated with our Services are owned by GSS or our licensors. You may not copy, modify, distribute, or create derivative works from any of our materials without written consent.</p>
@@ -93,23 +98,22 @@ get_header(); ?>
 
                                         <h2>14. Contact</h2>
                                         <p>If you have questions about these Terms, please contact us at:</p>
-                                        <p class="GSS-branding-bottom">Global Satellite Solutions</p>
-                                        <div class="contact-email-wrapper">
-                                            <div class="contact-email-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                                    <path d="M11.6714 12.7538C11.1739 13.0855 10.5959 13.2609 10 13.2609C9.40414 13.2609 8.82617 13.0855 8.32859 12.7538L0.133164 7.29001C0.0876953 7.2597 0.0433984 7.2281 0 7.1956V16.1486C0 17.1751 0.833008 17.9897 1.84113 17.9897H18.1588C19.1853 17.9897 20 17.1567 20 16.1486V7.19556C19.9565 7.22813 19.9121 7.25981 19.8665 7.29017L11.6714 12.7538Z" fill="#155BFF"/>
-                                                    <path d="M0.783203 6.31487L8.97863 11.7787C9.28887 11.9855 9.64441 12.0889 9.99996 12.0889C10.3555 12.0889 10.7111 11.9855 11.0214 11.7787L19.2168 6.31487C19.7072 5.98811 20 5.44124 20 4.85101C20 3.83612 19.1743 3.0105 18.1595 3.0105H1.84051C0.825664 3.01054 0 3.83616 0 4.85198C0 5.44124 0.292812 5.98811 0.783203 6.31487Z" fill="#155BFF"/>
-                                                </svg>
-                                            </div>
-                                            <a href="mailto:info@satqoe.com" class="contact-email-link">info@satqoe.com</a>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endwhile; ?>
-                            <?php else : ?>
-                                <!-- Fallback content (same as above) -->
-                                <p>Welcome to Global Satellite Solutions ("GSS"). These Terms of Service ("Terms") govern your access to and use of our website, platform, products, and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
-                                <!-- Rest of fallback content would go here -->
-                            <?php endif; ?>
+
+                                        <?php
+                                    }
+                                }
+                            }
+                            ?>
+                            <p class="GSS-branding-bottom">Global Satellite Solutions</p>
+                            <div class="contact-email-wrapper">
+                                <div class="contact-email-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                        <path d="M11.6714 12.7538C11.1739 13.0855 10.5959 13.2609 10 13.2609C9.40414 13.2609 8.82617 13.0855 8.32859 12.7538L0.133164 7.29001C0.0876953 7.2597 0.0433984 7.2281 0 7.1956V16.1486C0 17.1751 0.833008 17.9897 1.84113 17.9897H18.1588C19.1853 17.9897 20 17.1567 20 16.1486V7.19556C19.9565 7.22813 19.9121 7.25981 19.8665 7.29017L11.6714 12.7538Z" fill="#155BFF"/>
+                                        <path d="M0.783203 6.31487L8.97863 11.7787C9.28887 11.9855 9.64441 12.0889 9.99996 12.0889C10.3555 12.0889 10.7111 11.9855 11.0214 11.7787L19.2168 6.31487C19.7072 5.98811 20 5.44124 20 4.85101C20 3.83612 19.1743 3.0105 18.1595 3.0105H1.84051C0.825664 3.01054 0 3.83616 0 4.85198C0 5.44124 0.292812 5.98811 0.783203 6.31487Z" fill="#155BFF"/>
+                                    </svg>
+                                </div>
+                                <a href="mailto:info@satqoe.com" class="contact-email-link">info@satqoe.com</a>
+                            </div>
                         </div>
                     </div>
 
