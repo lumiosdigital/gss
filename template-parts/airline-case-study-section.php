@@ -26,6 +26,9 @@
                     <h4>More Than Monitoring</h4>
                     <p>Better awareness. Better action. Better outcomes.</p>
                     <p>The real value of Viper isn't just in tracking performance, it's in enabling change. While fewer complaints aren't guaranteed by data alone, they become a natural outcome when Viper insights lead to real improvements. Without Viper, problems persist. With Viper, status quo ends and better passenger experience begins.</p>
+                    <p class="director-quote">"By leveraging this data, Viper enables airlines and operators to work together to fine tune satellite networks and deliver the best connectivity experience for our guests."<br>
+                    <br>
+                    –David Scotland, Director, Inflight Product & Experiences at Alaska Airlines</p>
                     
                     <p>By aggregating performance data across the Airline's full connected fleet using Viper, the airline unlocks powerful operational and strategic benefits. Below is a summary of impact based on their estimated long-haul activity:</p>
                 </div>

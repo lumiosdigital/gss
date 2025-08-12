@@ -17,10 +17,10 @@
             
             <!-- Main Card -->
             <div class="experience-viper-card">
-                <h2 class="experience-viper-title">Experience Viper in Flight</h2>
+                <h2 class="experience-viper-title">Choose Your Sector</h2>
                 
                 <p class="experience-viper-description">
-                    See Viper in action—no installation required. Just open a test link during your next flight and start gathering real-world performance data within minutes.
+                    Connecting airlines, telecom providers, and their customers with trusted, real-time satellite performance intelligence that ensures proven quality of experience.
                 </p>
                 
                 <div class="experience-viper-actions">

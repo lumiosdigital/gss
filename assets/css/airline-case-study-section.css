@@ -71,6 +71,16 @@
     text-align: left;
 }
 
+.director-quote {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: -0.16px;
+    color: #0b2051;
+    font-weight: 600;
+    margin-top: var(--spacing-lg);
+}
+
 .case-study-description p:last-child {
     margin-bottom: 0;
 }
