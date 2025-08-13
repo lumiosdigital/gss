@@ -2,7 +2,7 @@
 /**
  * The template for displaying single posts (news articles)
  * Updated to match Figma design with title on left, content on right
- * Now includes custom author field support
+ * Now includes custom author field support and display toggles
  */
 
 get_header(); ?>
@@ -48,29 +48,52 @@ get_header(); ?>
                     <div class="post-heading-column">
                         <h1 class="post-title"><?php the_title(); ?></h1>
                         
-                        <div class="post-meta">
-                            <time class="post-date" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
-                                <?php echo get_the_date('F j, Y'); ?>
-                            </time>
-                            
-                            <?php 
-                            // Use custom author function (falls back to WordPress author if custom author is empty)
-                            $author_name = get_post_author_name(get_the_ID());
-                            if ($author_name) : ?>
-                                <br>Author: <?php echo esc_html($author_name); ?>
-                            <?php endif; ?>
-                            
-                            <?php if (get_the_category()) : ?>
-                                <div class="post-categories" style="margin-top: 16px;">
-                                    <?php 
-                                    $categories = get_the_category();
-                                    foreach ($categories as $category) {
-                                        echo '<span class="post-category" style="display: inline-block; padding: 4px 12px; background: #f0f4ff; color: #155BFF; font-size: 12px; font-weight: 500; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 8px;">' . esc_html($category->name) . '</span>';
-                                    }
-                                    ?>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+                        <!-- Post Meta - Only show if date or author should be displayed -->
+                        <?php if (should_show_post_date() || should_show_post_author()) : ?>
+                            <div class="post-meta">
+                                
+                                <!-- Show Date if toggle is enabled -->
+                                <?php if (should_show_post_date()) : ?>
+                                    <time class="post-date" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
+                                        <?php echo get_the_date('F j, Y'); ?>
+                                    </time>
+                                <?php endif; ?>
+                                
+                                <!-- Show Author if toggle is enabled -->
+                                <?php if (should_show_post_author()) : 
+                                    $author_name = get_post_author_name(get_the_ID());
+                                    if ($author_name) : ?>
+                                        <?php if (should_show_post_date()) : ?><br><?php endif; ?>
+                                        Author: <?php echo esc_html($author_name); ?>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                                
+                                <!-- Categories (always shown if they exist) -->
+                                <?php if (get_the_category()) : ?>
+                                    <div class="post-categories" style="margin-top: 16px;">
+                                        <?php 
+                                        $categories = get_the_category();
+                                        foreach ($categories as $category) {
+                                            echo '<span class="post-category" style="display: inline-block; padding: 4px 12px; background: #f0f4ff; color: #155BFF; font-size: 12px; font-weight: 500; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 8px;">' . esc_html($category->name) . '</span>';
+                                        }
+                                        ?>
+                                    </div>
+                                <?php endif; ?>
+                                
+                            </div>
+                        <?php endif; ?>
+                        
+                        <!-- If no meta is shown but categories exist, show them without the wrapper -->
+                        <?php if (!should_show_post_date() && !should_show_post_author() && get_the_category()) : ?>
+                            <div class="post-categories" style="margin-top: 24px;">
+                                <?php 
+                                $categories = get_the_category();
+                                foreach ($categories as $category) {
+                                    echo '<span class="post-category" style="display: inline-block; padding: 4px 12px; background: #f0f4ff; color: #155BFF; font-size: 12px; font-weight: 500; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 8px;">' . esc_html($category->name) . '</span>';
+                                }
+                                ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
 
                     <!-- Right Column - Content -->

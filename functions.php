@@ -1144,27 +1144,65 @@ function add_custom_author_meta_box() {
 }
 add_action('add_meta_boxes', 'add_custom_author_meta_box');
 
-// Meta box callback function
+// Enhanced meta box callback function with display toggles
 function custom_author_meta_box_callback($post) {
     // Add nonce field for security
     wp_nonce_field('custom_author_meta_box', 'custom_author_meta_box_nonce');
     
-    // Get current value
+    // Get current values
     $custom_author = get_post_meta($post->ID, '_custom_author', true);
+    $show_author = get_post_meta($post->ID, '_show_author', true);
+    $show_date = get_post_meta($post->ID, '_show_date', true);
     
-    // Display the field
-    echo '<table class="form-table">';
+    // Set defaults if values don't exist (first time editing)
+    if ($show_author === '') {
+        $show_author = '1'; // Default to showing author
+    }
+    if ($show_date === '') {
+        $show_date = '1'; // Default to showing date
+    }
+    
+    // Display the fields
+    echo '<table class="form-table" style="margin: 0;">';
+    
+    // Custom Author Field
     echo '<tr>';
-    echo '<td>';
+    echo '<td style="padding: 10px 0;">';
     echo '<label for="custom_author"><strong>Author Name:</strong></label><br>';
     echo '<input type="text" id="custom_author" name="custom_author" value="' . esc_attr($custom_author) . '" style="width: 100%; margin-top: 5px;" placeholder="Enter author name..." />';
     echo '<p class="description" style="margin-top: 5px; font-size: 12px; color: #666;">Leave blank to use default WordPress author (' . get_the_author_meta('display_name', $post->post_author) . ')</p>';
     echo '</td>';
     echo '</tr>';
+    
+    // Display Toggles Section
+    echo '<tr>';
+    echo '<td style="padding: 15px 0 10px 0; border-top: 1px solid #ddd;">';
+    echo '<label style="font-weight: 600; color: #333; margin-bottom: 10px; display: block;">Display Options:</label>';
+    
+    // Show Author Toggle
+    echo '<div style="margin-bottom: 10px;">';
+    echo '<label for="show_author" style="display: flex; align-items: center; font-size: 13px;">';
+    echo '<input type="checkbox" id="show_author" name="show_author" value="1" ' . checked(1, $show_author, false) . ' style="margin-right: 8px;">';
+    echo '<span>Show author information</span>';
+    echo '</label>';
+    echo '</div>';
+    
+    // Show Date Toggle
+    echo '<div style="margin-bottom: 5px;">';
+    echo '<label for="show_date" style="display: flex; align-items: center; font-size: 13px;">';
+    echo '<input type="checkbox" id="show_date" name="show_date" value="1" ' . checked(1, $show_date, false) . ' style="margin-right: 8px;">';
+    echo '<span>Show publication date</span>';
+    echo '</label>';
+    echo '</div>';
+    
+    echo '<p class="description" style="margin-top: 8px; font-size: 11px; color: #666;">Uncheck to hide author or date from the post display</p>';
+    echo '</td>';
+    echo '</tr>';
+    
     echo '</table>';
 }
 
-// Save custom author meta field
+// Enhanced save function to handle all fields
 function save_custom_author_meta($post_id) {
     // Check if nonce is valid
     if (!isset($_POST['custom_author_meta_box_nonce']) || !wp_verify_nonce($_POST['custom_author_meta_box_nonce'], 'custom_author_meta_box')) {
@@ -1186,6 +1224,14 @@ function save_custom_author_meta($post_id) {
         $custom_author = sanitize_text_field($_POST['custom_author']);
         update_post_meta($post_id, '_custom_author', $custom_author);
     }
+    
+    // Save show author toggle
+    $show_author = isset($_POST['show_author']) ? '1' : '0';
+    update_post_meta($post_id, '_show_author', $show_author);
+    
+    // Save show date toggle
+    $show_date = isset($_POST['show_date']) ? '1' : '0';
+    update_post_meta($post_id, '_show_date', $show_date);
 }
 add_action('save_post', 'save_custom_author_meta');
 
@@ -1202,4 +1248,36 @@ function get_post_author_name($post_id = null) {
     }
     
     return get_the_author_meta('display_name', get_post_field('post_author', $post_id));
+}
+
+// Helper function to check if author should be displayed
+function should_show_post_author($post_id = null) {
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+    
+    $show_author = get_post_meta($post_id, '_show_author', true);
+    
+    // Default to showing if no value is set
+    if ($show_author === '') {
+        return true;
+    }
+    
+    return $show_author === '1';
+}
+
+// Helper function to check if date should be displayed
+function should_show_post_date($post_id = null) {
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+    
+    $show_date = get_post_meta($post_id, '_show_date', true);
+    
+    // Default to showing if no value is set
+    if ($show_date === '') {
+        return true;
+    }
+    
+    return $show_date === '1';
 }
