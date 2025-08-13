@@ -45,7 +45,7 @@ get_header(); ?>
                         <!-- Introduction Section -->
                         <div class="contact-text-section contact-intro-section">
                             <div class="contact-section-content">
-                                <p>We'd love to hear from you. Whether you're ready to schedule a demo, have questions about VIPER's capabilities, or just want to explore what satellite performance intelligence could mean for your organization — we're here to help.</p>
+                                <p>We'd love to hear from you. Whether you're ready to schedule a demo, have questions about Viper's capabilities, or just want to explore what satellite performance intelligence could mean for your organization — we're here to help.</p>
                             </div>
                         </div>
 
@@ -76,7 +76,7 @@ get_header(); ?>
                         <div class="contact-text-section">
                             <div class="contact-section-content">
                                 <h3 class="contact-section-label">Schedule a Demo</h3>
-                                <p class="contact-section-description">See VIPER in action with a personalized walk-through.</p>
+                                <p class="contact-section-description">See Viper in action with a personalized walk-through.</p>
                                 
                                 <!-- Experience Viper Button (exact copy from footer) -->
                                 <div class="contact-cta-wrapper">
