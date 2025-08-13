@@ -1,6 +1,3 @@
-/**
- * Features Section Parallax Effects
- */
 
 (function() {
     'use strict';

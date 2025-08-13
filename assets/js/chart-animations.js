@@ -1,7 +1,3 @@
-/**
- * Chart Animations for Inflight Connectivity Section
- * Handles fade-in, number counting, and line drawing animations
- */
 
 class ChartAnimations {
     constructor() {

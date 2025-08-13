@@ -1,8 +1,3 @@
-/*
-===========================================
-   NAVIGATION STYLES
-===========================================
-*/
 
 /* Header Container - Three Column Layout */
 .site-header {
@@ -283,11 +278,6 @@
     transform: rotate(-45deg) translate(5px, -3.5px);
 }
 
-/*
-===========================================
-   RESPONSIVE DESIGN
-===========================================
-*/
 
 /* iPad Air and tablets - Use mobile navigation layout */
 @media (max-width: 1024px) {

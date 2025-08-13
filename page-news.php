@@ -1,19 +1,10 @@
 <?php
-/**
- * Template Name: News Page
- * 
- * The template for displaying the News/Blog page
- */
 
 get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
-        
-        <!-- News Page Container -->
         <div class="news-page-container">
-            
-            <!-- Breadcrumb Navigation -->
             <div class="breadcrumb-nav">
                 <div class="container">
                     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -34,25 +25,22 @@ get_header(); ?>
                 </div>
             </div>
 
-            <!-- Page Title -->
             <div class="news-header">
                 <div class="container">
                     <h1 class="news-title">News</h1>
                 </div>
             </div>
 
-            <!-- News Grid -->
             <div class="news-grid-section">
                 <div class="container">
                     <div class="news-grid" id="news-grid">
                         
                         <?php
-                        // Query for posts
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $news_query = new WP_Query(array(
                             'post_type' => 'post',
                             'post_status' => 'publish',
-                            'posts_per_page' => 12, // 4 columns, 3 rows initially
+                            'posts_per_page' => 12, 
                             'paged' => $paged,
                             'orderby' => 'date',
                             'order' => 'DESC'
@@ -62,13 +50,10 @@ get_header(); ?>
                             while ($news_query->have_posts()) : $news_query->the_post();
                         ?>
                         
-                        <!-- News Card -->
                         <article class="news-card">
                             
-                            <!-- Card Clickable Overlay -->
                             <a href="<?php the_permalink(); ?>" class="news-card-link-overlay" aria-label="Read article: <?php the_title_attribute(); ?>"></a>
                             
-                            <!-- Featured Image (if available) -->
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="news-card-image">
                                     <a href="<?php the_permalink(); ?>">
@@ -78,17 +63,16 @@ get_header(); ?>
                             <?php endif; ?>
                             
                             <div class="news-card-content">
-                                <!-- Date -->
-                                <div class="news-card-date">
-                                    <?php echo get_the_date('M j, Y'); ?>
-                                </div>
+                                <?php if (should_show_post_date(get_the_ID())) : ?>
+                                    <div class="news-card-date">
+                                        <?php echo get_the_date('M j, Y'); ?>
+                                    </div>
+                                <?php endif; ?>
                                 
-                                <!-- Title -->
                                 <h3 class="news-card-title">
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h3>
                                 
-                                <!-- Excerpt -->
                                 <div class="news-card-excerpt">
                                     <?php 
                                     if (has_excerpt()) {
@@ -99,7 +83,6 @@ get_header(); ?>
                                     ?>
                                 </div>
                                 
-                                <!-- Read More Link -->
                                 <div class="news-card-link">
                                     <a href="<?php the_permalink(); ?>" class="read-more-link">
                                         <span>Read More</span>
@@ -116,7 +99,6 @@ get_header(); ?>
                         else : 
                         ?>
                         
-                        <!-- No Posts Found -->
                         <div class="no-posts-found">
                             <div class="container">
                                 <h2>No news articles found</h2>
@@ -128,7 +110,7 @@ get_header(); ?>
                         
                     </div>
                     
-                    <!-- Load More Button (for infinite scroll) -->
+
                     <?php if ($news_query->max_num_pages > 1) : ?>
                         <div class="load-more-container">
                             <button class="load-more-btn" id="load-more-posts" 
@@ -153,7 +135,7 @@ get_header(); ?>
             
         </div>
         
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 
 <?php get_footer(); ?>

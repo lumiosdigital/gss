@@ -1,20 +1,9 @@
-/*
-===========================================
-   LEGAL PAGES STYLES (Terms & Cookies)
-===========================================
-*/
 
 .legal-page-wrapper {
     padding-top: var(--spacing-3xl);
     padding-bottom: 0;
     background-color: #F7F9FE;
 }
-
-/*
-===========================================
-   MAIN CONTENT GRID
-===========================================
-*/
 
 .legal-content-grid {
     display: grid;
@@ -57,12 +46,6 @@
 .legal-text-column {
     padding-top: 0;
 }
-
-/*
-===========================================
-   LEGAL CONTENT TYPOGRAPHY
-===========================================
-*/
 
 .legal-text-content p {
     font-size: var(--font-size-lg);
@@ -148,12 +131,6 @@
     color: var(--color-dark-navy);
 }
 
-/*
-===========================================
-   BLUE GRAPHICS SECTION
-===========================================
-*/
-
 .legal-graphics-wrapper {
     background-color: #F7F9FE;
     padding-top: var(--spacing-2xl);
@@ -181,12 +158,6 @@
     object-fit: cover;
     border-radius: 40px;
 }
-
-/*
-===========================================
-   RESPONSIVE DESIGN - COMPLETELY REWRITTEN
-===========================================
-*/
 
 /* Large Desktop: 1400px+ */
 @media (min-width: 1400px) {
@@ -514,12 +485,6 @@
         border-radius: 16px;
     }
 }
-
-/*
-===========================================
-   HIGH CONTRAST MODE
-===========================================
-*/
 
 @media (prefers-contrast: high) {
     .legal-graphics-section {

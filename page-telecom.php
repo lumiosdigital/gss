@@ -1,20 +1,13 @@
 <?php
-/**
- * The template for displaying the Telecommunications industry page
- * 
- * This template will be automatically used for any page with the slug "telecom"
- */
 
 get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main telecom-page">
         
-        <!-- Telecom Page Content -->
         <div class="telecom-page-wrapper">
             <div class="container">
                 
-                <!-- Breadcrumb Navigation -->
                 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
                     <ol class="breadcrumb-list">
                         <li class="breadcrumb-item">
@@ -39,18 +32,16 @@ get_header(); ?>
                     </ol>
                 </nav>
 
-                <!-- Main Content Area -->
+
                 <div class="telecom-content-grid">
                     
-                    <!-- Left Column - Sticky Heading -->
                     <div class="telecom-heading-column">
                         <h1 class="telecom-main-heading">Telecom</h1>
                     </div>
 
-                    <!-- Right Column - Content -->
                     <div class="telecom-text-column">
                         
-                        <!-- First Section -->
+
                         <div class="telecom-text-section top-text-section">
                             <h2 class="telecom-section-title">Satellite Performance Intelligence for Mobile Network Operators</h2>
                             <div class="telecom-section-content">
@@ -58,7 +49,7 @@ get_header(); ?>
                             </div>
                         </div>
 
-                        <!-- Second Section -->
+
                         <div class="telecom-text-section">
                             <h2 class="telecom-section-title">Validate co-branded inflight partnerships</h2>
                             <div class="telecom-section-content">
@@ -66,7 +57,7 @@ get_header(); ?>
                             </div>
                         </div>
 
-                        <!-- Three Feature Blocks -->
+
                         <div class="telecom-features-grid">
                             <div class="telecom-feature-item">
                                 <div class="telecom-feature-icon">
@@ -97,15 +88,13 @@ get_header(); ?>
                                     </svg>
                                 </div>
                                 <div class="telecom-feature-content">
-                                    <h3 class="telecom-feature-title">Optimize ROI by airline, aircraft, or provider</h3>
+                                    <h3 class="telecom-feature-title">Optimize ROI by use case</h3>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Inflight Partnership Image Section -->
                         <div class="telecom-inflight-section">
                             <div class="telecom-inflight-image">
-                                <!-- This should be uploaded as PNG -->
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/telecom-inflight-partnership.png" 
                                      alt="Inflight Partnership Dashboard" 
                                      class="telecom-inflight-background"
@@ -113,7 +102,6 @@ get_header(); ?>
                             </div>
                         </div>
 
-                        <!-- D2D Performance Section -->
                         <div class="telecom-d2d-section">
                             <h2 class="telecom-section-title">Why MNOs Should Use Viper</h2>
                             
@@ -155,7 +143,6 @@ get_header(); ?>
                             </div>
                         </div>
 
-                        <!-- Backhaul & IoT Connectivity Section -->
                         <div class="telecom-backhaul-section">
                             <h2 class="telecom-section-title">Assure backhaul & IoT connectivity</h2>
                             <div class="telecom-section-content">
@@ -193,7 +180,6 @@ get_header(); ?>
                             </p>
                         </div>
 
-                        <!-- Pricing Table Section -->
                         <div class="telecom-pricing-section">
                             <h2 class="telecom-section-title">Choose a model that fits your business<br>Viper supports:</h2>
                             
@@ -229,7 +215,6 @@ get_header(); ?>
                             </p>
                         </div>
 
-                        <!-- Platform Benefits Section -->
                         <div class="telecom-platform-section">
                             <h2 class="telecom-section-title">One Platform. Every Link. Total Visibility.</h2>
                             
@@ -278,11 +263,9 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- Blue CTA Section with Image -->
         <div class="telecom-cta-wrapper">         
             <div class="telecom-cta-section">
 
-                <!-- World Background Image will be added as background -->
                 <div class="telecom-cta-background">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/telecom-background.png" 
                         alt="Telecom CTA Background" 
@@ -292,7 +275,6 @@ get_header(); ?>
                 <div class="telecom-cta-container">
                     <div class="telecom-cta-content">
                         
-                        <!-- Main CTA Button (copied from experience viper) -->
                         <div class="telecom-cta-actions">
                             <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="telecom-btn-primary">
                                 <span class="telecom-btn-text">Ready To Experience Viper?</span>
@@ -308,7 +290,7 @@ get_header(); ?>
             </div>
         </div>
         
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 
 <?php get_footer(); ?>

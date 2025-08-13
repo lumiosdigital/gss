@@ -1,8 +1,3 @@
-/*
-===========================================
-   NEWS PAGE STYLES - FIXED
-===========================================
-*/
 
 .news-page-container {
     background-color: #f7f9fe;
@@ -11,11 +6,6 @@
     padding-top: var(--spacing-3xl);
 }
 
-/*
-===========================================
-   BREADCRUMB NAVIGATION
-===========================================
-*/
 
 .breadcrumb-nav {
     margin-bottom: var(--spacing-xl);
@@ -63,11 +53,7 @@
     letter-spacing: -0.12px;
 }
 
-/*
-===========================================
-   NEWS HEADER
-===========================================
-*/
+
 
 .news-header {
     padding: 0 0 var(--spacing-3xl);
@@ -84,11 +70,7 @@
     line-height: 1.2;
 }
 
-/*
-===========================================
-   NEWS GRID SECTION
-===========================================
-*/
+
 
 .news-grid-section {
     padding-bottom: var(--spacing-4xl);
@@ -103,11 +85,6 @@
     /* padding: 0 var(--spacing-2xl); */
 }
 
-/*
-===========================================
-   NEWS CARDS
-===========================================
-*/
 
 .news-card {
     background: var(--color-white);
@@ -284,12 +261,6 @@
     /* Fine-tune vertical position */
 }
 
-/*
-===========================================
-   LOAD MORE SECTION
-===========================================
-*/
-
 .load-more-container {
     text-align: center;
     margin-top: var(--spacing-4xl);
@@ -329,12 +300,6 @@
     justify-content: center;
 }
 
-/*
-===========================================
-   NO POSTS FOUND
-===========================================
-*/
-
 .no-posts-found {
     grid-column: 1 / -1;
     text-align: center;
@@ -353,12 +318,6 @@
     color: var(--color-text-secondary);
     font-size: var(--font-size-lg);
 }
-
-/*
-===========================================
-   RESPONSIVE DESIGN
-===========================================
-*/
 
 @media (max-width: 1200px) {
     .news-grid {
@@ -477,12 +436,6 @@
     }
 }
 
-/*
-===========================================
-   LOADING STATES
-===========================================
-*/
-
 .news-card.loading {
     opacity: 0.7;
     pointer-events: none;
@@ -502,11 +455,6 @@
     z-index: 10;
 }
 
-/*
-===========================================
-   ACCESSIBILITY
-===========================================
-*/
 
 @media (prefers-reduced-motion: reduce) {
 

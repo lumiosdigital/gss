@@ -1,20 +1,13 @@
 <?php
-/**
- * The template for displaying the Aviation industry page
- * 
- * This template will be automatically used for any page with the slug "aviation"
- */
 
 get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main aviation-page">
         
-        <!-- Aviation Page Content -->
         <div class="aviation-page-wrapper">
             <div class="container">
                 
-                <!-- Breadcrumb Navigation -->
                 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
                     <ol class="breadcrumb-list">
                         <li class="breadcrumb-item">
@@ -39,26 +32,19 @@ get_header(); ?>
                     </ol>
                 </nav>
 
-                <!-- Main Content Area -->
                 <div class="aviation-content-grid">
                     
-                    <!-- Left Column - Sticky Heading -->
                     <div class="aviation-heading-column">
                         <h1 class="aviation-main-heading">Aviation</h1>
                     </div>
-
-                    <!-- Right Column - Content -->
                     <div class="aviation-text-column">
                         
-                        <!-- First Section -->
                         <div class="aviation-text-section top-text-section">
                             <h2 class="aviation-section-title">Collaborative Performance. Validated Results.</h2>
                             <div class="aviation-section-content">
                                 <p>Viper bridges airlines and satellite service providers through a shared performance intelligence layer. By continuously running standardized, industry-defined tests, all stakeholders gain real-time visibility into connectivity quality. This collaboration turns passive data into proactive insight—empowering providers and airlines to jointly identify root causes, implement improvements, and validate the impact of every change. The result: stronger accountability, faster resolution, and a better-connected passenger experience.</p>
                             </div>
                         </div>
-
-                        <!-- Second Section -->
                         <div class="aviation-text-section">
                             <h2 class="aviation-section-title">Tail-Level Intelligence Brings Visibility to Every Aircraft</h2>
                             <div class="aviation-section-content">
@@ -66,10 +52,7 @@ get_header(); ?>
                                 Viper goes beyond basic monitoring—giving you the power to see, map, and manage connectivity performance down to each individual aircraft. Every flight becomes a traceable digital record of the passenger experience, enabling smarter decisions and faster fixes.</p>
                             </div>
                         </div>
-
-                        <!-- Six Feature Blocks -->
                         <div class="aviation-features-grid">
-                            <!-- Left Column Features -->
                             <div class="aviation-features-column aviation-features-left">
                                 <div class="aviation-feature-item">
                                     <div class="aviation-feature-icon">
@@ -116,7 +99,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <!-- Right Column Features -->
                             <div class="aviation-features-column aviation-features-right">
                                 <div class="aviation-feature-item">
                                     <div class="aviation-feature-icon">
@@ -189,19 +171,17 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- Inflight Connectivity Section -->
         <?php get_template_part('template-parts/inflight-connectivity-section'); ?>
 
-        <!-- Strategic Takeaways Section -->
         <div class="aviation-page-wrapper">
             <div class="container">
                 <div class="aviation-strategic-section">
                     <h3 class="aviation-strategic-title">Strategic Takeaways</h3>
 
                     <div class="aviation-strategic-grid">
-                        <!-- Left Column -->
+
                         <div class="aviation-strategic-column aviation-strategic-left">
-                            <!-- Operational Confidence -->
+
                             <div class="aviation-strategic-item">
                                 <div class="aviation-strategic-content">
                                     <h4 class="aviation-strategic-item-title">Operational Confidence</h4>
@@ -211,7 +191,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <!-- Engineering Efficiency -->
                             <div class="aviation-strategic-item">
                                 <div class="aviation-strategic-content">
                                     <h4 class="aviation-strategic-item-title">Engineering Efficiency</h4>
@@ -221,7 +200,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <!-- Performance Transparency -->
                             <div class="aviation-strategic-item">
                                 <div class="aviation-strategic-content">
                                     <h4 class="aviation-strategic-item-title">Performance Transparency</h4>
@@ -231,16 +209,12 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Middle Column - SVG Timeline (same as strategic takeaways) -->
                         <div class="aviation-strategic-column aviation-strategic-middle">
                             <div class="aviation-timeline-svg">
                                 <svg width="312" height="720" viewBox="0 0 312 720" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M156 31L156 709" stroke="#E0EAF8" stroke-width="1.5" stroke-dasharray="4 4"/>
                                     
-                                    <!-- Connection Point 1 -->
                                     <line x1="7" y1="15.5" x2="156" y2="15.5" stroke="#E0EAF8"/>
-                                    <!-- Moving rectangle along line 1 -->
                                     <rect x="152" y="14.5" width="8" height="2" rx="1" fill="#2866F7" opacity="0">
                                         <animateTransform
                                             attributeName="transform"
@@ -258,9 +232,7 @@ get_header(); ?>
                                     <circle cx="156" cy="15" r="6" fill="#2866F7" class="scintillate-delay-1"/>
                                     <circle cx="4" cy="15" r="4" transform="rotate(-90 4 15)" fill="#2866F7"/>
                                     
-                                    <!-- Connection Point 2 -->
                                     <line x1="7" y1="289.5" x2="156" y2="289.5" stroke="#E0EAF8"/>
-                                    <!-- Moving rectangle along line 2 -->
                                     <rect x="150" y="288.5" width="6" height="2" rx="1" fill="#2866F7" opacity="0">
                                         <animateTransform
                                             attributeName="transform"
@@ -280,9 +252,7 @@ get_header(); ?>
                                     <circle cx="156" cy="289" r="6" fill="#2866F7" class="scintillate-delay-2"/>
                                     <circle cx="4" cy="289" r="4" transform="rotate(-90 4 289)" fill="#2866F7"/>
                                     
-                                    <!-- Connection Point 3 -->
                                     <line x1="305" y1="151.499" x2="156" y2="151.499" stroke="#E0EAF8"/>
-                                    <!-- Moving rectangle along line 3 -->
                                     <rect x="156" y="150.5" width="9" height="2" rx="1" fill="#2866F7" opacity="0">
                                         <animateTransform
                                             attributeName="transform"
@@ -302,9 +272,7 @@ get_header(); ?>
                                     <circle cx="156" cy="152" r="4" fill="#2866F7" class="scintillate-delay-3"/>
                                     <circle cx="308" cy="152" r="4" transform="rotate(90 308 152)" fill="#2866F7"/>
                                     
-                                    <!-- Connection Point 4 -->
                                     <line x1="305" y1="425.499" x2="156" y2="425.499" stroke="#E0EAF8"/>
-                                    <!-- Moving rectangle along line 4 -->
                                     <rect x="156" y="424.5" width="5" height="2" rx="1" fill="#2866F7" opacity="0">
                                         <animateTransform
                                             attributeName="transform"
@@ -324,9 +292,7 @@ get_header(); ?>
                                     <circle cx="156" cy="426" r="4" fill="#2866F7" class="scintillate-delay-4"/>
                                     <circle cx="308" cy="426" r="4" transform="rotate(90 308 426)" fill="#2866F7"/>
                                     
-                                    <!-- Connection Point 5 -->
                                     <line x1="7" y1="564.5" x2="156" y2="564.5" stroke="#E0EAF8"/>
-                                    <!-- Moving rectangle along line 5 -->
                                     <rect x="149" y="563.5" width="7" height="2" rx="1" fill="#2866F7" opacity="0">
                                         <animateTransform
                                             attributeName="transform"
@@ -345,10 +311,8 @@ get_header(); ?>
                                     <circle cx="157" cy="564" r="16" transform="rotate(-90 157 564)" fill="#2866F7" fill-opacity="0.18"/>
                                     <circle cx="157" cy="564" r="8" fill="#2866F7" class="scintillate-delay-5"/>
                                     <circle cx="4" cy="565" r="4" transform="rotate(-90 4 565)" fill="#2866F7"/>
-                                    
-                                    <!-- Connection Point 6 -->
+
                                     <line x1="305" y1="704.5" x2="156" y2="704.5" stroke="#E0EAF8"/>
-                                    <!-- Moving rectangle along line 6 -->
                                     <rect x="156" y="703.5" width="6" height="2" rx="1" fill="#2866F7" opacity="0">
                                         <animateTransform
                                             attributeName="transform"
@@ -371,9 +335,7 @@ get_header(); ?>
                             </div>
                         </div>
 
-                        <!-- Right Column -->
                         <div class="aviation-strategic-column aviation-strategic-right">
-                            <!-- SLA Enforcement -->
                             <div class="aviation-strategic-item">
                                 <div class="aviation-strategic-content">
                                     <h4 class="aviation-strategic-item-title">SLA Enforcement</h4>
@@ -383,7 +345,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <!-- Customer Experience -->
                             <div class="aviation-strategic-item">
                                 <div class="aviation-strategic-content">
                                     <h4 class="aviation-strategic-item-title">Customer Experience</h4>
@@ -393,7 +354,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <!-- Vendor Strategy Alignment -->
                             <div class="aviation-strategic-item">
                                 <div class="aviation-strategic-content">
                                     <h4 class="aviation-strategic-item-title">Vendor Strategy Alignment</h4>
@@ -408,11 +368,9 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- Blue CTA Section with Image -->
         <div class="aviation-cta-wrapper">         
             <div class="aviation-cta-section">
 
-                <!-- World Background Image will be added as background -->
                 <div class="aviation-cta-background">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aviation-image.svg" 
                         alt="Aviation CTA Background" 
@@ -422,7 +380,6 @@ get_header(); ?>
                 <div class="aviation-cta-container">
                     <div class="aviation-cta-content">
                         
-                        <!-- Main CTA Button (copied from experience viper) -->
                         <div class="aviation-cta-actions">
                             <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="aviation-btn-primary">
                                 <span class="aviation-btn-text">Ready To Experience Viper?</span>
@@ -438,7 +395,7 @@ get_header(); ?>
             </div>
         </div>
         
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 
 <?php get_footer(); ?>

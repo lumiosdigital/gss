@@ -1,7 +1,3 @@
-/**
- * Strategic Takeaways Section Animations
- * Handles the flying airplane animation based on scroll position
- */
 
 document.addEventListener('DOMContentLoaded', function() {
     const airplaneImage = document.querySelector('.strategic-airplane-image');

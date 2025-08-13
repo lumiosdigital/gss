@@ -1,20 +1,13 @@
 <?php
-/**
- * The template for displaying the Cookies Policy page
- * 
- * This template will be automatically used for any page with the slug "cookies-policy"
- */
 
 get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
         
-        <!-- Cookies Policy Page Content -->
         <div class="legal-page-wrapper">
             <div class="container">
                 
-                <!-- Breadcrumb Navigation -->
                 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
                     <ol class="breadcrumb-list">
                         <li class="breadcrumb-item">
@@ -31,16 +24,13 @@ get_header(); ?>
                     </ol>
                 </nav>
 
-                <!-- Main Content Area -->
                 <div class="legal-content-grid">
                     
-                    <!-- Left Column - Heading -->
                     <div class="legal-heading-column">
                         <h1 class="legal-main-heading">Cookies Policy</h1>
                         <p class="legal-effective-date">Effective Date: August 1, 2025</p>
                     </div>
 
-                    <!-- Right Column - Content -->
                     <div class="legal-text-column">
                         <div class="legal-text-content">
                             <?php
@@ -49,11 +39,9 @@ get_header(); ?>
                                     the_post();
                                     $content = get_the_content();
                                     
-                                    // If page has content, show it
                                     if (!empty(trim(strip_tags($content)))) {
                                         the_content();
                                     } else {
-                                        // Show default content
                                         ?>
                                         <p><span class="GSS-branding">Global Satellite Solutions ("GSS," "we," "us," or "our")</span> uses cookies and similar tracking technologies to enhance your browsing experience, analyze site usage, and support our performance monitoring services.</p>
                                         <br>
@@ -127,7 +115,7 @@ get_header(); ?>
             </div>
         </div>
         
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 
 <?php get_footer(); ?>

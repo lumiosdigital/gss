@@ -1,6 +1,3 @@
-/**
- * Enhanced Viper Experience Modal Functionality
- */
 
 (function($) {
     'use strict';

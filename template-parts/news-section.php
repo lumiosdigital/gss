@@ -1,11 +1,5 @@
 <?php
-/**
- * Template part for displaying the news section on the homepage
- *
- * @package GSS
- */
 
-// Query for latest 8 posts
 $news_query = new WP_Query(array(
     'post_type' => 'post',
     'post_status' => 'publish',
@@ -16,27 +10,24 @@ $news_query = new WP_Query(array(
 ?>
 
 <?php if ($news_query->have_posts()) : ?>
-<!-- News Section -->
+
 <section class="homepage-news-section">
-    <div class="container">
-        
-        <!-- Section Header -->
+    <div class="container"> 
         <div class="section-header">
             <h2 class="section-title">Our News</h2>
             <p class="section-description">Stay updated with the latest news, insights, and developments in satellite communications and inflight connectivity.</p>
         </div>
         
-        <!-- News Grid -->
+
         <div class="homepage-news-grid">
             <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
             
-            <!-- News Card -->
+
             <article class="homepage-news-card">
                 
-                <!-- Card Clickable Overlay -->
+
                 <a href="<?php the_permalink(); ?>" class="homepage-news-card-link-overlay" aria-label="Read article: <?php the_title_attribute(); ?>"></a>
-                
-                <!-- Featured Image (if available) -->
+
                 <?php if (has_post_thumbnail()) : ?>
                     <div class="homepage-news-card-image">
                         <a href="<?php the_permalink(); ?>">
@@ -46,17 +37,18 @@ $news_query = new WP_Query(array(
                 <?php endif; ?>
                 
                 <div class="homepage-news-card-content">
-                    <!-- Date -->
-                    <div class="homepage-news-card-date">
-                        <?php echo get_the_date('M j, Y'); ?>
-                    </div>
-                    
-                    <!-- Title -->
+
+                    <?php if (should_show_post_date(get_the_ID())) : ?>
+                        <div class="homepage-news-card-date">
+                            <?php echo get_the_date('M j, Y'); ?>
+                        </div>
+                    <?php endif; ?>
+
                     <h3 class="homepage-news-card-title">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h3>
                     
-                    <!-- Excerpt -->
+
                     <div class="homepage-news-card-excerpt">
                         <?php 
                         if (has_excerpt()) {
@@ -67,7 +59,6 @@ $news_query = new WP_Query(array(
                         ?>
                     </div>
                     
-                    <!-- Read More Link -->
                     <div class="homepage-news-card-link">
                         <a href="<?php the_permalink(); ?>" class="homepage-read-more-link">
                             <span>Read More</span>
@@ -82,7 +73,6 @@ $news_query = new WP_Query(array(
             <?php endwhile; ?>
         </div>
         
-        <!-- Read All News Button -->
         <div class="homepage-news-cta">
             <a href="<?php echo esc_url(home_url('/news')); ?>" class="read-all-news-btn">
                 <span>Read All News</span>

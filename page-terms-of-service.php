@@ -1,20 +1,15 @@
 <?php
-/**
- * The template for displaying the Terms of Service page
- * 
- * This template will be automatically used for any page with the slug "terms-of-service"
- */
 
 get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
         
-        <!-- Terms of Service Page Content -->
+
         <div class="legal-page-wrapper">
             <div class="container">
                 
-                <!-- Breadcrumb Navigation -->
+
                 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
                     <ol class="breadcrumb-list">
                         <li class="breadcrumb-item">
@@ -31,16 +26,14 @@ get_header(); ?>
                     </ol>
                 </nav>
 
-                <!-- Main Content Area -->
                 <div class="legal-content-grid">
                     
-                    <!-- Left Column - Heading -->
+
                     <div class="legal-heading-column">
                         <h1 class="legal-main-heading">Terms of Service</h1>
                         <p class="legal-effective-date">Effective Date: August 1, 2025</p>
                     </div>
 
-                    <!-- Right Column - Content -->
                     <div class="legal-text-column">
                         <div class="legal-text-content">
                             <?php
@@ -49,11 +42,10 @@ get_header(); ?>
                                     the_post();
                                     $content = get_the_content();
                                     
-                                    // If page has content, show it
+
                                     if (!empty(trim(strip_tags($content)))) {
                                         the_content();
                                     } else {
-                                        // Show default content
                                         ?>
                                         <p>Welcome to <span class="GSS-branding">Global Satellite Solutions ("GSS")</span>. These Terms of Service ("Terms") govern your access to and use of our website, platform, products, and services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
 
@@ -122,7 +114,7 @@ get_header(); ?>
             </div>
         </div>
 
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 
 <?php get_footer(); ?>

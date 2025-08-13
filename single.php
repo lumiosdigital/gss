@@ -1,9 +1,4 @@
 <?php
-/**
- * The template for displaying single posts (news articles)
- * Updated to match Figma design with title on left, content on right
- * Now includes custom author field support and display toggles
- */
 
 get_header(); ?>
 
@@ -12,11 +7,9 @@ get_header(); ?>
         
         <?php while (have_posts()) : the_post(); ?>
         
-        <!-- Single Post Container -->
         <div class="single-post-container">
             <div class="container">
-                
-                <!-- Breadcrumb Navigation -->
+
                 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -41,25 +34,20 @@ get_header(); ?>
                     </ol>
                 </nav>
 
-                <!-- Main Content Grid (like About page) -->
                 <div class="post-content-grid">
                     
-                    <!-- Left Column - Title & Meta -->
                     <div class="post-heading-column">
                         <h1 class="post-title"><?php the_title(); ?></h1>
                         
-                        <!-- Post Meta - Only show if date or author should be displayed -->
                         <?php if (should_show_post_date() || should_show_post_author()) : ?>
                             <div class="post-meta">
                                 
-                                <!-- Show Date if toggle is enabled -->
                                 <?php if (should_show_post_date()) : ?>
                                     <time class="post-date" datetime="<?php echo esc_attr(get_the_date('c')); ?>">
                                         <?php echo get_the_date('F j, Y'); ?>
                                     </time>
                                 <?php endif; ?>
                                 
-                                <!-- Show Author if toggle is enabled -->
                                 <?php if (should_show_post_author()) : 
                                     $author_name = get_post_author_name(get_the_ID());
                                     if ($author_name) : ?>
@@ -68,7 +56,6 @@ get_header(); ?>
                                     <?php endif; ?>
                                 <?php endif; ?>
                                 
-                                <!-- Categories (always shown if they exist) -->
                                 <?php if (get_the_category()) : ?>
                                     <div class="post-categories" style="margin-top: 16px;">
                                         <?php 
@@ -82,8 +69,7 @@ get_header(); ?>
                                 
                             </div>
                         <?php endif; ?>
-                        
-                        <!-- If no meta is shown but categories exist, show them without the wrapper -->
+
                         <?php if (!should_show_post_date() && !should_show_post_author() && get_the_category()) : ?>
                             <div class="post-categories" style="margin-top: 24px;">
                                 <?php 
@@ -96,11 +82,9 @@ get_header(); ?>
                         <?php endif; ?>
                     </div>
 
-                    <!-- Right Column - Content -->
                     <div class="post-content-column">
                         <div class="post-content-wrapper">
                             
-                            <!-- Featured Image (if available) -->
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="post-featured-image" style="margin-bottom: 32px;">
                                     <div class="featured-image-wrapper" style="border-radius: 12px; overflow: hidden;">
@@ -109,14 +93,12 @@ get_header(); ?>
                                 </div>
                             <?php endif; ?>
 
-                            <!-- Post Excerpt (if available) -->
                             <?php if (has_excerpt()) : ?>
                                 <div class="post-excerpt" style="font-size: 20px; line-height: 1.6; color: #6B7280; font-weight: 400; margin-bottom: 32px;">
                                     <?php the_excerpt(); ?>
                                 </div>
                             <?php endif; ?>
                             
-                            <!-- Post Content -->
                             <?php the_content(); ?>
                             
                             <?php
@@ -134,7 +116,6 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- Post Tags -->
         <?php if (has_tag()) : ?>
             <div class="post-tags">
                 <div class="container">
@@ -153,7 +134,6 @@ get_header(); ?>
             </div>
         <?php endif; ?>
 
-        <!-- Back to News -->
         <div class="back-to-news">
             <div class="container">
                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('news'))); ?>" class="back-to-news-link">
@@ -167,7 +147,7 @@ get_header(); ?>
         
         <?php endwhile; ?>
         
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 
 <?php get_footer(); ?>

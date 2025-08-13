@@ -1,27 +1,17 @@
 <?php
-/**
- * Template part for displaying the Insights to Action section (Frame Claude 5)
- *
- * @package Global_Satellite_Solutions
- */
 ?>
 
 <section class="insights-to-action-section" id="insights-to-action">
     <div class="insights-to-action-container">
         <div class="insights-to-action-content" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/inflight-connectivity-background.png');">
             
-            <!-- Header Section -->
             <div class="insights-to-action-header">
                 <h1 class="insights-to-action-title">From Insight to Action<br>Transforming QoE Data Into Real-Time Decisions</h1>
                 <p class="insights-to-action-subtitle">
                     With tail-level intelligence, Wonder Airways doesn't just monitor connectivity — they see it, map it, and manage it, aircraft by aircraft.
                 </p>
             </div>
-
-            <!-- Features Grid -->
             <div class="insights-features-grid">
-                
-                <!-- Feature 1: See the Story of Every Tail -->
                 <div class="insight-feature-card">
                     <div class="insight-feature-icon">
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,8 +27,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Feature 2: Provider Heatmaps -->
                 <div class="insight-feature-card">
                     <div class="insight-feature-icon">
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,8 +67,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Feature 3: Route-Level Clarity -->
                 <div class="insight-feature-card">
                     <div class="insight-feature-icon">
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,8 +80,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Feature 4: Visual Maintenance Triggers -->
                 <div class="insight-feature-card">
                     <div class="insight-feature-icon">
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,8 +93,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Feature 5: Fleet-Wide Trends in Motion -->
                 <div class="insight-feature-card">
                     <div class="insight-feature-icon">
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,8 +112,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Feature 6: Digital Signature Per Aircraft -->
                 <div class="insight-feature-card">
                     <div class="insight-feature-icon">
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">

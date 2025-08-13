@@ -1,13 +1,10 @@
 <?php
-/**
- * Template part for displaying the airline case study section
- */
+
 ?>
 
 <section class="airline-case-study-section" id="case-study">
     <div class="airline-case-study-container">
         
-        <!-- Main Header with Title and Description -->
         <div class="case-study-header">
             <div class="case-study-title-column">
                 <h2 class="case-study-title">
@@ -33,11 +30,9 @@
                     <p>By aggregating performance data across the Airline's full connected fleet using Viper, the airline unlocks powerful operational and strategic benefits. Below is a summary of impact based on their estimated long-haul activity:</p>
                 </div>
 
-                <!-- Fleet-Wide Impact Section -->
                 <div class="fleet-impact-section">
                     <h3 class="section-title">Airline Fleet-Wide Aggregated Viper Impact</h3>
-                    
-                    <!-- Desktop Table -->
+
                     <div class="fleet-impact-table-wrapper">
                         <div class="fleet-impact-table">
                             <div class="table-header">
@@ -72,47 +67,46 @@
                         </div>
                     </div>
 
-                    <!-- Mobile Vertical Table (shown on mobile instead of cards) -->
                     <div class="fleet-impact-mobile-vertical" style="display: none;">
                         <div class="fleet-impact-vertical-table">
-                            <!-- Headers -->
+                 
                             <div class="fleet-impact-vertical-header">Metric</div>
                             <div class="fleet-impact-vertical-header">1 Year</div>
                             <div class="fleet-impact-vertical-header">3 Years</div>
                             
-                            <!-- Flights Row -->
+                   
                             <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Flights</div>
                             <div class="fleet-impact-vertical-cell">85,000</div>
                             <div class="fleet-impact-vertical-cell">255,000</div>
                             
-                            <!-- Passengers Row -->
+                  
                             <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Passengers</div>
                             <div class="fleet-impact-vertical-cell">22,100,000</div>
                             <div class="fleet-impact-vertical-cell">66,300,000</div>
                             
-                            <!-- Samples Row -->
+                       
                             <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Samples</div>
                             <div class="fleet-impact-vertical-cell">1,700,000</div>
                             <div class="fleet-impact-vertical-cell">5,100,000</div>
                             
-                            <!-- Complaints Prevented Row -->
+                
                             <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Complaints Prevented</div>
                             <div class="fleet-impact-vertical-cell">25,500</div>
                             <div class="fleet-impact-vertical-cell">76,500</div>
                             
-                            <!-- Savings Row -->
+               
                             <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">Savings (USD)</div>
                             <div class="fleet-impact-vertical-cell">$2,550,000</div>
                             <div class="fleet-impact-vertical-cell">$7,650,000</div>
                             
-                            <!-- NPS Gain Row -->
+               
                             <div class="fleet-impact-vertical-cell fleet-impact-vertical-label">NPS Gain</div>
                             <div class="fleet-impact-vertical-cell">+425</div>
                             <div class="fleet-impact-vertical-cell">+1,275</div>
                         </div>
                     </div>
 
-                    <!-- Mobile Cards (kept as fallback, but hidden in favor of vertical table) -->
+         
                     <div class="fleet-impact-mobile-cards" style="display: none;">
                         <div class="fleet-impact-card">
                             <div class="fleet-impact-card-title">1 Year Impact</div>
@@ -178,7 +172,7 @@
                     <p class="table-note">These results are based on the assumption of ~170 connected aircraft operating ~1.37 flights/day on average with 260 passengers per flight, collecting 20 QoE/QoS test samples per flight.</p>
                 </div>
 
-                <!-- Benefits Summary Boxes -->
+       
                 <div>
                     <div class="benefits-summary">
                         <div class="benefit-summary-box">
@@ -213,7 +207,7 @@
                             </div>
                         </div>
                     </div> 
-                    <!-- Bottom Description -->
+             
                     <div class="bottom-description">
                         <p>Viper delivers a powerful, scalable, and provider-agnostic performance intelligence layer. With ROI exceeding 10x in the first year, it enables this Airline to:</p>
                     </div>                                        
@@ -221,10 +215,10 @@
             </div>
         </div>
 
-        <!-- Benefits Tables Section -->
+
         <div class="benefits-tables-section">
             <div class="benefits-tables">
-                <!-- Customer Experience Table -->
+           
                 <div class="benefits-table">
                     <h4 class="table-title">Improved Customer Experience</h4>
                     
@@ -255,7 +249,7 @@
                     </div>
                 </div>
 
-                <!-- Operational Gains Table -->
+        
                 <div class="benefits-table">
                     <h4 class="table-title">Operational Gains</h4>
                     

@@ -1,11 +1,4 @@
 <?php
-/**
- * The main template file
- * 
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- */
-
 get_header(); ?>
 
 <main id="primary" class="site-main">
@@ -43,7 +36,6 @@ get_header(); ?>
         <?php endwhile; ?>
         
         <?php
-        // Pagination
         the_posts_navigation();
         ?>
         

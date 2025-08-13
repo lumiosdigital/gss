@@ -1,12 +1,9 @@
 <?php
-/**
- * Features Section Component - "Actionable Intelligence" 
- */
+
 ?>
 
 <section class="features-section">
         
-    <!-- Section Header -->
     <div class="features-header">
         <h2 class="features-title">
             Actionable Intelligence for Every Flight, Every Device, Every Passenger.
@@ -16,10 +13,8 @@
         </p>
     </div>
     
-    <!-- Features Grid -->
     <div class="features-grid">
-        
-        <!-- Browser-based testing (no parallax) -->
+
         <div class="feature-card feature-card-blue">
             <h3 class="feature-title">Browser-based testing</h3>
             <div class="feature-visual">
@@ -27,7 +22,6 @@
             </div>
         </div>
         
-        <!-- Airline app with parallax -->
         <div class="feature-card feature-card-green" data-parallax="true">
             <div class="parallax-bg plane">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plane.svg" alt="Plane background">
@@ -38,7 +32,6 @@
             </div>
         </div>
         
-        <!-- Crew tablet with parallax -->
         <div class="feature-card feature-card-green" data-parallax="true">
             <div class="parallax-bg test-score">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/average-test-score.svg" alt="Crew tablet background">
@@ -49,7 +42,6 @@
             </div>
         </div>
         
-        <!-- AWS Storage with parallax -->
         <div class="feature-card feature-card-blue" data-parallax="true">
             <div class="parallax-bg geometric-aws">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/geometric-AWS.svg" alt="AWS cloud background">

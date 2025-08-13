@@ -1,22 +1,15 @@
 <?php
-/**
- * The template for displaying the About Us page
- * 
- * This template will be automatically used for any page with the slug "about"
- */
 
 get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
         
-        <!-- About Us Page Content -->
         <div class="about-page-wrapper">
             <div class="container">
                 
 
 
-                <!-- Breadcrumb Navigation -->
                 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
                     <ol class="breadcrumb-list">
                         <li class="breadcrumb-item">
@@ -33,24 +26,20 @@ get_header(); ?>
                     </ol>
                 </nav>
 
-                <!-- Main Content Area -->
                 <div class="about-content-grid">
-                    
-                    <!-- Left Column - Heading -->
+
                     <div class="about-heading-column">
                         <h1 class="about-main-heading">About Us</h1>
                     </div>
 
-                    <!-- Right Column - Content -->
                     <div class="about-text-column">
                         <div class="about-text-content">
                             <?php if (have_posts()) : ?>
                                 <?php while (have_posts()) : the_post(); ?>
                                     <?php if (get_the_content()) : ?>
-                                        <!-- Use page content if available -->
+
                                         <?php the_content(); ?>
                                     <?php else : ?>
-                                        <!-- Default content if no page content is set -->
                                         <p>
                                             Global Satellite Solutions is the company behind Viper, the First Standards based independent performance intelligence platform for inflight connectivity (IFC) and satellite networks.<br><br>
                                             Born from the Seamless Air Alliance and powered by contributions from over 200 experts across aviation, telecom, and satellite industries, we are redefining how airlines and mobile network operators manage connectivity quality.
@@ -67,7 +56,6 @@ get_header(); ?>
                                     <?php endif; ?>
                                 <?php endwhile; ?>
                             <?php else : ?>
-                                <!-- Fallback content -->
                                 <p>
                                     Global Satellite Solutions is the company behind Viper, the First Standards based independent performance intelligence platform for inflight connectivity (IFC) and satellite networks.<br><br>
                                     Born from the Seamless Air Alliance and powered by contributions from over 200 experts across aviation, telecom, and satellite industries, we are redefining how airlines and mobile network operators manage connectivity quality.
@@ -89,8 +77,6 @@ get_header(); ?>
 
             </div>
         </div>
-
-        <!-- Blue Graphics Section with Image -->
         <div class="about-graphics-wrapper">
             <div class="about-graphics-section">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-us.svg" 
@@ -101,7 +87,7 @@ get_header(); ?>
         </div>
 
         
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 
 <?php get_footer(); ?>

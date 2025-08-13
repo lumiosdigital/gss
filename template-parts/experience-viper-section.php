@@ -1,13 +1,8 @@
 <?php
-/**
- * Template part for displaying the Experience Viper in Flight section
- *
- * @package Global_Satellite_Solutions
- */
+
 ?>
 
 <section class="experience-viper-section" id="experience-viper">
-    <!-- World Background Image -->
     <div class="world-background">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/world-background.svg" alt="World Map Background" class="world-background-image">
     </div>
@@ -15,7 +10,6 @@
     <div class="experience-viper-container">
         <div class="experience-viper-content">
             
-            <!-- Main Card -->
             <div class="experience-viper-card">
                 <h2 class="experience-viper-title">Choose Your Sector</h2>
                 

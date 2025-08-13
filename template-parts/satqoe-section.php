@@ -1,7 +1,4 @@
 <?php
-/**
- * SatQoE Section Component
- */
 ?>
 
 <section class="satqoe-section">

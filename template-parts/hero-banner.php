@@ -1,13 +1,8 @@
 <?php
-/**
- * Hero Banner Component
- * 
- * This can be included on any page that needs the hero banner
- */
+
 ?>
 
 <section class="hero-banner">
-    <!-- Background SVG -->
     <div class="hero-bg-svg">
         <svg width="1340" height="940" viewBox="0 0 1340 940" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_490_750" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1340" height="940">
@@ -45,7 +40,6 @@
     </div>
     <div class="hero-container">
         
-        <!-- Left Content -->
         <div class="hero-content">
             <h1 class="hero-title">
                 The Industry’s Trusted Benchmark for Measuring IFC Experience
@@ -77,11 +71,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Right Visual Elements -->
     </div>
-
-    <!-- Foreground SVG -->
     <div class="hero-fg-svg">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-banner-foreground-new.png" alt="Hero Foreground" class="hero-fg-image">
     </div>

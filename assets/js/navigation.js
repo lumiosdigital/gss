@@ -1,6 +1,3 @@
-/**
- * Navigation JavaScript for Global Satellite Solutions
- */
 
 (function($) {
     'use strict';

@@ -1,8 +1,4 @@
-/*
-===========================================
-   INFLIGHT CONNECTIVITY SECTION STYLES
-===========================================
-*/
+
 
 .inflight-connectivity-section {
     padding: var(--spacing-sm) 0 0;
@@ -48,12 +44,6 @@
     z-index: 2;
 }
 
-/*
-===========================================
-   HEADER SECTION
-===========================================
-*/
-
 .inflight-connectivity-header {
     text-align: center;
     padding: var(--spacing-3xl) var(--spacing-xl) var(--spacing-2xl);
@@ -80,12 +70,6 @@
     margin: 1.438rem auto 0;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-
-/*
-===========================================
-   MAIN CONTENT GRID
-===========================================
-*/
 
 .inflight-connectivity-main-grid {
     display: grid;
@@ -160,11 +144,6 @@
     letter-spacing: -0.01rem;
 }
 
-/*
-===========================================
-   WHY IT MATTERS SECTION
-===========================================
-*/
 
 .inflight-connectivity-matters-section {
     padding: 0 var(--spacing-xl) var(--spacing-3xl);
@@ -240,12 +219,6 @@
     margin-bottom: 0.94rem;
 }
 
-/*
-===========================================
-   CHARTS SECTION - Enhanced for Animations
-===========================================
-*/
-
 .charts-container {
     position: relative;
     height: 280px;
@@ -288,11 +261,7 @@
     max-width: none;
 }
 
-/*
-===========================================
-   RESPONSIVE DESIGN
-===========================================
-*/
+
 
 @media (max-width: 1024px) {
     .inflight-connectivity-content {
@@ -507,11 +476,6 @@
     }
 }
 
-/*
-===========================================
-   ACCESSIBILITY IMPROVEMENTS
-===========================================
-*/
 
 @media (prefers-reduced-motion: reduce) {
     .inflight-connectivity-card {

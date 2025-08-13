@@ -1,7 +1,3 @@
-/**
- * News Page JavaScript
- * Handles load more functionality and infinite scroll
- */
 
 (function($) {
     'use strict';

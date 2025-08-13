@@ -182,7 +182,7 @@ function gss_enqueue_news_scripts() {
 add_action('wp_enqueue_scripts', 'gss_enqueue_news_scripts');
 
 /**
- * AJAX handler for loading more posts
+ * AJAX handler for loading more posts - UPDATED TO RESPECT DATE TOGGLE
  */
 function gss_load_more_posts() {
     // Verify nonce
@@ -226,10 +226,12 @@ function gss_load_more_posts() {
                 
                 <div class="news-card-content">
                     <div class="news-card-main-content">
-                        <!-- Date -->
-                        <div class="news-card-date">
-                            <?php echo get_the_date('M j, Y'); ?>
-                        </div>
+                        <!-- Date (only show if toggle is enabled) -->
+                        <?php if (should_show_post_date(get_the_ID())) : ?>
+                            <div class="news-card-date">
+                                <?php echo get_the_date('M j, Y'); ?>
+                            </div>
+                        <?php endif; ?>
                         
                         <!-- Title -->
                         <h3 class="news-card-title">

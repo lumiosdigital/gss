@@ -1,8 +1,4 @@
-/*
-===========================================
-   SINGLE POST STYLES - UPDATED FOR FIGMA DESIGN
-===========================================
-*/
+
 
 .single-post-container {
     background-color: #F7F9FE;
@@ -11,11 +7,7 @@
     padding-bottom: 0;
 }
 
-/*
-===========================================
-   BREADCRUMB NAVIGATION
-===========================================
-*/
+
 
 .breadcrumb-nav {
     margin-bottom: var(--spacing-xl);
@@ -63,11 +55,7 @@
     letter-spacing: -0.12px;
 }
 
-/*
-===========================================
-   MAIN CONTENT GRID (Like About Page)
-===========================================
-*/
+
 
 .post-content-grid {
     display: grid;
@@ -105,11 +93,6 @@
     padding-top: 0;
 }
 
-/*
-===========================================
-   POST CONTENT
-===========================================
-*/
 
 .post-content-wrapper {
     font-family: 'Inter', sans-serif;
@@ -260,11 +243,6 @@
     margin-bottom: var(--spacing-lg);
 }
 
-/*
-===========================================
-   POST TAGS
-===========================================
-*/
 
 .post-tags {
     padding: var(--spacing-xl) 0;
@@ -308,11 +286,6 @@
     color: var(--color-brand);
 }
 
-/*
-===========================================
-   BACK TO NEWS
-===========================================
-*/
 
 .back-to-news {
     padding: var(--spacing-3xl) 0;
@@ -339,11 +312,6 @@
     color: var(--color-white);
 }
 
-/*
-===========================================
-   RESPONSIVE DESIGN - COMPLETELY REWRITTEN
-===========================================
-*/
 
 /* Large Desktop: 1400px+ */
 @media (min-width: 1400px) {
@@ -733,11 +701,6 @@
     }
 }
 
-/*
-===========================================
-   ACCESSIBILITY
-===========================================
-*/
 
 @media (prefers-reduced-motion: reduce) {
     .back-to-news-link {
@@ -748,8 +711,3 @@
         transform: none;
     }
 }
-
-/* .back-to-news-link:focus {
-    outline: 2px solid var(--color-brand);
-    outline-offset: 2px;
-} */

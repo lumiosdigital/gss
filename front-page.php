@@ -1,9 +1,4 @@
 <?php
-/**
- * The front page template file
- * 
- * This is the template that displays the homepage
- */
 
 get_header(); ?>
 
@@ -34,7 +29,7 @@ get_header(); ?>
         <!-- News Section -->
         <?php get_template_part('template-parts/news-section'); ?>
         
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 
 <?php get_footer(); ?>

@@ -1,20 +1,12 @@
 <?php
-/**
- * The template for displaying the footer
- */
+
 ?>
 
-    </div><!-- #page -->
-
+    </div>
     <footer class="site-footer">
         <div class="footer-container">
-            
-            <!-- Main Footer Content -->
             <div class="footer-main">
-                
-                <!-- Left Column - Logo, Description, CTA -->
                 <div class="footer-brand">
-                    <!-- Logo -->
                     <div class="footer-logo">
                         <div class="footer-logo-icon">
                             <svg width="122" height="87" viewBox="0 0 122 87" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,13 +29,9 @@
                         </div>
                         <p>Global Satellite<br>Solutions</p>
                     </div>
-
-                    <!-- Description -->
                     <div class="footer-description">
                         <p>Viper is a product of Global Satellite Solutions, built on Seamless Air Alliance standards and powered by GlobalReach.</p>
                     </div>
-
-                    <!-- CTA Button -->
                     <div class="footer-cta">
                         <a href="<?php echo esc_url(get_permalink(get_page_by_path('contact'))); ?>" class="footer-btn-primary">
                             <span class="footer-btn-text">Ready To Experience Viper?</span>
@@ -56,9 +44,7 @@
                     </div>
                 </div>
 
-                <!-- Center Columns - Navigation Menus -->
                 <div class="footer-menus">
-                    <!-- Primary Menu -->
                     <div class="footer-menu-column">
                         <nav class="footer-nav">
                             <?php
@@ -67,13 +53,12 @@
                                 'menu_class'     => 'footer-menu',
                                 'container'      => false,
                                 'fallback_cb'    => 'gss_footer_fallback_menu',
-                                'depth'          => 1, // Only show top-level items
+                                'depth'          => 1,
                             ));
                             ?>
                         </nav>
                     </div>
 
-                    <!-- Secondary Menu -->
                     <div class="footer-menu-column">
                         <nav class="footer-nav">
                             <ul class="footer-menu">
@@ -85,23 +70,8 @@
                     </div>
                 </div>
 
-                <!-- Right Column - Social & Contact -->
                 <div class="footer-contact">
-                    <!-- Social Media Buttons -->
                     <div class="footer-social">
-                        <!-- <a href="#" class="footer-social-btn" target="_blank" rel="noopener noreferrer">
-                            <span>Facebook</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <g clip-path="url(#clip0_329_6488)">
-                                <path d="M10 0C4.4772 0 0 4.4772 0 10C0 14.6896 3.2288 18.6248 7.5844 19.7056V13.056H5.5224V10H7.5844V8.6832C7.5844 5.2796 9.1248 3.702 12.4664 3.702C13.1 3.702 14.1932 3.8264 14.6404 3.9504V6.7204C14.4044 6.6956 13.9944 6.6832 13.4852 6.6832C11.8456 6.6832 11.212 7.3044 11.212 8.9192V10H14.4784L13.9172 13.056H11.212V19.9268C16.1636 19.3288 20.0004 15.1128 20.0004 10C20 4.4772 15.5228 0 10 0Z" fill="white"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_329_6488">
-                                <rect width="20" height="20" fill="white"/>
-                                </clipPath>
-                            </defs>
-                            </svg>
-                        </a> -->
                         <a href="https://www.linkedin.com/company/global-satellite-solutions-inc/" class="footer-social-btn" target="_blank" rel="noopener noreferrer">
                             <span>LinkedIn</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -115,16 +85,7 @@
                             </defs>
                             </svg>
                         </a>
-
-                        <!-- <a href="#" class="footer-social-btn" target="_blank" rel="noopener noreferrer">
-                            <span>YouTube</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M19.8008 6C19.8008 6 19.6055 4.62109 19.0039 4.01563C18.2422 3.21875 17.3906 3.21484 17 3.16797C14.2031 2.96484 10.0039 2.96484 10.0039 2.96484H9.99609C9.99609 2.96484 5.79688 2.96484 3 3.16797C2.60938 3.21484 1.75781 3.21875 0.996094 4.01563C0.394531 4.62109 0.203125 6 0.203125 6C0.203125 6 0 7.62109 0 9.23828V10.7539C0 12.3711 0.199219 13.9922 0.199219 13.9922C0.199219 13.9922 0.394531 15.3711 0.992187 15.9766C1.75391 16.7734 2.75391 16.7461 3.19922 16.832C4.80078 16.9844 10 17.0313 10 17.0313C10 17.0313 14.2031 17.0234 17 16.8242C17.3906 16.7773 18.2422 16.7734 19.0039 15.9766C19.6055 15.3711 19.8008 13.9922 19.8008 13.9922C19.8008 13.9922 20 12.375 20 10.7539V9.23828C20 7.62109 19.8008 6 19.8008 6ZM7.93359 12.5938V6.97266L13.3359 9.79297L7.93359 12.5938Z" fill="white"/>
-                            </svg>
-                        </a> -->
                     </div>
-
-                    <!-- Contact Info -->
                     <div class="footer-contact-info">
                         <p class="footer-contact-label">Get in Touch:</p>
                         <a href="mailto:info@globalsatellitesolutions.com" class="footer-contact-email">
@@ -135,7 +96,6 @@
 
             </div>
 
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="footer-bottom-line"></div>
                 <div class="footer-copyright">

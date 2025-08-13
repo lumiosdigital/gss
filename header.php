@@ -1,7 +1,4 @@
 <?php
-/**
- * The header for Global Satellite Solutions theme
- */
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -21,8 +18,7 @@
 
     <header id="masthead" class="site-header">
         <div class="header-container">
-            
-            <!-- Logo/Brand - Left -->
+
             <div class="site-branding">
                 <?php if ( has_custom_logo() ) : ?>
                     <div class="site-logo">
@@ -40,10 +36,8 @@
                 <?php endif; ?>
             </div>
 
-            <!-- Primary Navigation - Center -->
             <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'gss' ); ?>">
                 
-                <!-- Mobile Menu Toggle -->
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                     <span class="menu-toggle-text"><?php esc_html_e( 'Menu', 'gss' ); ?></span>
                     <span class="menu-icon">
@@ -53,7 +47,6 @@
                     </span>
                 </button>
 
-                <!-- Navigation Menu -->
                 <div class="primary-menu-wrapper">
                     <?php
                     wp_nav_menu(
@@ -67,7 +60,6 @@
                     );
                     ?>
                     
-                    <!-- Mobile CTA Button - Always Present -->
                     <div class="mobile-cta">
                         <a href="https://calendly.com/gsandridge-satqoe" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Schedule a Discovery Call
@@ -75,14 +67,13 @@
                     </div>
                 </div>
 
-            </nav><!-- #site-navigation -->
+            </nav>
 
-            <!-- CTA Button - Right -->
             <div class="header-cta">
                 <a href="https://calendly.com/gsandridge-satqoe" target="_blank" rel="noopener noreferrer" class="cta-button">
                     Schedule a Discovery Call
                 </a>
             </div>
             
-        </div><!-- .header-container -->
-    </header><!-- #masthead -->
+        </div>
+    </header>

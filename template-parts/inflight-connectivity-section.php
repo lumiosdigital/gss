@@ -1,26 +1,18 @@
 <?php
-/**
- * Template part for displaying the Inflight Connectivity infographic section
- *
- * @package Global_Satellite_Solutions
- */
+
 ?>
 
 <section class="inflight-connectivity-section" id="inflight-connectivity">
     <div class="inflight-connectivity-container">
         <div class="inflight-connectivity-content" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/inflight-connectivity-background.png');">
             
-            <!-- Header -->
             <div class="inflight-connectivity-header">
                 <h1 class="inflight-connectivity-title">QoS vs. QoE:</h1>
                 <h1 class="inflight-connectivity-title">Why Both Matter in Inflight Connectivity</h1>
                 <p class="inflight-connectivity-subtitle">Quality of Service (QoS) and Quality of Experience (QoE) are two critical -but distinct- measures that determine the success of inflight connectivity (IFC).</p>
             </div>
 
-            <!-- Main Content Grid -->
             <div class="inflight-connectivity-main-grid">
-                
-                <!-- QoS Section -->
                 <div class="inflight-connectivity-card qos-card">
                     <h2 class="card-title">Quality of Service (QoS)</h2>
                     <p class="card-description">
@@ -53,8 +45,6 @@
                         within expected technical parameters?
                     </p>
                 </div>
-
-                <!-- QoE Section -->
                 <div class="inflight-connectivity-card qoe-card">
                     <h2 class="card-title">Quality of Experience (QoE)</h2>
                     <p class="card-description">
@@ -88,8 +78,6 @@
                     </p>
                 </div>
             </div>
-
-            <!-- Why It Matters Section -->
             <div class="inflight-connectivity-matters-section">
                 <div class="matters-card">
                     <h2 class="matters-title">Why It Matters</h2>
@@ -100,7 +88,6 @@
                     </p>
 
                     <div class="matters-content-grid">
-                        <!-- Left Content -->
                         <div class="matters-text">
                             <p class="matters-description">
                                 By combining network performance metrics (QoS) with passenger-
@@ -127,8 +114,6 @@
                                 </li>
                             </ul>
                         </div>
-
-                        <!-- Charts Section -->
                         <div class="charts-container">
                             <div class="chart-item">
                             <svg width="315" height="162" viewBox="0 0 315 162" fill="none" xmlns="http://www.w3.org/2000/svg">

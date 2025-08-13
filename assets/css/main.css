@@ -1,17 +1,7 @@
-/*
-===========================================
-   MAIN STYLES - GLOBAL SATELLITE SOLUTIONS
-===========================================
-*/
 
 /* Import Inter Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/*
-===========================================
-   CSS CUSTOM PROPERTIES (VARIABLES)
-===========================================
-*/
 
 :root {
     /* Colors from Figma Design System */
@@ -146,11 +136,6 @@
     --container-2xl: 1340px;
 }
 
-/*
-===========================================
-   RESET & BASE STYLES
-===========================================
-*/
 
 /* Modern CSS Reset */
 *,
@@ -277,11 +262,6 @@ select {
     font-size: var(--font-size-base);
 }
 
-/*
-===========================================
-   UTILITY CLASSES
-===========================================
-*/
 
 /* Container */
 .container {
@@ -437,12 +417,6 @@ select {
     white-space: nowrap;
     border: 0;
 }
-
-/*
-===========================================
-   RESPONSIVE DESIGN
-===========================================
-*/
 
 @media (max-width: 768px) {
     :root {
