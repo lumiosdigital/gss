@@ -35,7 +35,7 @@
 
                     <div class="viper-modal-content">
                         <p class="viper-modal-subtitle">
-                            Book a personalized demo with our team.<br>
+                            Get in touch with our team.<br>
                             Let's show you what true inflight visibility looks like.
                         </p>
 
@@ -126,9 +126,9 @@
 
                             <p class="viper-terms-text">
                                 By submitting, you agree to our 
-                                <a href="${window.location.origin}/terms-of-service" class="viper-terms-link" target="_blank">terms of service</a> 
+                                <a href="${window.location.origin}/terms-of-service" class="viper-terms-link" target="_blank">Terms of Service</a> 
                                 & 
-                                <a href="${window.location.origin}/privacy-policy" class="viper-terms-link" target="_blank">privacy policy</a>
+                                <a href="${window.location.origin}/privacy-policy" class="viper-terms-link" target="_blank">Privacy Policy</a>
                             </p>
                         </form>
                     </div>
@@ -194,6 +194,7 @@
             if (text.includes('Ready To Experience Viper') || 
                 text.includes('Experience Viper') || 
                 text.includes('Ready to See Viper in Action') ||
+                text.includes('Schedule a Discovery Call') ||
                 href && href.includes('#experience-viper') ||
                 href && href.includes('experience-viper')) {
                 

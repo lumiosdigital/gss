@@ -27,10 +27,10 @@
                     <br>
                     –David Scotland, Director, Inflight Product & Experiences at Alaska Airlines</p>
                     
-                    <p>By aggregating performance data across the Airline's full connected fleet using Viper, the airline unlocks powerful operational and strategic benefits. Below is a summary of impact based on their estimated long-haul activity:</p>
+                    <p>By aggregating performance data across the Airline's full connected fleet using Viper, the airline unlocks powerful operational and strategic benefits. Below is a summary of impact based on their estimated long-haul activity.</p>
                 </div>
 
-                <div class="fleet-impact-section">
+                <!-- <div class="fleet-impact-section">
                     <h3 class="section-title">Airline Fleet-Wide Aggregated Viper Impact</h3>
 
                     <div class="fleet-impact-table-wrapper">
@@ -170,10 +170,10 @@
                     </div>
                     
                     <p class="table-note">These results are based on the assumption of ~170 connected aircraft operating ~1.37 flights/day on average with 260 passengers per flight, collecting 20 QoE/QoS test samples per flight.</p>
-                </div>
+                </div> -->
 
        
-                <div>
+                <!-- <div>
                     <div class="benefits-summary">
                         <div class="benefit-summary-box">
                             <div class="benefit-icon">
@@ -211,12 +211,12 @@
                     <div class="bottom-description">
                         <p>Viper delivers a powerful, scalable, and provider-agnostic performance intelligence layer. With ROI exceeding 10x in the first year, it enables this Airline to:</p>
                     </div>                                        
-                </div>
+                </div> -->
             </div>
         </div>
 
 
-        <div class="benefits-tables-section">
+        <!-- <div class="benefits-tables-section">
             <div class="benefits-tables">
            
                 <div class="benefits-table">
@@ -276,7 +276,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         
     </div>
 </section>

@@ -128,10 +128,10 @@
 }
 
 .parallax-bg.test-score {
-    width: 130%;
-    height: 130%;
-    left: -40%;
-    top: -9%;
+    /* width: 130%; */
+    /* height: 130%; */
+    left: -0%;
+    top: -16%;
 }
 
 .parallax-bg.geometric-aws {

@@ -59,7 +59,7 @@
                     </span>
                 </a>
                 <a href="#case-study" class="btn-secondary">
-                    Case Study
+                    Viper Return on Investment
                 </a>
             </div>
             

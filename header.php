@@ -61,7 +61,7 @@
                     ?>
                     
                     <div class="mobile-cta">
-                        <a href="https://calendly.com/gsandridge-satqoe" target="_blank" rel="noopener noreferrer" class="cta-button">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Schedule a Discovery Call
                         </a>
                     </div>
