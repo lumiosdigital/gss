@@ -283,12 +283,7 @@ function gss_load_more_posts() {
 add_action('wp_ajax_load_more_posts', 'gss_load_more_posts');
 add_action('wp_ajax_nopriv_load_more_posts', 'gss_load_more_posts');
 
-/**
- * Handle Viper form submission via AJAX
- */
-/**
- * Handle Viper form submission via AJAX
- */
+
 function gss_handle_viper_form_submission() {
     // Verify nonce
     if (!wp_verify_nonce($_POST['nonce'], 'viper_form_nonce')) {
@@ -301,6 +296,7 @@ function gss_handle_viper_form_submission() {
     $full_name = sanitize_text_field($_POST['fullName']);
     $company = sanitize_text_field($_POST['company']);
     $notes = sanitize_textarea_field($_POST['notes']);
+    $schedule_demo = isset($_POST['scheduleDemo']) ? sanitize_text_field($_POST['scheduleDemo']) : 'no';
     $source = sanitize_text_field($_POST['source']);
     
     // Basic validation
@@ -309,22 +305,19 @@ function gss_handle_viper_form_submission() {
         return;
     }
     
-    // Prepare submission data
+    // Prepare submission data for email
     $submission_data = array(
         'email' => $email,
         'full_name' => $full_name,
         'company' => $company,
         'notes' => $notes,
+        'schedule_demo' => $schedule_demo,
         'source' => $source,
-        'ip_address' => $_SERVER['REMOTE_ADDR'],
         'submitted_at' => current_time('mysql')
     );
     
-    // Store submission in database
-    gss_store_viper_submission_with_status($submission_data);
-    
     // Send email notification
-    $to = 'gsandridge@satqoe.com';
+    $to = 'jmandala@satqoe.com';
     $subject = 'New Viper Demo Request from ' . get_bloginfo('name');
     $message = gss_build_viper_email_content($submission_data);
     
@@ -341,9 +334,8 @@ function gss_handle_viper_form_submission() {
         // Send customer confirmation email
         $customer_subject = 'Thank you for your Viper demo request';
         $customer_message = "Hi " . $full_name . ",\n\nThank you for your interest in Viper! We've received your demo request and will be in touch soon.\n\nBest regards,\nThe Global Satellite Solutions Team";
-        $customer_headers = array('From: hello@lumiosdigital.com');
+        $customer_headers = array('From: no-reply@satqoe.com');
         
-        // Send confirmation (don't fail the whole process if this doesn't work)
         wp_mail($email, $customer_subject, $customer_message, $customer_headers);
         
         wp_send_json_success('Thank you! Your demo request has been submitted successfully. We\'ll be in touch soon.');
@@ -359,68 +351,17 @@ add_action('wp_ajax_nopriv_submit_viper_form', 'gss_handle_viper_form_submission
 /**
  * Store submission in custom table
  */
-function gss_store_viper_submission($data) {
-    global $wpdb;
-    
-    $table_name = $wpdb->prefix . 'viper_submissions';
-    
-    // Create table if it doesn't exist
-    gss_create_viper_submissions_table();
-    
-    $wpdb->insert(
-        $table_name,
-        array(
-            'email' => $data['email'],
-            'full_name' => $data['full_name'],
-            'company' => $data['company'],
-            'notes' => $data['notes'],
-            'source' => $data['source'],
-            'ip_address' => $data['ip_address'],
-            'submitted_at' => $data['submitted_at']
-        ),
-        array('%s', '%s', '%s', '%s', '%s', '%s', '%s')
-    );
-}
 
-/**
- * Create submissions table
- */
-function gss_create_viper_submissions_table() {
-    global $wpdb;
-    
-    $table_name = $wpdb->prefix . 'viper_submissions';
-    
-    $charset_collate = $wpdb->get_charset_collate();
-    
-    $sql = "CREATE TABLE IF NOT EXISTS $table_name (
-        id mediumint(9) NOT NULL AUTO_INCREMENT,
-        email varchar(255) NOT NULL,
-        full_name varchar(255) DEFAULT '',
-        company varchar(255) DEFAULT '',
-        notes text DEFAULT '',
-        source varchar(100) DEFAULT '',
-        ip_address varchar(45) DEFAULT '',
-        submitted_at datetime DEFAULT CURRENT_TIMESTAMP,
-        PRIMARY KEY (id),
-        KEY email (email),
-        KEY source (source),
-        KEY submitted_at (submitted_at)
-    ) $charset_collate;";
-    
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($sql);
-}
 
-/**
- * Build the email content for Viper form submissions
- */
+
 function gss_build_viper_email_content($data) {
     $current_time = current_time('F j, Y \a\t g:i A T');
-    $site_url = home_url();
     $site_name = get_bloginfo('name');
-    
-    // Determine source display name
     $source_display = ucwords(str_replace('_', ' ', $data['source']));
+    
+    // Demo preference badge
+    $demo_badge_color = $data['schedule_demo'] === 'yes' ? '#00a32a' : '#999';
+    $demo_badge_text = $data['schedule_demo'] === 'yes' ? '✓ YES - Schedule Demo' : '✗ No Demo Requested';
     
     $html = '
     <!DOCTYPE html>
@@ -482,34 +423,38 @@ function gss_build_viper_email_content($data) {
                 color: #333;
                 word-wrap: break-word;
             }
+            .demo-badge {
+                display: inline-block;
+                background: ' . $demo_badge_color . ';
+                color: white;
+                padding: 8px 16px;
+                border-radius: 5px;
+                font-weight: 600;
+                font-size: 14px;
+                margin-top: 5px;
+            }
             .notes-field {
                 white-space: pre-wrap;
                 background: white;
                 padding: 15px;
-                border-radius: 6px;
+                border-radius: 5px;
                 border-left: 4px solid #155bff;
-            }
-            .source-badge {
-                display: inline-block;
-                background: #b1fe4c;
-                color: #091026;
-                padding: 4px 12px;
-                border-radius: 15px;
-                font-size: 12px;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
             }
             .cta-button {
                 display: inline-block;
-                background: #b1fe4c;
-                color: #091026;
-                padding: 12px 30px;
+                background: #155bff;
+                color: white;
+                padding: 14px 28px;
                 text-decoration: none;
-                border-radius: 25px;
+                border-radius: 8px;
                 font-weight: 600;
-                font-size: 16px;
-                margin-top: 10px;
+                margin: 20px 0;
+            }
+            .footer {
+                text-align: center;
+                padding: 20px;
+                color: #666;
+                font-size: 12px;
             }
         </style>
     </head>
@@ -517,18 +462,17 @@ function gss_build_viper_email_content($data) {
         <div class="email-container">
             <div class="email-header">
                 <h1>🚀 New Viper Demo Request</h1>
-                <p>Someone is interested in experiencing Viper!</p>
+                <p style="margin: 10px 0 0 0; opacity: 0.9;">' . $current_time . '</p>
             </div>
-            
             <div class="email-content">
-                <p>You have received a new demo request through the Viper Experience form on <strong>' . $site_name . '</strong>.</p>
-                
-                <p><strong>Source:</strong> <span class="source-badge">' . esc_html($source_display) . '</span></p>
+                <p style="font-size: 16px; margin-bottom: 20px;">
+                    You have received a new demo request from <strong>' . $site_name . '</strong>.
+                </p>
                 
                 <div class="form-data">
                     <div class="field-group">
                         <span class="field-label">Email Address</span>
-                        <div class="field-value"><strong>' . esc_html($data['email']) . '</strong></div>
+                        <div class="field-value">' . esc_html($data['email']) . '</div>
                     </div>
                     
                     ' . (!empty($data['full_name']) ? '
@@ -545,12 +489,24 @@ function gss_build_viper_email_content($data) {
                     </div>
                     ' : '') . '
                     
+                    <div class="field-group">
+                        <span class="field-label">Schedule Demo?</span>
+                        <div class="field-value">
+                            <span class="demo-badge">' . $demo_badge_text . '</span>
+                        </div>
+                    </div>
+                    
                     ' . (!empty($data['notes']) ? '
                     <div class="field-group">
                         <span class="field-label">Notes</span>
                         <div class="field-value notes-field">' . esc_html($data['notes']) . '</div>
                     </div>
                     ' : '') . '
+                    
+                    <div class="field-group">
+                        <span class="field-label">Source</span>
+                        <div class="field-value">' . $source_display . '</div>
+                    </div>
                 </div>
                 
                 <p style="text-align: center;">
@@ -559,6 +515,9 @@ function gss_build_viper_email_content($data) {
                     </a>
                 </p>
             </div>
+            <div class="footer">
+                <p>This email was sent from ' . $site_name . ' contact form.</p>
+            </div>
         </div>
     </body>
     </html>';
@@ -566,267 +525,9 @@ function gss_build_viper_email_content($data) {
     return $html;
 }
 
-/**
- * Add admin page to view submissions
- */
-function gss_add_viper_admin_page() {
-    add_submenu_page(
-        'tools.php',
-        'Viper Submissions',
-        'Viper Submissions',
-        'manage_options',
-        'viper-submissions',
-        'gss_viper_submissions_page'
-    );
-}
-add_action('admin_menu', 'gss_add_viper_admin_page');
 
-/**
- * Display submissions admin page
- */
-/**
- * Display submissions admin page with enhanced features
- */
-function gss_viper_submissions_page() {
-    global $wpdb;
-    
-    $table_name = $wpdb->prefix . 'viper_submissions';
-    
-    // Create table if it doesn't exist
-    gss_create_viper_submissions_table();
-    
-    // Handle individual submission view
-    if (isset($_GET['view']) && is_numeric($_GET['view'])) {
-        $submission_id = intval($_GET['view']);
-        $submission = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE id = %d", $submission_id));
-        
-        if ($submission) {
-            echo '<div class="wrap">';
-            echo '<h1>Viper Submission Details</h1>';
-            echo '<a href="' . admin_url('tools.php?page=viper-submissions') . '" class="button">← Back to All Submissions</a>';
-            echo '<br><br>';
-            
-            // Status badge
-            $status = isset($submission->status) ? $submission->status : 'new';
-            $status_colors = array('new' => '#00a32a', 'answered' => '#135e96', 'follow_up' => '#996800');
-            $status_color = isset($status_colors[$status]) ? $status_colors[$status] : '#666';
-            // Action buttons
-            $nonce = wp_create_nonce('viper_action_nonce');
-            echo '<div style="margin: 15px 0;">';
-            if ($status !== 'answered') {
-                echo '<a href="' . admin_url('tools.php?page=viper-submissions&viper_action=mark_answered&submission_id=' . $submission->id . '&_wpnonce=' . $nonce) . '" class="button button-primary">Mark as Answered</a> ';
-            }
-            if ($status !== 'follow_up') {
-                echo '<a href="' . admin_url('tools.php?page=viper-submissions&viper_action=mark_followup&submission_id=' . $submission->id . '&_wpnonce=' . $nonce) . '" class="button">Mark for Follow-up</a> ';
-            }
-            echo '<a href="' . admin_url('tools.php?page=viper-submissions&viper_action=delete&submission_id=' . $submission->id . '&_wpnonce=' . $nonce) . '" class="button button-link-delete" onclick="return confirm(\'Delete this submission?\')">Delete</a>';
-            echo '</div>';
-            echo '<div style="background: white; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">';
-            echo '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">';
-            echo '<h2>Submission #' . $submission->id . '</h2>';
-            echo '<span style="background: ' . $status_color . '; color: white; padding: 5px 12px; border-radius: 3px; font-size: 12px; text-transform: uppercase; font-weight: bold;">' . ucwords(str_replace('_', ' ', $status)) . '</span>';
-            echo '</div>';
-            
-            echo '<p><strong>Date:</strong> ' . $submission->submitted_at . '</p>';
-            echo '<p><strong>Email:</strong> <a href="mailto:' . esc_attr($submission->email) . '">' . esc_html($submission->email) . '</a></p>';
-            echo '<p><strong>Name:</strong> ' . esc_html($submission->full_name) . '</p>';
-            echo '<p><strong>Company:</strong> ' . esc_html($submission->company) . '</p>';
-            echo '<p><strong>Source:</strong> ' . esc_html($submission->source) . '</p>';
-            // echo '<p><strong>IP Address:</strong> ' . esc_html($submission->ip_address) . '</p>';
-            echo '<h3>Notes:</h3>';
-            echo '<div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #0073aa; white-space: pre-wrap; word-wrap: break-word; word-break: break-word; max-width: 100%; overflow-wrap: break-word;">' . esc_html($submission->notes) . '</div>';
-            echo '</div>';
-            
-            echo '</div>';
-            return;
-        }
-    }
-    
-    // Filter by status
-    $current_status = isset($_GET['status']) ? sanitize_text_field($_GET['status']) : 'all';
-    $where_clause = '';
-    if ($current_status !== 'all') {
-        $where_clause = $wpdb->prepare(' WHERE status = %s', $current_status);
-    }
-    
-    // Get counts for each status
-    $status_counts = $wpdb->get_results("SELECT status, COUNT(*) as count FROM $table_name GROUP BY status");
-    $total_count = $wpdb->get_var("SELECT COUNT(*) FROM $table_name");
-    
-    // Show all submissions
-    $submissions = $wpdb->get_results("SELECT * FROM $table_name $where_clause ORDER BY submitted_at DESC LIMIT 100");
-    
-    echo '<div class="wrap">';
-    echo '<h1>Viper Demo Submissions</h1>';
-    
-    // Status filter tabs
-    echo '<ul class="subsubsub">';
-    echo '<li><a href="' . admin_url('tools.php?page=viper-submissions') . '"' . ($current_status === 'all' ? ' class="current"' : '') . '>All (' . $total_count . ')</a> |</li>';
-    foreach ($status_counts as $status) {
-        $status_name = ucwords(str_replace('_', ' ', $status->status));
-        echo '<li><a href="' . admin_url('tools.php?page=viper-submissions&status=' . $status->status) . '"' . ($current_status === $status->status ? ' class="current"' : '') . '>' . $status_name . ' (' . $status->count . ')</a>' . ($status !== end($status_counts) ? ' |' : '') . '</li>';
-    }
-    echo '</ul>';
-    
-    if (empty($submissions)) {
-        echo '<p>No submissions found.</p>';
-    } else {
-        echo '<form method="post" action="">';
-        wp_nonce_field('bulk_viper_nonce');
 
-        // Bulk actions
-        echo '<div class="tablenav top">';
-        echo '<div class="alignleft actions bulkactions">';
-        echo '<select name="bulk_action">';
-        echo '<option value="">Bulk Actions</option>';
-        echo '<option value="bulk_answered">Mark as Answered</option>';
-        echo '<option value="bulk_followup">Mark for Follow-up</option>';
-        echo '<option value="bulk_delete">Delete</option>';
-        echo '</select>';
-        echo '<input type="submit" class="button" value="Apply" onclick="return confirm(\'Apply this action to selected submissions?\')">';
-        echo '</div>';
-        echo '</div>';
 
-        echo '<table class="wp-list-table widefat fixed striped">';
-        echo '<thead><tr>';
-        echo '<td class="manage-column column-cb check-column"><input type="checkbox" id="cb-select-all-1"></td>';
-        echo '<th style="width: 120px;">Date</th>';
-        echo '<th style="width: 120px;">Status</th>';
-        echo '<th>Name</th>';
-        echo '<th>Email</th>';
-        echo '<th>Company</th>';
-        echo '<th>Source</th>';
-        echo '<th>Notes Preview</th>';
-        echo '<th style="width: 120px;">Actions</th>';
-        echo '</tr></thead>';
-        echo '<tbody>';
-
-        foreach ($submissions as $submission) {
-            $status = isset($submission->status) ? $submission->status : 'new';
-            
-            // Determine row class based on status
-            $row_class = '';
-            if ($status === 'new') {
-                $row_class = 'style="background-color: #f0f8f0; border-left: 3px solid #00a32a;"';
-            } elseif ($status === 'follow_up') {
-                $row_class = 'style="background-color: #fff8e5; border-left: 3px solid #996800;"';
-            }
-            
-            echo '<tr ' . $row_class . '>';
-            echo '<th scope="row" class="check-column"><input type="checkbox" name="submission_ids[]" value="' . $submission->id . '"></th>';
-            echo '<td>' . esc_html(date('M j, Y', strtotime($submission->submitted_at))) . '</td>';
-            
-            // Status badge
-            $status_colors = array('new' => '#00a32a', 'answered' => '#135e96', 'follow_up' => '#996800');
-            $status_color = isset($status_colors[$status]) ? $status_colors[$status] : '#666';
-            echo '<td><span style="background: ' . $status_color . '; color: white; padding: 2px 8px; border-radius: 3px; font-size: 11px; text-transform: uppercase; font-weight: bold;">' . ucwords(str_replace('_', ' ', $status)) . '</span></td>';
-            
-            echo '<td>' . esc_html($submission->full_name) . '</td>';
-            echo '<td><a href="mailto:' . esc_attr($submission->email) . '">' . esc_html($submission->email) . '</a></td>';
-            echo '<td>' . esc_html($submission->company) . '</td>';
-            echo '<td>' . esc_html($submission->source) . '</td>';
-            $notes_preview = strlen($submission->notes) > 80 ? substr($submission->notes, 0, 80) . '...' : $submission->notes;
-            echo '<td style="max-width: 200px; word-wrap: break-word; overflow: hidden;">' . esc_html($notes_preview) . '</td>';
-            
-            echo '<td>';
-            echo '<a href="' . admin_url('tools.php?page=viper-submissions&view=' . $submission->id) . '" class="button-small">View</a>';
-            echo '</td>';
-            echo '</tr>';
-        }
-
-        echo '</tbody></table>';
-        echo '</form>';
-
-        // Add JavaScript for select all checkbox
-        echo '<script>
-        document.getElementById("cb-select-all-1").addEventListener("change", function() {
-            var checkboxes = document.querySelectorAll("input[name=\'submission_ids[]\']");
-            for (var i = 0; i < checkboxes.length; i++) {
-                checkboxes[i].checked = this.checked;
-            }
-        });
-        </script>';
-    }
-    
-    echo '</div>';
-}
-
-/**
- * Handle submission actions safely
- */
-/**
- * Handle submission actions safely
- */
-/**
- * Handle submission actions safely
- */
-function gss_handle_viper_submission_actions_safe() {
-    // Only run on the admin viper submissions page
-    if (!is_admin() || !isset($_GET['page']) || $_GET['page'] !== 'viper-submissions') {
-        return;
-    }
-    
-    if (!current_user_can('manage_options')) {
-        return;
-    }
-    
-    global $wpdb;
-    $table_name = $wpdb->prefix . 'viper_submissions';
-    
-    // Handle individual actions (GET requests)
-    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['viper_action']) && isset($_GET['submission_id']) && wp_verify_nonce($_GET['_wpnonce'], 'viper_action_nonce')) {
-        $submission_id = intval($_GET['submission_id']);
-        $action = sanitize_text_field($_GET['viper_action']);
-        
-        switch ($action) {
-            case 'delete':
-                $wpdb->delete($table_name, array('id' => $submission_id), array('%d'));
-                wp_redirect(admin_url('tools.php?page=viper-submissions&message=deleted'));
-                exit;
-                
-            case 'mark_answered':
-                $wpdb->update($table_name, array('status' => 'answered'), array('id' => $submission_id), array('%s'), array('%d'));
-                wp_redirect(admin_url('tools.php?page=viper-submissions&message=answered'));
-                exit;
-                
-            case 'mark_followup':
-                $wpdb->update($table_name, array('status' => 'follow_up'), array('id' => $submission_id), array('%s'), array('%d'));
-                wp_redirect(admin_url('tools.php?page=viper-submissions&message=followup'));
-                exit;
-        }
-    }
-    
-    // Handle bulk actions (POST requests)
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bulk_action']) && isset($_POST['submission_ids']) && wp_verify_nonce($_POST['_wpnonce'], 'bulk_viper_nonce')) {
-        $action = sanitize_text_field($_POST['bulk_action']);
-        $submission_ids = array_map('intval', $_POST['submission_ids']);
-        
-        if (!empty($submission_ids)) {
-            $ids_placeholder = implode(',', array_fill(0, count($submission_ids), '%d'));
-            
-            switch ($action) {
-                case 'bulk_delete':
-                    $wpdb->query($wpdb->prepare("DELETE FROM $table_name WHERE id IN ($ids_placeholder)", $submission_ids));
-                    wp_redirect(admin_url('tools.php?page=viper-submissions&message=bulk_deleted'));
-                    exit;
-                    
-                case 'bulk_answered':
-                    $wpdb->query($wpdb->prepare("UPDATE $table_name SET status = 'answered' WHERE id IN ($ids_placeholder)", $submission_ids));
-                    wp_redirect(admin_url('tools.php?page=viper-submissions&message=bulk_answered'));
-                    exit;
-                    
-                case 'bulk_followup':
-                    $wpdb->query($wpdb->prepare("UPDATE $table_name SET status = 'follow_up' WHERE id IN ($ids_placeholder)", $submission_ids));
-                    wp_redirect(admin_url('tools.php?page=viper-submissions&message=bulk_followup'));
-                    exit;
-            }
-        }
-    }
-}
-add_action('admin_init', 'gss_handle_viper_submission_actions_safe');
-
-// Create table on theme activation
-add_action('after_setup_theme', 'gss_create_viper_submissions_table');
 
 /**
  * Display post meta (date, author, categories) conditionally
@@ -1087,51 +788,10 @@ function gss_save_post_settings($post_id) {
     update_post_meta($post_id, '_featured_on_homepage', $featured_on_homepage);
 }
 add_action('save_post', 'gss_save_post_settings');
-/**
- * Enhanced create submissions table with status
- */
-function gss_create_enhanced_viper_submissions_table() {
-    global $wpdb;
-    
-    $table_name = $wpdb->prefix . 'viper_submissions';
-    
-    // Add status column if it doesn't exist
-    $columns = $wpdb->get_results("SHOW COLUMNS FROM $table_name LIKE 'status'");
-    if (empty($columns)) {
-        $wpdb->query("ALTER TABLE $table_name ADD COLUMN status varchar(20) DEFAULT 'new' AFTER ip_address");
-        $wpdb->query("ALTER TABLE $table_name ADD COLUMN updated_at datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER status");
-    }
-}
-add_action('admin_init', 'gss_create_enhanced_viper_submissions_table');
 
-/**
- * Enhanced store submission with status
- */
-function gss_store_viper_submission_with_status($data) {
-    global $wpdb;
-    
-    $table_name = $wpdb->prefix . 'viper_submissions';
-    
-    // Insert the submission
-    $result = $wpdb->insert(
-        $table_name,
-        array(
-            'email' => $data['email'],
-            'full_name' => $data['full_name'],
-            'company' => $data['company'],
-            'notes' => $data['notes'],
-            'source' => $data['source'],
-            'ip_address' => $data['ip_address'],
-            'submitted_at' => $data['submitted_at']
-        ),
-        array('%s', '%s', '%s', '%s', '%s', '%s', '%s')
-    );
-    
-    // Try to set status if column exists
-    if ($result && $wpdb->insert_id) {
-        $wpdb->query($wpdb->prepare("UPDATE $table_name SET status = 'new' WHERE id = %d", $wpdb->insert_id));
-    }
-}
+
+
+
 
 // Add custom meta box to post editor
 function add_custom_author_meta_box() {

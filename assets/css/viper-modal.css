@@ -28,7 +28,7 @@
     border-radius: 20px;
     width: 950px;
     max-width: 95vw;
-    max-height: 80vh;
+    max-height: 86vh;
     overflow: hidden;
     box-shadow: 0px -6px 104px 0px rgba(0, 0, 0, 0.05);
     transform: translateY(30px) scale(0.95);
@@ -107,13 +107,13 @@
 
 .viper-modal-subtitle {
     font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-semibold);
-    font-size: 20px;
+    font-weight: var(--font-weight-normal);
+    font-size: 18px;
     color: var(--color-text-primary);
     text-align: center;
     line-height: 1.4;
     letter-spacing: -0.18px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 /* Form Layout */
@@ -689,5 +689,108 @@
 @media print {
     .viper-modal-overlay {
         display: none !important;
+    }
+}
+
+.viper-demo-question {
+    margin: 30px 0 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.viper-demo-question .viper-field-label {
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: -0.28px;
+    display: block;
+    text-align: center;
+}
+
+.viper-radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.viper-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-normal);
+    font-size: 16px;
+    color: var(--color-text-primary);
+    transition: all 0.2s ease;
+}
+
+.viper-radio-label:hover {
+    opacity: 0.8;
+}
+
+.viper-radio-label input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: var(--color-brand);
+}
+
+.viper-radio-text {
+    user-select: none;
+}
+
+/* Radio button custom styling for better appearance */
+.viper-radio-label input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e0eaf8;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.viper-radio-label input[type="radio"]:hover {
+    border-color: var(--color-brand);
+}
+
+.viper-radio-label input[type="radio"]:checked {
+    border-color: var(--color-brand);
+    background: var(--color-brand);
+}
+
+.viper-radio-label input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .viper-demo-question {
+        margin: 20px 0 15px;
+    }
+
+    .viper-radio-group {
+        gap: 20px;
+    }
+
+    .viper-radio-label {
+        font-size: 14px;
     }
 }

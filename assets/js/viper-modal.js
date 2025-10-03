@@ -1,3 +1,7 @@
+/**
+ * Viper Modal - Enhanced version with demo scheduling option
+ * Global Satellite Solutions
+ */
 
 (function($) {
     'use strict';
@@ -35,7 +39,7 @@
 
                     <div class="viper-modal-content">
                         <p class="viper-modal-subtitle">
-                            Get in touch with our team.<br>
+                            Book a call with our team.<br>
                             Let's show you what true inflight visibility looks like.
                         </p>
 
@@ -60,14 +64,18 @@
                                                 id="viperEmail" 
                                                 name="email" 
                                                 class="viper-field-input" 
-                                                placeholder="Type your email" 
-                                                required
+                                                placeholder="Type your email"
+                                                required 
+                                                aria-required="true"
                                             >
                                         </div>
+                                        <div class="viper-field-error" role="alert"></div>
                                     </div>
 
                                     <div class="viper-field-group">
-                                        <label class="viper-field-label" for="viperFullName">Full Name</label>
+                                        <label class="viper-field-label" for="viperFullName">
+                                            Full Name
+                                        </label>
                                         <div class="viper-field-wrapper">
                                             <input 
                                                 type="text" 
@@ -80,7 +88,9 @@
                                     </div>
 
                                     <div class="viper-field-group">
-                                        <label class="viper-field-label" for="viperCompany">Company</label>
+                                        <label class="viper-field-label" for="viperCompany">
+                                            Company
+                                        </label>
                                         <div class="viper-field-wrapper">
                                             <input 
                                                 type="text" 
@@ -95,16 +105,33 @@
 
                                 <div class="viper-form-right">
                                     <div class="viper-field-group">
-                                        <label class="viper-field-label" for="viperNotes">Tell us about your needs</label>
+                                        <label class="viper-field-label" for="viperNotes">
+                                            Notes
+                                        </label>
                                         <div class="viper-field-wrapper textarea-wrapper">
                                             <textarea 
                                                 id="viperNotes" 
                                                 name="notes" 
-                                                class="viper-field-textarea" 
-                                                placeholder="What specific challenges are you facing with inflight connectivity? What would you like to see in a demo?"
+                                                class="viper-field-input viper-field-textarea" 
+                                                placeholder="We'd love to learn more about you!"
                                             ></textarea>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+
+                            <!-- Demo Scheduling Question -->
+                            <div class="viper-demo-question">
+                                <label class="viper-field-label">Would you like to schedule a demo?</label>
+                                <div class="viper-radio-group">
+                                    <label class="viper-radio-label">
+                                        <input type="radio" name="scheduleDemo" value="no" id="viperDemoNo" checked>
+                                        <span class="viper-radio-text">No</span>
+                                    </label>
+                                    <label class="viper-radio-label">
+                                        <input type="radio" name="scheduleDemo" value="yes" id="viperDemoYes">
+                                        <span class="viper-radio-text">Yes</span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -126,9 +153,9 @@
 
                             <p class="viper-terms-text">
                                 By submitting, you agree to our 
-                                <a href="${window.location.origin}/terms-of-service" class="viper-terms-link" target="_blank">Terms of Service</a> 
+                                <a href="${window.location.origin}/terms-of-service" class="viper-terms-link" target="_blank">terms of service</a> 
                                 & 
-                                <a href="${window.location.origin}/privacy-policy" class="viper-terms-link" target="_blank">Privacy Policy</a>
+                                <a href="${window.location.origin}/privacy-policy" class="viper-terms-link" target="_blank">privacy policy</a>
                             </p>
                         </form>
                     </div>
@@ -273,12 +300,12 @@
      * Close the modal
      */
     function closeViperModal() {
-        viperModal.removeClass('active success-state'); // Add success-state here
+        viperModal.removeClass('active success-state');
         $('body').css('overflow', '');
         
         // Reset form and clear messages
         $('#viperForm')[0].reset();
-        $('#viperForm').show(); // Make sure form is visible again
+        $('#viperForm').show();
         $('#viperMessage').html('');
         $('#viperSubmitButton').removeClass('loading').prop('disabled', false);
         $('.viper-submit-wrapper').removeClass('viper-submit-error');
@@ -300,6 +327,9 @@
         $('.viper-submit-wrapper').removeClass('viper-submit-error');
         $('.viper-error-icon').remove();
 
+        // Get the selected radio button value
+        const scheduleDemo = $('input[name="scheduleDemo"]:checked').val();
+
         // Collect form data
         const formData = {
             action: 'submit_viper_form',
@@ -308,6 +338,7 @@
             fullName: $('#viperFullName').val().trim(),
             company: $('#viperCompany').val().trim(),
             notes: $('#viperNotes').val().trim(),
+            scheduleDemo: scheduleDemo,
             source: $('#viperSource').val()
         };
 
@@ -368,13 +399,7 @@
             </div>
         `);
         
-        submitWrapper.append(errorIcon);
+        submitWrapper.prepend(errorIcon);
     }
-
-    // Expose functions globally if needed
-    window.ViperModal = {
-        open: openViperModal,
-        close: closeViperModal
-    };
 
 })(jQuery);
