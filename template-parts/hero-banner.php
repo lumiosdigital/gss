@@ -58,7 +58,7 @@
                         </svg>
                     </span>
                 </a>
-                <a href="#case-study" class="btn-secondary">
+                <a href="https://docsend.com/view/ydm6eaehju53s3x2" target="_blank" rel="noopener noreferrer" class="btn-secondary">
                     Viper Return on Investment
                 </a>
             </div>
