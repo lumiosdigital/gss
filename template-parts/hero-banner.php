@@ -73,6 +73,6 @@
         </div>
     </div>
     <div class="hero-fg-svg">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-banner-foreground-new.png" alt="Hero Foreground" class="hero-fg-image">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-banner-foreground-last.png" alt="Hero Foreground" class="hero-fg-image">
     </div>
 </section>

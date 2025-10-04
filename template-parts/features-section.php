@@ -34,7 +34,7 @@
         
         <div class="feature-card feature-card-green" data-parallax="true">
             <div class="parallax-bg test-score">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/average-test-score.svg" alt="Crew tablet background">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/average-test-score-new.svg" alt="Crew tablet background">
             </div>
             <h3 class="feature-title">Crew tablet</h3>
             <div class="feature-visual crew-member">
